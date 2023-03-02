@@ -6,6 +6,7 @@ import LogInPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignupPage";
 import Profile from "./pages/Profile";
 import PrivateRoute from "./components/Privateroute";
+import ForumPage from "./pages/ForumPage";
 import InfoPage from "./pages/InfoPage";
 import ResourcePage from "./pages/ResourcePage";
 import AboutPage from "./pages/AboutPage";
@@ -72,6 +73,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path="/forum" element={<ForumPage />} />
       </Routes>
     </div>
   );
