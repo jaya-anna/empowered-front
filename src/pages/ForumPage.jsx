@@ -76,6 +76,7 @@ function ForumPage() {
 function Post({ post }) {
     const [comments, setComments] = useState([]);
     const [commentContent, setCommentContent] = useState('');
+    const {token} = useContext(SessionContext);
 
     useEffect(() => {
         fetchComments();
@@ -89,9 +90,12 @@ function Post({ post }) {
     async function handleCreateComment(e) {
         e.preventDefault();
         try {
-        await axios.post(`http://localhost:5005/forum/posts/${post._id}/createcomment`, {
+        await axios.post(`http://localhost:5005/forum/posts/${post._id}/createcomment`, 
+        {
             content: commentContent,
-        });
+        },
+        {headers: { Authorization: `holder ${token}`  } }
+        );
         setCommentContent('');
         fetchComments();
         } catch (error) {
