@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useContext } from 'react';
+import { SessionContext } from '../contexts/SessionContext';
 
 function ForumPage() {
     const [posts, setPosts] = useState([]);
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const {token} = useContext(SessionContext);
 
     useEffect(() => {
         fetchPosts();
     }, []);
 
     async function fetchPosts() {
-        const response = await axios.get('ttp://localhost:5005/forum/posts');
+        const response = await axios.get('http://localhost:5005/forum/posts');
         setPosts(response.data);
     }
 
     async function handleCreatePost(e) {
         e.preventDefault();
         try {
-        await axios.post('http://localhost:5005/forum/createpost', { title, content });
+        await axios.post('http://localhost:5005/forum/createpost', { title, content }, {headers: { Authorization: `holder ${token}`  } }
+        );
         setTitle('');
         setContent('');
         fetchPosts();
@@ -67,7 +71,7 @@ function ForumPage() {
         </div>
         </div>
     );
-    }
+}
 
 function Post({ post }) {
     const [comments, setComments] = useState([]);
@@ -103,8 +107,9 @@ function Post({ post }) {
         <div>
         <h2>{post.title}</h2>
         <p>{post.content}</p>
+        <p>{post.author.username}</p>
         <div>
-            <form method="POST" action="/createcomment" onSubmit={handleCreateComment}>
+            <form method="POST" action="/posts/:postId/createcomment" onSubmit={handleCreateComment}>
                 <div>
                     <label htmlFor="content">Comment:</label>
                     <input
@@ -128,8 +133,8 @@ function Post({ post }) {
 function Comment({ comment }) {
     return (
         <div>
-        <p>{comment.content}</p>
-        <p>By: {comment.author.username}</p>
+            <p>Comment: {comment.content}</p>
+            <p>By: {comment.author.username}</p>
         </div>
     );
 }
