@@ -24,33 +24,15 @@ const SignupPage = () => {
   };
 
   return (
-    <div
-      style={{
-        margin: "0 auto",
-        maxWidth: "400px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        height: "calc(100vh - 100px)",
-      }}
-    >
+    <div>
       <h1>Signup</h1>
 
-      <form
-        component="form"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-          marginTop: "2rem",
-        }}
-        onSubmit={handleSubmit}
-      >
+      <form onSubmit={handleSubmit}>
         <label>
           Username
           <input
-            label="Username"
-            variant="filled"
+            type="text"
+            name="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -59,8 +41,8 @@ const SignupPage = () => {
         <label>
           Email
           <input
-            label="Email"
-            variant="filled"
+            type="email"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -69,17 +51,15 @@ const SignupPage = () => {
         <label>
           Password
           <input
-            label="Password"
-            variant="filled"
+            type="password"
+            name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <button
           type="submit"
-          variant="filled"
-          color="cyan"
-          style={{ marginTop: "1rem", alignSelf: "center" }}
+        
         >
           Register
         </button>

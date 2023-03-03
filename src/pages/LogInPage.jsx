@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { SessionContext } from "../contexts/SessionContext";
 
 const LoginPage = () => {
@@ -24,36 +24,15 @@ const LoginPage = () => {
   };
 
   return (
-    <div
-      className="login"
-      style={{
-        margin: "0 auto",
-        maxWidth: "400px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        height: "calc(100vh - 100px)",
-      }}
-    >
+    <div className="login">
       <h1>Login</h1>
 
-
-      <form
-        component="form"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-          marginTop: "2rem",
-        }}
-        onSubmit={handleSubmit}
-      >
+      <form onSubmit={handleSubmit}>
         <label>
           Username
           <input
-            label="Username"
-            variant="filled"
-            withAsterisk
+            type="text"
+            name="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -62,23 +41,18 @@ const LoginPage = () => {
         <label>
           Password
           <input
-            label="Password"
-            variant="filled"
-            withAsterisk
+            type="password"
+            name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
 
-        <button
-          type="submit"
-          variant="filled"
-          color="cyan"
-          style={{ marginTop: "1rem", alignSelf: "center" }}
-        >
-          Connect
-        </button>
+        <button type="submit">Connect</button>
       </form>
+
+      <p>Don't have an account yet?</p>
+      <Link to={"/signup"}> Sign Up</Link>
     </div>
   );
 };
