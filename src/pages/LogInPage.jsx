@@ -6,7 +6,7 @@ import { SessionContext } from "../contexts/SessionContext";
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { setToken } = useContext(SessionContext);
+  const { setToken, setIsAuthenticated } = useContext(SessionContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -16,6 +16,7 @@ const LoginPage = () => {
         username: username,
         password: password,
       });
+      setIsAuthenticated(true)
       setToken(response.data.token);
       navigate("/profile");
     } catch (error) {
