@@ -1,12 +1,20 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useContext } from 'react'
+import { SessionContext } from '../contexts/SessionContext';
 
 function Profile() {
 
-    const [username, setUsername] = useState("");
+    const {user} = useContext(SessionContext)
+    console.log(user)
   return (
     <div>
-      <h1>Welcome, {username} !</h1>
+    {user ? ( <div>
+      <h1>Welcome, {user.username} !</h1>
+    </div>) : (
+      <div>
+      <h1>Hi</h1>
+    </div>
+    )
+    }
     </div>
   )
 }

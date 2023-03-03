@@ -6,14 +6,13 @@ import { SessionContext } from "../contexts/SessionContext";
 function NavBar() {
   // const auth = localStorage.getItem("holder");
 
-  const {isAuthenticated} = useContext(SessionContext)
+  const {isAuthenticated, setIsAuthenticated} = useContext(SessionContext)
   const navigate = useNavigate();
   const [isLoggedin, setIsLoggedin] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("holder");
-    setIsLoggedin(false);
-    navigate("/login");
+    setIsAuthenticated(false)
   };
 
   return (

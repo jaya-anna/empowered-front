@@ -7,23 +7,28 @@ const SessionContextProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [token, setToken] = useState("");
     const [isLoading, setIsLoading] = useState(true);
+    const [user, setUser] = useState({});
     
     const verifyToken = async (jwt) => {
         console.log("JWT: ", jwt);
         try {
-            await axios.post("http://localhost:5005/auth/verify", undefined, {
+            const response = await axios.post("http://localhost:5005/auth/verify", undefined, {
                 headers: {
                     Authorization: `holder ${jwt}`
                 },
             })
             setToken(jwt);
-            setIsAuthenticated(true);
+            setUser(response.data)
             setIsLoading(false);
+
         } catch (error) {
             console.log("Error authenticating holder: ", error);
             window.localStorage.removeItem("holder");
         }
     }
+    useEffect(() => {
+        console.log(user)
+    }, [user])
 
     useEffect(() => {
         const localToken = window.localStorage.getItem("holder");
@@ -41,7 +46,7 @@ const SessionContextProvider = ({children}) => {
     }, [token])
 
     return (
-        <SessionContext.Provider value={{setToken, token, isAuthenticated, isLoading}} >{children}</SessionContext.Provider>
+        <SessionContext.Provider value={{setToken, token, isAuthenticated, isLoading, user}} >{children}</SessionContext.Provider>
     )
 }
 
