@@ -1,5 +1,4 @@
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import LogInPage from "./pages/LoginPage";
@@ -10,35 +9,33 @@ import ForumPage from "./pages/ForumPage";
 import InfoPage from "./pages/InfoPage";
 import ResourcePage from "./pages/ResourcePage";
 import AboutPage from "./pages/AboutPage";
-import NavBar from "./components/Navbar";
 import FAQPage from "./pages/FAQPage";
+import OutletComponent from "./components/OutletComponent";
 
 function App() {
 
   return (
     <div className="app">
 
-        <NavBar />
+        
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LogInPage />} />
+
+        <Route path="/" element={<OutletComponent/>}>
+        <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/resources" element={<ResourcePage />} />
         <Route path="/info" element={<InfoPage />} />
         <Route path="/forum" element={<ForumPage />} />
         <Route path="/faq" element={<FAQPage />} />
-
-        <Route
-          path="/profile"
-          element={
-            <PrivateRoute>
+        <Route path="/profile" element={<PrivateRoute>
               <Profile />
-            </PrivateRoute>
-          }
-        />
+            </PrivateRoute>}/>
         <Route path="/forum" element={<ForumPage />} />
+        </Route>
+
       </Routes>
     </div>
   );
