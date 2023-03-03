@@ -14,7 +14,7 @@ const SessionContextProvider = ({children}) => {
         try {
             const response = await axios.post("http://localhost:5005/auth/verify", undefined, {
                 headers: {
-                    Authorization: `holder ${jwt}`
+                    authorization: `holder ${jwt}`
                 },
             })
             setToken(jwt);
@@ -27,26 +27,33 @@ const SessionContextProvider = ({children}) => {
         }
     }
     useEffect(() => {
+        const localToken = window.localStorage.getItem("holder");
+        if (localToken) {
+          verifyToken(localToken);
+        }
+      }, []);
+
+      
+    /* useEffect(() => {
         console.log(user)
     }, [user])
-
-    useEffect(() => {
-        const localToken = window.localStorage.getItem("holder");
-        console.log("LOCAL TOKEN: ", localToken)
-        verifyToken(localToken);
-    }, [])
-
+ */
     useEffect(() => {
         if (token) {
             window.localStorage.setItem("holder", token);
-            if (!isAuthenticated) {
-                setIsAuthenticated(true);
-            }
-        }
-    }, [token])
+            setIsAuthenticated(true);
+            // console.log(isAuthenticated);
+          }
+        }, [token]);
+
+       /*  const localToken = window.localStorage.getItem("holder");
+        console.log("LOCAL TOKEN: ", localToken)
+        verifyToken(localToken);
+    }, []) */
+
 
     return (
-        <SessionContext.Provider value={{setToken, token, isAuthenticated, isLoading, user}} >{children}</SessionContext.Provider>
+        <SessionContext.Provider value={{setToken, token, isAuthenticated, isLoading, user, setUser}} >{children}</SessionContext.Provider>
     )
 }
 
