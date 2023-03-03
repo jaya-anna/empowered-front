@@ -42,6 +42,7 @@ function ForumPage() {
     return (
         <div>
         <h1>Forum</h1>
+        <p>We also value the voices and experiences of our readers, and we encourage you to share your thoughts and feedback in the comments section.</p>
         <div>
             <form method="POST" action="/createpost" onSubmit={handleCreatePost}>
             <div>
@@ -76,6 +77,7 @@ function ForumPage() {
 function Post({ post }) {
     const [comments, setComments] = useState([]);
     const [commentContent, setCommentContent] = useState('');
+    const {token} = useContext(SessionContext);
 
     useEffect(() => {
         fetchComments();
@@ -89,11 +91,14 @@ function Post({ post }) {
     async function handleCreateComment(e) {
         e.preventDefault();
         try {
-        await axios.post(`http://localhost:5005/forum/posts/${post._id}/createcomment`, {
-            content: commentContent,
-        });
-        setCommentContent('');
-        fetchComments();
+            await axios.post(`http://localhost:5005/forum/posts/${post._id}/createcomment`, 
+                {
+                    content: commentContent,
+                },
+                {headers: { Authorization: `holder ${token}`  } }
+                );
+            setCommentContent('');
+            fetchComments();
         } catch (error) {
         console.log(error);
         }
@@ -103,11 +108,34 @@ function Post({ post }) {
         setCommentContent(e.target.value);
     }
 
+    async function handleDeletePost() {
+        try {
+            await axios.delete(`http://localhost:5005/forum/posts/${post._id}`, {
+                headers: { Authorization: `holder ${token}` },
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async function handleDeleteComment() {
+        try {
+            await axios.delete(`http://localhost:5005/forum//posts/${post._id}/comments/${comment._id}`, {
+                headers: { Authorization: `holder ${token}` },
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div>
         <h2>{post.title}</h2>
         <p>{post.content}</p>
         <p>{post.author.username}</p>
+
+        <button onClick={handleDeletePost}>Delete Post</button>
+
         <div>
             <form method="POST" action="/posts/:postId/createcomment" onSubmit={handleCreateComment}>
                 <div>
@@ -121,20 +149,16 @@ function Post({ post }) {
             <button type="submit">Create Comment</button>
             </form>
         </div>
+
         <div>
             {comments.map((comment) => (
-            <Comment key={comment._id} comment={comment} />
+                <div key={comment._id}>
+                    <p>Comment: {comment.content}</p>
+                    <p>By: {comment.author.username}</p>
+                    <button onClick={handleDeleteComment}>Delete Comment</button>
+                </div>
             ))}
         </div>
-        </div>
-    );
-}
-
-function Comment({ comment }) {
-    return (
-        <div>
-            <p>Comment: {comment.content}</p>
-            <p>By: {comment.author.username}</p>
         </div>
     );
 }
