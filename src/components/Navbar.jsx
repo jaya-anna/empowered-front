@@ -1,18 +1,16 @@
 import React, { useContext } from "react";
 import { NavLink, useNavigate, Link } from "react-router-dom";
-import { useState } from "react";
 import { SessionContext } from "../contexts/SessionContext";
 
 function NavBar() {
   // const auth = localStorage.getItem("holder");
 
-  const {isAuthenticated, setIsAuthenticated} = useContext(SessionContext)
+  const { isAuthenticated, setIsAuthenticated } = useContext(SessionContext);
   const navigate = useNavigate();
-  const [isLoggedin, setIsLoggedin] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("holder");
-    setIsAuthenticated(false)
+    setIsAuthenticated(false);
   };
 
   return (

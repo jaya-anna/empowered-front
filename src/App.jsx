@@ -11,31 +11,35 @@ import ResourcePage from "./pages/ResourcePage";
 import AboutPage from "./pages/AboutPage";
 import FAQPage from "./pages/FAQPage";
 import OutletComponent from "./components/OutletComponent";
+import UpdateForm from "./components/UpdateForm";
 
 function App() {
-
   return (
     <div className="app">
-
-        
-
       <Routes>
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LogInPage />} />
 
-        <Route path="/" element={<OutletComponent/>}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/resources" element={<ResourcePage />} />
-        <Route path="/info" element={<InfoPage />} />
-        <Route path="/forum" element={<ForumPage />} />
-        <Route path="/faq" element={<FAQPage />} />
-        <Route path="/profile" element={<PrivateRoute>
-              <Profile />
-            </PrivateRoute>}/>
-        <Route path="/forum" element={<ForumPage />} />
+        <Route path="/" element={<OutletComponent />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/resources" element={<ResourcePage />} />
+          <Route path="/info" element={<InfoPage />} />
+          <Route path="/forum" element={<ForumPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/update" element={<UpdateForm />} />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <Profile>
+                  <UpdateForm />
+                </Profile>
+              </PrivateRoute>
+            }
+          />
+          <Route path="/forum" element={<ForumPage />} />
         </Route>
-
       </Routes>
     </div>
   );
