@@ -23,6 +23,7 @@ function NavBar() {
         <NavLink to="/about">About</NavLink>
         <NavLink to="/info">Info</NavLink>
         <NavLink to="/forum">Forum</NavLink>
+        <NavLink to="/faq">FAQ</NavLink>
 
         <Link
         type="button"

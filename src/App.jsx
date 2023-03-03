@@ -11,6 +11,7 @@ import InfoPage from "./pages/InfoPage";
 import ResourcePage from "./pages/ResourcePage";
 import AboutPage from "./pages/AboutPage";
 import NavBar from "./components/Navbar";
+import FAQPage from "./pages/FAQPage";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/resources" element={<ResourcePage />} />
         <Route path="/info" element={<InfoPage />} />
         <Route path="/forum" element={<ForumPage />} />
+        <Route path="/faq" element={<FAQPage />} />
 
         <Route
           path="/profile"

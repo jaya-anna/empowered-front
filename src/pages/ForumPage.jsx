@@ -42,6 +42,7 @@ function ForumPage() {
     return (
         <div>
         <h1>Forum</h1>
+        <p>We also value the voices and experiences of our readers, and we encourage you to share your thoughts and feedback in the comments section.</p>
         <div>
             <form method="POST" action="/createpost" onSubmit={handleCreatePost}>
             <div>
