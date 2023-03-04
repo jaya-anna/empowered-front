@@ -1,6 +1,7 @@
+import { Box, Button, PasswordInput, Text, TextInput } from "@mantine/core";
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { SessionContext } from "../contexts/SessionContext";
 
 const LoginPage = () => {
@@ -24,36 +25,53 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login">
-      <h1>Login</h1>
-
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
-
-        <label>
-          Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-
-        <button type="submit">Connect</button>
-      </form>
-
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
-    </div>
+    <Box
+      sx={{
+        margin: "0 auto",
+        maxWidth: "400px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        height: "calc(100vh - 100px)",
+      }}
+    >
+      <Text align="center" size="xl" weight="bold">
+        Login
+      </Text>
+      <Box
+        component="form"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
+          marginTop: "2rem",
+        }}
+        onSubmit={handleSubmit}
+      >
+        <TextInput
+          label="Username"
+          variant="filled"
+          withAsterisk
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <PasswordInput
+          label="Password"
+          variant="filled"
+          withAsterisk
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Button
+          type="submit"
+          variant="filled"
+          color="violet.3"
+          sx={{ marginTop: "1rem", alignSelf: "center" }}
+        >
+          Connect
+        </Button>
+      </Box>
+    </Box>
   );
 };
 
