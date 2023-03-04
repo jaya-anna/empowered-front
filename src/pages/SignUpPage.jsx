@@ -1,11 +1,14 @@
+import { Box, Button, PasswordInput, Text, TextInput, Anchor} from "@mantine/core";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { IconHome2} from '@tabler/icons-react'
 
 const SignupPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  //const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
@@ -19,52 +22,77 @@ const SignupPage = () => {
       });
       navigate("/login");
     } catch (error) {
-      console.log(error);
+      /*const errorDescription = error.response.data.message;
+      setErrorMessage(errorDescription);*/
     }
   };
 
   return (
-    <div>
-      <h1>Signup</h1>
+    <Box
+      sx={{
+        margin: "0 auto",
+        maxWidth: "400px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        height: "calc(100vh - 100px)",
+      }}
+    >
+      <Text align="center" size="xl" weight="bold">
+        Signup
+      </Text>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
+      <Box
+        component="form"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
+          marginTop: "2rem",
+        }}
+        onSubmit={handleSubmit}
+      >
+        <TextInput
+          label="Username"
+          variant="filled"
+          withAsterisk
+          value={username}
+          required
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <TextInput
+          label="Email"
+          variant="filled"
+          withAsterisk
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-        <label>
-          Email
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
+        <PasswordInput
+          label="Password"
+          variant="filled"
+          withAsterisk
+          value={password}
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <label>
-          Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <button
+        <Button
           type="submit"
-        
+          variant="filled"
+          color="violet.3"
+          sx={{ marginTop: "1rem", alignSelf: "center" }}
         >
           Register
-        </button>
-      </form>
-    </div>
+        </Button>
+        <Text>Already have account?</Text>
+        <Anchor color="violet.3" href="/login" target="_blank">
+        Login
+    </Anchor>
+        
+      </Box>
+     
+    </Box>
   );
 };
 

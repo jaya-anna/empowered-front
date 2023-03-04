@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { AppShell, Box, Button, Header } from '@mantine/core'
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import LogInPage from "./pages/LoginPage";
@@ -11,7 +12,8 @@ import ResourcePage from "./pages/ResourcePage";
 import AboutPage from "./pages/AboutPage";
 import FAQPage from "./pages/FAQPage";
 import OutletComponent from "./components/OutletComponent";
-import UpdateForm from "./components/UpdateForm";
+
+import UpdatePage from "./pages/UpdatePage";
 
 function App() {
   return (
@@ -27,13 +29,13 @@ function App() {
           <Route path="/info" element={<InfoPage />} />
           <Route path="/forum" element={<ForumPage />} />
           <Route path="/faq" element={<FAQPage />} />
-          <Route path="/update" element={<UpdateForm />} />
+          <Route path="/update" element={<UpdatePage />} />
           <Route
             path="/profile"
             element={
               <PrivateRoute>
                 <Profile>
-                  <UpdateForm />
+                  <UpdatePage />
                 </Profile>
               </PrivateRoute>
             }
