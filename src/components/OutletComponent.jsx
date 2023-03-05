@@ -2,14 +2,18 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
+import { AppShell, Navbar, Header } from '@mantine/core';
 
 function OutletComponent() {
   return (
-    <div>
+    <AppShell
+      padding="md"
+      
+    >
       <NavBar />
       <Outlet />
       <Footer />
-    </div>
+    </AppShell>
   );
 }
 

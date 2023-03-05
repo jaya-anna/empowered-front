@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useContext } from 'react';
 import { SessionContext } from '../contexts/SessionContext';
 
+import { Card, Text, Button, Input, Group } from '@mantine/core';
+
 function ForumPage() {
     const [posts, setPosts] = useState([]);
     const [title, setTitle] = useState('');
@@ -45,31 +47,36 @@ function ForumPage() {
         <p>We also value the voices and experiences of our readers, and we encourage you to share your thoughts and feedback in the comments section.</p>
         <div>
             <form method="POST" action="/createpost" onSubmit={handleCreatePost}>
-            <div>
-                <label htmlFor="title">Title:</label>
-                <input
-                type="text"
-                id="title"
-                value={title}
-                onChange={handleTitleChange}
-                />
-            </div>
-            <div>
-                <label htmlFor="content">Content:</label>
-                <input
-                id="content"
-                value={content}
-                onChange={handleContentChange}
-                ></input>
-            </div>
-            <button type="submit">Create Post</button>
+                <Group spacing="lg" direction="column">
+                    
+                        <label>Post title:</label>
+                        <Input
+                            type="text"
+                            id="title"
+                            value={title}
+                            onChange={handleTitleChange}
+                        />
+                    
+                        <label>Post content:</label>
+                        <Input
+                            id="content"
+                            value={content}
+                            onChange={handleContentChange}
+                        />
+                    
+                        <Button type="submit">Create Post</Button>
+                </Group>
             </form>
         </div>
+
         <div>
-            {posts.map((post) => (
-            <Post key={post._id} post={post} />
-            ))}
+            <Card shadow="sm" padding="sm" style={{ marginBottom: '1rem' }}>
+                {posts.map((post) => (
+                    <Post key={post._id} post={post} />
+                ))}
+            </Card>
         </div>
+
         </div>
     );
 }
@@ -118,48 +125,68 @@ function Post({ post }) {
         }
     }
 
-    async function handleDeleteComment() {
+    async function handleDeleteComment(comment) {
         try {
             await axios.delete(`http://localhost:5005/forum//posts/${post._id}/comments/${comment._id}`, {
                 headers: { Authorization: `holder ${token}` },
             });
+
+            setComments(comments.filter(c => c._id !== comment._id));
         } catch (error) {
             console.log(error);
         }
     }
 
     return (
-        <div>
-        <h2>{post.title}</h2>
-        <p>{post.content}</p>
-        <p>{post.author.username}</p>
+        <Card shadow="sm" padding="sm" style={{ marginBottom: '1rem' }}>
+        <Group spacing="lg" direction="column">
+            <Card shadow="sm" padding="sm" style={{ marginBottom: '1rem' }}>
+                <Text size="lg" weight={600} style={{ marginBottom: '0.5rem' }}>
+                    {post.title}
+                </Text>
 
-        <button onClick={handleDeletePost}>Delete Post</button>
+                <Text>
+                    {post.content}
+                </Text>
+
+                <Text>
+                    {post.author.username}
+                </Text>
+
+                <Button onClick={handleDeletePost}>Delete Post</Button>
+            </Card>
+
+        
 
         <div>
             <form method="POST" action="/posts/:postId/createcomment" onSubmit={handleCreateComment}>
-                <div>
-                    <label htmlFor="content">Comment:</label>
-                    <input
-                    id="content"
-                    value={commentContent}
-                    onChange={handleCommentContentChange}
-                    ></input>
-                </div>
-            <button type="submit">Create Comment</button>
+
+                <Group spacing="lg" direction="column">
+                    
+                        <label>Comment:</label>
+                        <Input
+                            id="content"
+                            value={commentContent}
+                            onChange={handleCommentContentChange}
+                        />
+                    
+                    <Button type="submit">Create Comment</Button>
+
+                </Group>
             </form>
         </div>
 
         <div>
             {comments.map((comment) => (
                 <div key={comment._id}>
-                    <p>Comment: {comment.content}</p>
-                    <p>By: {comment.author.username}</p>
-                    <button onClick={handleDeleteComment}>Delete Comment</button>
+                    <Text>  Comment: {comment.content} </Text>  
+                    <Text>  By: {comment.author.username}  </Text> 
+                    <Button onClick={() => handleDeleteComment(comment)}>Delete Comment</Button>
                 </div>
             ))}
         </div>
-        </div>
+        </Group>
+        </Card>
     );
 }
 
