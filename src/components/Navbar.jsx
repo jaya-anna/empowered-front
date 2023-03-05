@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { AppShell, Box, Button, Header, Text } from '@mantine/core';
+import { Box, Button, Header, Text } from '@mantine/core';
 import { SessionContext } from "../contexts/SessionContext";
 
 function NavBar() {
@@ -13,7 +13,7 @@ function NavBar() {
   };
 
   return (
-    <AppShell padding={0}>
+
       <Header
         shadow="sm"
         padding={{ xs: 'sm', md: 'lg' }}
@@ -70,7 +70,7 @@ function NavBar() {
           </Box>
         </Box>
       </Header>
-    </AppShell>
+
   );
 }
 
