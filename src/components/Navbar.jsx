@@ -18,7 +18,7 @@ function NavBar() {
         shadow="sm"
         padding={{ xs: 'sm', md: 'lg' }}
         position="static"
-        borderBottom={0}
+        borderBottom={1}
       >
         <Box display="flex" alignItems="center">
           <NavLink to="/">
