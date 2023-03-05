@@ -11,9 +11,13 @@ Our mission is to provide accessible and accurate information on sex education a
 
 We believe that everyone deserves access to accurate and up-to-date information about their bodies and their sexual health, and we strive to provide that through our web application. 
 
-        The team: Anna, Leila, Diana
-
       </p>
+
+      <p>
+        The team: Anna, Leila, Diana
+      </p>
+
+      
     </div>
   )
 }

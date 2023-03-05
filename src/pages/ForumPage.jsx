@@ -118,7 +118,7 @@ function Post({ post, setPosts }) {
     
 // delete post
     async function handleDeletePost() {
-        if (post.author._id !== token.userId) {
+        if (post.author._id !== _id) {
             console.log("You're not authorized to delete this post");
             return;
         }

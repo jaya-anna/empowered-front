@@ -1,7 +1,7 @@
 import React from "react";
-import { useState } from "react";
-//import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function UpdatePage() {
   const [user, setUser] = useState({});
@@ -9,13 +9,24 @@ function UpdatePage() {
   const [email, setEmail] = useState("");
   const [deleting, setDeleting] = useState(false);
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
-//handle Button Update 
+  //Diana: This is the function that will be called when the component mounts.
+  useEffect(() => {
+    async function getUser() {
+      try {
+        const response = await axios.get("http://localhost:5005/auth/verify");
+        setUser(response.data);
+      } catch (error) {
+        console.log("Error: ", error);
+      }
+    }
+    getUser();
+  }, []);
 
+// handle Update 
   const handleUpdate = async (event) => {
     event.preventDefault();
-    console.log("updated Username:", username)
 
     try {
       const response = await axios.post("http://localhost:5005/auth/update", {
@@ -29,16 +40,16 @@ function UpdatePage() {
     }
   };
 
-  // handle Button Delete
+  // handle Delete
   const handleDelete = async () => {
     setDeleting(true);
-try{
-  await axios.delete("http://localhost:5005/auth/delete")
-  
-}catch (error) {
-  console.log("Error: ", error);
-  setDeleting(false);
-}
+    try {
+      await axios.delete("http://localhost:5005/auth/delete");
+      navigate("/");
+    } catch (error) {
+      console.log("Error: ", error);
+      setDeleting(false);
+    }
   }
 
   return (
@@ -48,18 +59,19 @@ try{
         <label>Username</label>
         <input
           type="text"
-          value={user.username}
-          onChange={(e) => setUsername({ username: e.target.value })}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <label>Email adress</label>
         <input
           type="email"
-          value={user.email}
-          onChange={(e) => setEmail({ email: e.target.value })}
+          value={email}
+          onChange={(e) => setEmail( e.target.value )}
         />
         <button onClick={handleUpdate}>Save</button>
         <button onClick={handleDelete}> Delete Profile</button>
       </form>
+      <footer>{deleting ? "Deleting..." : null}</footer>
     </div>
   );
 }
