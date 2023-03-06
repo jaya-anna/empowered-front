@@ -1,14 +1,25 @@
-import { Box, Button, PasswordInput, Text, TextInput, Anchor} from "@mantine/core";
+import {
+  Box,
+  Button,
+  PasswordInput,
+  Text,
+  TextInput,
+  Anchor,
+  Checkbox,
+  Title,
+  Center,
+  rem, Divider
+} from "@mantine/core";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { IconHome2} from '@tabler/icons-react'
+import { IconArrowRight, IconAlertCircle } from "@tabler/icons-react";
 
 const SignupPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  //const [errorMessage, setErrorMessage] = useState(undefined);
+  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
@@ -22,12 +33,13 @@ const SignupPage = () => {
       });
       navigate("/login");
     } catch (error) {
-      /*const errorDescription = error.response.data.message;
-      setErrorMessage(errorDescription);*/
+      setErrorMessage(error.response.data.errorMessage);
+      console.log(error);
     }
   };
 
   return (
+
     <Box
       sx={{
         margin: "0 auto",
@@ -38,10 +50,12 @@ const SignupPage = () => {
         height: "calc(100vh - 100px)",
       }}
     >
-      <Text align="center" size="xl" weight="bold">
-        Signup
-      </Text>
 
+
+      <Center maw={400} h={100} mx="auto">
+        <Title order={1}>Signup</Title>
+      </Center>
+      
       <Box
         component="form"
         sx={{
@@ -76,22 +90,39 @@ const SignupPage = () => {
           required
           onChange={(e) => setPassword(e.target.value)}
         />
-
+        <Checkbox label="I accept terms & conditions" mt="sm" />
+        <Center maw={800} h={40} mx="auto">
+        <Text fz="sm" color="red.8" icon={<IconAlertCircle size="1rem" />}>
+          {errorMessage}
+        </Text>
+        </Center>
         <Button
           type="submit"
-          variant="filled"
-          color="violet.3"
+          variant="gradient"
+          gradient={{ from: "#ff9c6b", to: "#e34f4f", deg: 60 }}
           sx={{ marginTop: "1rem", alignSelf: "center" }}
         >
           Register
         </Button>
-        <Text>Already have account?</Text>
-        <Anchor color="violet.3" href="/login" target="_blank">
-        Login
-    </Anchor>
-        
+
+        <Center maw={700} h={70} mx="auto">
+          <Text td="underline" fz="sm">
+            Already have account?
+          </Text>
+          </Center>
+
+          <Center maw={700} h={10} mx="auto">
+          <Anchor color="#ff9c6b" href="/login">
+            <Center inline>
+              <Box ml={5} fw={700} fz="sm">
+                Go to Login
+              </Box>
+              <IconArrowRight size={rem(16)} />
+            </Center>
+          </Anchor>
+          </Center>
+
       </Box>
-     
     </Box>
   );
 };

@@ -1,4 +1,11 @@
-import { Box, Button, PasswordInput, Text, TextInput } from "@mantine/core";
+import {
+  Box,
+  Button,
+  PasswordInput,
+  Text,
+  TextInput,
+  Title, Center
+} from "@mantine/core";
 import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +15,7 @@ const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { setToken } = useContext(SessionContext);
+  const [errorMessage, setErrorMessage] = useState(undefined);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -20,7 +28,8 @@ const LoginPage = () => {
       setToken(response.data.token);
       navigate("/profile");
     } catch (error) {
-      console.log("Error: ", error);
+      setErrorMessage(error.response.data.errorMessage);
+      console.log(error);
     }
   };
 
@@ -35,9 +44,7 @@ const LoginPage = () => {
         height: "calc(100vh - 100px)",
       }}
     >
-      <Text align="center" size="xl" weight="bold">
-        Login
-      </Text>
+      <Center maw={400} h={100} mx="auto"><Title order={1}>Login</Title></Center>
       <Box
         component="form"
         sx={{
@@ -64,12 +71,15 @@ const LoginPage = () => {
         />
         <Button
           type="submit"
-          variant="filled"
-          color="violet.3"
+          variant="gradient"
+          gradient={{ from: "#ff9c6b", to: "#e34f4f", deg: 60 }}
           sx={{ marginTop: "1rem", alignSelf: "center" }}
         >
           Connect
         </Button>
+        <Text fw={700} fz="sm" color="red.8">
+          {errorMessage}
+        </Text>
       </Box>
     </Box>
   );
