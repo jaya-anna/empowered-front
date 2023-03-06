@@ -17,21 +17,21 @@ function ResourcePage() {
           <ul style={{ paddingLeft: '20px' }}>
             <li>
               <a href="https://www.amazon.com/Its-Perfectly-Normal-Changing-Growing/dp/0763668729" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Image src="https://images-na.ssl-images-amazon.com/images/I/61JeJ3q1BbL._SX258_BO1,204,203,200_.jpg" width={80} alt="It's Perfectly Normal book cover" />
+                <Image src="https://m.media-amazon.com/images/I/A1pp7rvuN4L.jpg" width={80} alt="It's Perfectly Normal book cover" />
                 <span>"It's Perfectly Normal" by Robie H. Harris and Michael Emberley</span>
-              </a>: A comprehensive guide to puberty, sex, and relationships for young people
+              </a> A comprehensive guide to puberty, sex, and relationships for young people
             </li>
             <li>
               <a href="https://www.amazon.com/Sexual-Intelligence-Marty-Klein/dp/0062026062" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Image src="https://images-na.ssl-images-amazon.com/images/I/41U6rOVrDDL._SX331_BO1,204,203,200_.jpg" width={80} alt="Sexual Intelligence book cover" />
+                <Image src="https://m.media-amazon.com/images/P/0062026062.01._SCLZZZZZZZ_SX500_.jpg" width={80} alt="Sexual Intelligence book cover" />
                 <span>"Sexual Intelligence" by Marty Klein</span>
-              </a>: A guide to developing a healthy and fulfilling sex life, including tips for communication and consent
+              </a> A guide to developing a healthy and fulfilling sex life, including tips for communication and consent
             </li>
             <li>
               <a href="https://www.amazon.com/Guide-Getting-Paul-Joannides/dp/1885535457" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Image src="https://images-na.ssl-images-amazon.com/images/I/61c%2BvP%2BCVGL._SX390_BO1,204,203,200_.jpg" width={80} alt="The Guide to Getting it On book cover" />
+                <Image src="https://m.media-amazon.com/images/I/512bCyJrRmL._SX387_BO1,204,203,200_.jpg" width={80} alt="The Guide to Getting it On book cover" />
                 <span>"The Guide to Getting it On" by Paul Joannides</span>
-              </a>: An inclusive and humorous guide to all aspects of sex, from anatomy to technique
+              </a> An inclusive and humorous guide to all aspects of sex, from anatomy to technique
             </li>
           </ul>
         </Card>
@@ -44,21 +44,21 @@ function ResourcePage() {
         <ul style={{ paddingLeft: '20px' }}>
           <li>
             <a href="https://podcasts.apple.com/us/podcast/sex-with-emily/id467599648" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Image src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts123/v4/55/86/68/558668f6-293c-d208-ba6e-9de34be85138/mza_6269178118943447448.jpg/600x600bb.jpg" width={80} alt="Sex with Emily podcast cover" />
+              <Image src="https://i.podnews.network/r/t/396/11221-2b1ef06c.webp" width={80} alt="Sex with Emily podcast cover" />
               <span>"Sex with Emily" by Emily Morse</span>
-            </a>: A podcast that explores sex, relationships, and intimacy with experts and everyday people
+            </a> A podcast that explores sex, relationships, and intimacy with experts and everyday people
           </li>
           <li>
             <a href="https://podcasts.apple.com/us/podcast/savage-lovecast/id135784124" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Image src="https://is4-ssl.mzstatic.com/image/thumb/Podcasts124/v4/45/37/41/45374158-a69a-41be-9ef9-faa03fb3c7d3/mza_10088103378438428554.png/600x600bb.jpg" width={80} alt="Savage Lovecast podcast cover" />
+              <Image src="https://m.media-amazon.com/images/I/51N-kQCITjL._SL500_.jpg" width={80} alt="Savage Lovecast podcast cover" />
               <span>"Savage Lovecast" by Dan Savage</span>
-            </a>: A podcast that offers advice and insights on sex and relationships, with a focus on LGBTQ+ issues
+            </a> A podcast that offers advice and insights on sex and relationships, with a focus on LGBTQ+ issues
           </li>
           <li>
             <a href="https://podcasts.apple.com/us/podcast/whoreible-decisions/id1291914299" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Image src="https://is5-ssl.mzstatic.com/image/thumb/Podcasts124/v4/e3/3a/f3/e33af3c6-c935-107f-4726-70643f33b1d1/mza_14171921489650631752.jpg/600x600bb.jpg" width={80} alt="Whoreible Decisions podcast cover" />
+              <Image src="https://podsauce.com/wp-content/uploads/2022/03/WhoreibleDecisions-Logo-FINAL3000x3000-V2.png" width={80} alt="Whoreible Decisions podcast cover" />
               <span>"Whoreible Decisions" by Mandii B and WeezyWTF</span>
-            </a>: A podcast that discusses sex and dating from a frank and humorous perspective
+            </a> A podcast that discusses sex and dating from a frank and humorous perspective
           </li>
         </ul>
       </Card>
@@ -71,21 +71,21 @@ function ResourcePage() {
   <ul style={{ paddingLeft: '20px' }}>
     <li>
       <a href="https://www.plannedparenthood.org/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <Image src="https://www.plannedparenthood.org/themes/custom/pp/images/pp-logo.png" width={80} alt="Planned Parenthood logo" />
+        <Image src="https://www.plannedparenthood.org/static/assets/img/logos/planned-parenthood-logo-484x60.png" width={80} alt="Planned Parenthood logo" />
         <span>Planned Parenthood</span>
-      </a>: A national organization that provides reproductive health services and sex education resources to individuals of all ages and genders
+      </a> A national organization that provides reproductive health services and sex education resources to individuals of all ages and genders
     </li>
     <li>
       <a href="https://www.scarleteen.com/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <Image src="https://www.scarleteen.com/sites/all/themes/scarleteen/logo.svg" width={80} alt="Scarleteen logo" />
+        <Image src="http://www.scarleteen.com/sites/all/themes/scarleteen/images/logo.png" width={80} alt="Scarleteen logo" />
         <span>Scarleteen</span>
-      </a>: A website that offers comprehensive sex education and advice to young people, including LGBTQ+ individuals and survivors of sexual assault
+      </a> A website that offers comprehensive sex education and advice to young people, including LGBTQ+ individuals and survivors of sexual assault
     </li>
     <li>
       <a href="https://goaskalice.columbia.edu/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <Image src="https://goaskalice.columbia.edu/themes/custom/goaskalice/logo.svg" width={80} alt="Go Ask Alice! logo" />
+        <Image src="https://hips.hearstapps.com/hmg-prod/images/index-13-1654538886.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*" width={80} alt="Go Ask Alice! logo" />
         <span>Go Ask Alice!</span>
-      </a>: A health Q&A website run by Columbia University that covers a wide range of topics, including sexual health and relationships
+      </a> A health Q&A website run by Columbia University that covers a wide range of topics, including sexual health and relationships
     </li>
   </ul>
 </Card>
@@ -138,21 +138,21 @@ function ResourcePage() {
         <ul style={{ paddingLeft: '20px' }}>
           <li>
             <a href="https://www.youtube.com/c/sexplanations" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Image src="https://i.ytimg.com/vi/37vU6pt3zV0/hqdefault.jpg" width={80} alt="Sexplanations channel preview" />
+              <Image src="https://i.ytimg.com/vi/7FA9aqw1wag/maxresdefault.jpg" width={80} alt="Sexplanations channel preview" />
               <span>Sexplanations</span>
-            </a>: A popular YouTube channel hosted by sex educator Dr. Lindsey Doe. The channel covers a wide range of topics related to sex education and health, including anatomy, sexual pleasure, and sexual health. Each video is well-researched and includes expert insights, personal stories, and clear explanations.
+            </a> A popular YouTube channel hosted by sex educator Dr. Lindsey Doe. The channel covers a wide range of topics related to sex education and health, including anatomy, sexual pleasure, and sexual health. Each video is well-researched and includes expert insights, personal stories, and clear explanations.
           </li>
           <li>
             <a href="https://sexedpodcast.com/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Image src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts124/v4/07/17/e4/0717e4fa-0e0c-e1a9-37e1-2845d5cfdcef/mza_14748872627942447113.png/1200x1200bb.jpg" width={80} alt="Sex Ed Podcast preview" />
+              <Image src="https://is2-ssl.mzstatic.com/image/thumb/Podcasts113/v4/33/db/c9/33dbc9d1-1198-5eb4-4027-eb757f1582e0/mza_4290841366370468815.jpg/552x0w.webp" width={80} alt="Sex Ed Podcast preview" />
               <span>The Sex Ed Podcast</span>
-            </a>: A podcast hosted by Liz Walker, a sex educator and therapist. The podcast covers a range of topics related to sex education and health, including consent, healthy relationships, and sexual pleasure. Each episode features interviews with experts in the field and personal stories from individuals.
+            </a> A podcast hosted by Liz Walker, a sex educator and therapist. The podcast covers a range of topics related to sex education and health, including consent, healthy relationships, and sexual pleasure. Each episode features interviews with experts in the field and personal stories from individuals.
           </li>
           <li>
             <a href="https://www.ted.com/talks/al_vernacchio_sex_needs_a_new_metaphor_here_s_one" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <Image src="https://pe.tedcdn.com/images/ted/6ad9d6ee88c0d31f507b417fcb7520d334c66e47_1600x1200.jpg" width={80} alt="Let's Talk About Sex TEDx Talk preview" />
+              <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsUMmmnfqZH1Kzh0HtynlP0vQ1ET23jnyoLFbpTIFQ-xRtRQSJ21DR0568CXmqa-5SVqc&usqp=CAU" width={80} alt="Let's Talk About Sex TEDx Talk preview" />
               <span>Let's Talk About Sex</span>
-            </a>: A TEDx Talk by sex educator Al Vernacchio. In his talk, Vernacchio discusses the importance of comprehensive sex education and the need for a more nuanced and inclusive approach to teaching about sex and relationships.
+            </a> A TEDx Talk by sex educator Al Vernacchio. In his talk, Vernacchio discusses the importance of comprehensive sex education and the need for a more nuanced and inclusive approach to teaching about sex and relationships.
           </li>
         </ul>
       </Card>
@@ -165,44 +165,30 @@ function ResourcePage() {
   <Text weight={500} style={{ marginBottom: '10px' }}>Interactive Tools and Quizzes</Text>
   <ul style={{ paddingLeft: '20px' }}>
     <li>
-      <a href="https://www.ashasexualhealth.org/sexual-health-quiz/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <Image src="https://www.ashasexualhealth.org/wp-content/uploads/2021/06/ASHA_Quiz_Social-share.png" width={80} alt="ASHA Sexual Health Quiz" />
+      <a href="https://www.ashasexualhealth.org/hpv-and-men-take-the-quiz/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Image src="https://cdn.riddle.com/embeds/v2/images/q_80,c_fill,w_960,h_540/fa8/fa8ffcb228c3503a4bbcb5d8e40078fb.png" width={80} alt="ASHA Sexual Health Quiz" />
         <div>
-          <span>ASHA Sexual Health Quiz</span>
+          <span>ASHA -  What do you know about HPV and men? Quiz</span>
           <br />
-          <span>A comprehensive quiz to assess your knowledge of sexual health topics, including contraception, STIs, and sexual pleasure.</span>
+          <span></span>
         </div>
-      </a>
+      </a> A quiz to assess your knowledge of how HPV infection affect men. HPV (a.k.a. human papillomavirus) is the name of a group of viruses that infect the skin. There are over 100 different types of HPV, and some of those types are sexually transmitted. In women, HPV can lead to cervical cancer (and other types of cancer as well), but what about in men?  
     </li>
     <li>
-      <a href="https://www.plannedparenthood.org/get-care/our-services/quiz" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <Image src="https://www.plannedparenthood.org/-/media/PPEN/PPFW/events/2021/lets-talk-sex/quiz.png" width={80} alt="Planned Parenthood Sexual and Reproductive Health Quiz" />
+      <a href="https://www.plannedparenthood.org/online-tools/am-i-pregnant" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Image src="https://cdn.plannedparenthood.org/uploads/filer_public_thumbnails/filer_public/28/b9/28b9e83b-4ab5-4cae-8cbf-9e39e1bc1a92/08_pp_website_quiz-5-660x400.jpg__1200x900_q75_subsampling-2.jpg" width={80} alt="Planned Parenthood Sexual and Reproductive Health Quiz" />
         <div>
-          <span>Planned Parenthood Sexual and Reproductive Health Quiz</span>
-          <br />
-          <span>An interactive quiz to test your knowledge on a range of sexual and reproductive health topics, including birth control, STIs, and pregnancy.</span>
+          <span>Planned Parenthood - Am I Pregnant? Quiz</span>
         </div>
-      </a>
+      </a> Missed your period? Had sex without a condom? There’s only one way to find out for sure if you’re pregnant: take a pregnancy test. But it’s normal to wonder if you need a test or not.
     </li>
     <li>
-      <a href="https://www.scarleteen.com/article/sexuality_readiness_checklist" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <Image src="https://www.scarleteen.com/sites/default/files/styles/teaser_half_1x/public/Quiz_0.png?itok=1bckE2rR" width={80} alt="Scarleteen Sexual Readiness Checklist" />
+      <a href="https://www.scarleteen.com/article/advice/yes_no_maybe_so_a_sexual_inventory_stocklist" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Image src="https://www.scarleteen.com/sites/files/scarleteen/styles/article_image/public/article_images/yesnomaybe_sm.png?itok=rOA_pUmd" width={80} alt="Scarleteen Sexual Readiness Checklist" />
         <div>
-          <span>Scarleteen Sexual Readiness Checklist</span>
-          <br />
-          <span>An interactive tool to help you assess your readiness for sexual activity.</span>
+          <span>Yes, No, Maybe So: A Sexual Inventory Stocklist</span>
         </div>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.scarleteen.com/quiz/healthy_relationships_quiz" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <Image src="https://www.scarleteen.com/sites/default/files/styles/teaser_half_1x/public/quiz_cover.png?itok=gsWEk63h" width={80} alt="Scarleteen Healthy Relationships Quiz" />
-        <div>
-          <span>Scarleteen Healthy Relationships Quiz</span>
-          <br />
-          <span>An interactive quiz to help you learn more about healthy relationships and improve your communication skills.</span>
-        </div>
-      </a>
+      </a>  Yes, No and Maybe lists aren't something we invented. They've been used for a long time by sexuality educators, sex therapists, communities, couples and individuals, and they can be seriously useful tools. 
     </li>
   </ul>
 </Card>
