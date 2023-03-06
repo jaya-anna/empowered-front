@@ -87,7 +87,7 @@ function QuizPage() {
                 <h2>Question {currentQuestionIndex + 1} of {quizQuestions.length}</h2>
                 <h3>{quizQuestions[currentQuestionIndex].question}</h3>
 
-                <ul>
+                <ul style={{ listStyle: "none" }}>
                     {quizQuestions[currentQuestionIndex].options.map(option => (
                         <li key={option}>
                             <label>
@@ -104,10 +104,8 @@ function QuizPage() {
                     ))}
                 </ul>
 
-                {/* Display whether the user's answer is correct or incorrect */}
                 {isAnswerCorrect === true && <p style={{color: "green"}}>Correct!</p>}
                 {isAnswerCorrect === false && <p style={{color: "red"}}>Incorrect.</p>}
-
 
                 <button onClick={handleNextButtonClick} disabled={!answerDisabled}>Next Question</button>
             </div>
