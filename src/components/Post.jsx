@@ -9,7 +9,10 @@ import Comment from "./Comment";
 function Post({ post, setPosts, posts, fetchPosts }) {
   const [comments, setComments] = useState([]);
   const [commentContent, setCommentContent] = useState("");
-  const { token } = useContext(SessionContext);
+  const [isEditing, setIsEditing] = useState(false);
+  const [newTitle, setNewTitle] = useState(post.title);
+  const [newContent, setNewContent] = useState(post.content);
+  const { token , user } = useContext(SessionContext);
 
   useEffect(() => {
     fetchComments();
@@ -24,9 +27,6 @@ function Post({ post, setPosts, posts, fetchPosts }) {
 
   // POSTS
   //1.  UPDATE POST
-  const [isEditing, setIsEditing] = useState(false);
-  const [newTitle, setNewTitle] = useState(post.title);
-  const [newContent, setNewContent] = useState(post.content);
   function handleNewTitleChange(e) {
     setNewTitle(e.target.value);
   }
@@ -148,8 +148,14 @@ function Post({ post, setPosts, posts, fetchPosts }) {
                   Post created at: {date.toLocaleDateString("en-US", options)}
                 </Text>
 
+            { post.author._id === user._id && (
+                <>
                 <Button onClick={() => handleEditPost(post)}>Edit post</Button>
                 <Button onClick={handleDeletePost}>Delete Post</Button>
+                </>
+            )}
+
+
               </Card>
             </>
           )}
