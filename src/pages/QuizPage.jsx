@@ -77,9 +77,19 @@ function QuizPage() {
 
             {showScore ? (
 
-                <div>
-                <Text size="lg" align="center">Your Score: {score} out of {quizQuestions.length}</Text>
-                <Button onClick={handleRestartButtonClick} variant="light">Restart Quiz</Button>
+                <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }} >
+
+                    <Text size="lg" align="center">Your Score: {score} out of {quizQuestions.length}</Text>
+                    
+                    <Button 
+                        onClick={handleRestartButtonClick} 
+                        variant="light"
+                        style={{ marginTop: 50, padding: '10px 20px'  }}
+
+                    >
+                        Restart Quiz
+                    </Button>
+
                 </div>
 
             ) : (
