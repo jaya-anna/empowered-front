@@ -33,17 +33,25 @@ function QuizPage() {
     const [selectedAnswer, setSelectedAnswer] = useState('');
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
-    
+    const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
 
     function handleAnswerOptionClick(answerOption) {
         setSelectedAnswer(answerOption);
+        checkAnswer(answerOption);
+    }
+
+    function checkAnswer(answerOption) {
+        if (answerOption === quizQuestions[currentQuestionIndex].answer) {
+            setIsAnswerCorrect(true);
+            setScore(score + 1);
+        } else {
+            setIsAnswerCorrect(false);
+        }
     }
 
     function handleNextButtonClick() {
-        if (selectedAnswer === quizQuestions[currentQuestionIndex].answer) {
-            setScore(score + 1);
-        }
         setSelectedAnswer('');
+        setIsAnswerCorrect(null);
         if (currentQuestionIndex < quizQuestions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
@@ -56,6 +64,7 @@ function QuizPage() {
         setSelectedAnswer('');
         setScore(0);
         setShowScore(false);
+        setIsAnswerCorrect(null);
     }
 
     return (
@@ -89,6 +98,11 @@ function QuizPage() {
                         </li>
                     ))}
                 </ul>
+
+                {/* Display whether the user's answer is correct or incorrect */}
+                {isAnswerCorrect === true && <p style={{color: "green"}}>Correct!</p>}
+                {isAnswerCorrect === false && <p style={{color: "red"}}>Incorrect.</p>}
+
 
                 <button onClick={handleNextButtonClick}>Next Question</button>
             </div>
