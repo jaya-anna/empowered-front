@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { SessionContext } from "../contexts/SessionContext";
 
 import { Card, Text, Button, Input, Group } from "@mantine/core";
+import Comment from "./Comment";
 
 function Post({ post, setPosts, posts, fetchPosts }) {
   const [comments, setComments] = useState([]);
@@ -92,61 +93,6 @@ function Post({ post, setPosts, posts, fetchPosts }) {
     setCommentContent(e.target.value);
   }
 
-  // 2. DELETE COMMENT
-  async function handleDeleteComment(comment) {
-    try {
-      await axios.delete(
-        `http://localhost:5005/forum//posts/${post._id}/comments/${comment._id}`,
-        {
-          headers: { Authorization: `holder ${token}` },
-        }
-      );
-
-      setComments(comments.filter((c) => c._id !== comment._id));
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  // 3. EDIT COMMENT
-  const [isEditingComment, setIsEditingComment] = useState(false);
-  const [newCommentContent, setNewCommentContent] = useState("");
-
-  function handleEditComment(comment) {
-    setIsEditingComment(true);
-  }
-
-  function handleNewCommentContentChange(e) {
-    setNewCommentContent(e.target.value);
-  }
-
-  async function handleSaveComment(comment) {
-    try {
-      const response = await axios.put(
-        `http://localhost:5005/forum/posts/${post._id}/comments/${comment._id}`,
-        {
-          content: newCommentContent,
-        },
-        {
-          headers: { Authorization: `holder ${token}` },
-        }
-      );
-      setComments((prevComments) => {
-        return prevComments.map((c) => {
-          if (c._id === comment._id) {
-            c.content = newContent;
-          }
-          return c;
-        });
-      });
-
-      setIsEditingComment(false);
-
-      fetchComments();
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   let options = {
     weekday: "long",
@@ -212,65 +158,31 @@ function Post({ post, setPosts, posts, fetchPosts }) {
         {/* CARD FOR COMMENTS */}
         <Card shadow="sm" padding="sm" style={{ marginBottom: "1rem" }}>
           {/* SHOW COMMENTS */}
-          <Group direction="column">
-            {comments.map((comment) => (
-              <div key={comment._id}>
-                {isEditingComment ? (
-                  <>
-                    <Input
-                      id="newCommentContent"
-                      value={newCommentContent}
-                      onChange={handleNewCommentContentChange}
-                    />
-                    <Button onClick={() => handleSaveComment(comment)}>
-                      Save comment
-                    </Button>
-                  </>
-                ) : (
-                  <>
-                    <Text> Comment: {comment.content} </Text>
-                    <Text>
-                      {" "}
-                      By:{" "}
-                      {comment.author.username[0].toUpperCase() +
-                        comment.author.username.slice(1)}{" "}
-                    </Text>
-                    <Text>
-                      Comment created at:
-                      {new Date(comment.createdAt).toLocaleDateString(
-                        undefined,
-                        options
-                      )}
-                    </Text>
-
-                    <Button onClick={() => handleEditComment(comment)}>
-                      Edit comment
-                    </Button>
-                    <Button onClick={() => handleDeleteComment(comment)}>
-                      Delete Comment
-                    </Button>
-                  </>
-                )}
-              </div>
-            ))}
-          </Group>
+            <Group direction="column">
+            <Text>Comments created so far:</Text>
+                {comments.map((comment) => (
+                    <Comment key={comment._id} comment={comment} setComments={setComments} comments={comments} fetchComments={fetchComments} post={post} />
+                ))}
+            </Group>
 
           {/* LEAVE COMMENT FORM */}
-          <form
-            method="POST"
-            action="/posts/:postId/createcomment"
-            onSubmit={handleCreateComment}
-          >
-            <label>Leave a comment:</label>
-            <Input
-              id="content"
-              value={commentContent}
-              onChange={handleCommentContentChange}
-            />
+            <form
+                method="POST"
+                action="/posts/:postId/createcomment"
+                onSubmit={handleCreateComment}
+            >
+                <label>Leave a comment:</label>
+                <Input
+                    id="content"
+                    type="text"
+                    value={commentContent}
+                    onChange={handleCommentContentChange}
+                />
 
-            <Button type="submit">Leave Comment</Button>
-          </form>
+                <Button type="submit">Leave Comment</Button>
+            </form>
         </Card>
+
       </Group>
     </Card>
   );
