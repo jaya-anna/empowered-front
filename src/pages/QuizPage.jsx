@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, Text, Checkbox, Group } from '@mantine/core';
 
 const quizQuestions = [
 {        
@@ -72,46 +73,52 @@ function QuizPage() {
     }
 
     return (
-        <div>
+            <div style={{ maxWidth: 600, margin: "auto", padding: 100 }}>
 
-        {showScore ? (
+            {showScore ? (
 
-            <div>
-                <h1>Your Score: {score} out of {quizQuestions.length}</h1>
-                <button onClick={handleRestartButtonClick}>Restart Quiz</button>
-            </div>
+                <div>
+                <Text size="lg" align="center">Your Score: {score} out of {quizQuestions.length}</Text>
+                <Button onClick={handleRestartButtonClick} variant="light">Restart Quiz</Button>
+                </div>
 
-        ) : (
+            ) : (
 
-            <div>
-                <h2>Question {currentQuestionIndex + 1} of {quizQuestions.length}</h2>
-                <h3>{quizQuestions[currentQuestionIndex].question}</h3>
-
-                <ul style={{ listStyle: "none" }}>
+                <div>
+                <Text size="lg" align="center">Question {currentQuestionIndex + 1} of {quizQuestions.length}</Text>
+                <Text size="xl" weight={700} style={{ marginTop: 20 }}>{quizQuestions[currentQuestionIndex].question}</Text>
+        
+                <Group style={{ marginTop: 20 }} direction='column' >
                     {quizQuestions[currentQuestionIndex].options.map(option => (
-                        <li key={option}>
-                            <label>
-                                <input 
-                                    type="checkbox" 
-                                    value={option} 
-                                    checked={selectedAnswer === option} 
-                                    onChange={() => handleAnswerOptionClick(option)} 
-                                    disabled={answerDisabled}
-                                />
-                                {option}
-                            </label>
-                        </li>
+                        <div key={option} style={{ marginBottom: 10 }}>
+                            <Checkbox
+                                label={option}
+                                value={option}
+                                checked={selectedAnswer === option}
+                                onChange={() => handleAnswerOptionClick(option)}
+                                disabled={answerDisabled}
+                            />
+                        </div>
                     ))}
-                </ul>
+                </Group>
+        
+                {isAnswerCorrect === true && <Text style={{ color: "green", marginTop: 10 }}>Correct!</Text>}
+                {isAnswerCorrect === false && <Text style={{ color: "red", marginTop: 10 }}>Incorrect.</Text>}
+        
+                <Button 
+                    onClick={handleNextButtonClick}
+                    variant="outline"
+                    disabled={!answerDisabled}
+                    style={{ marginTop: 20 }}
+                >
+                    Next Question
+                </Button>
+                </div>
 
-                {isAnswerCorrect === true && <p style={{color: "green"}}>Correct!</p>}
-                {isAnswerCorrect === false && <p style={{color: "red"}}>Incorrect.</p>}
+            )}
 
-                <button onClick={handleNextButtonClick} disabled={!answerDisabled}>Next Question</button>
             </div>
-        )}
-
-        </div>
-    );
+      );
+      
 }
 export default QuizPage;
