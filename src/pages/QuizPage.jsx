@@ -34,10 +34,12 @@ function QuizPage() {
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+    const [answerDisabled, setAnswerDisabled] = useState(false);
 
     function handleAnswerOptionClick(answerOption) {
         setSelectedAnswer(answerOption);
         checkAnswer(answerOption);
+        setAnswerDisabled(true);
     }
 
     function checkAnswer(answerOption) {
@@ -52,6 +54,7 @@ function QuizPage() {
     function handleNextButtonClick() {
         setSelectedAnswer('');
         setIsAnswerCorrect(null);
+        setAnswerDisabled(false);
         if (currentQuestionIndex < quizQuestions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
@@ -65,6 +68,7 @@ function QuizPage() {
         setScore(0);
         setShowScore(false);
         setIsAnswerCorrect(null);
+        setAnswerDisabled(false);
     }
 
     return (
@@ -92,6 +96,7 @@ function QuizPage() {
                                     value={option} 
                                     checked={selectedAnswer === option} 
                                     onChange={() => handleAnswerOptionClick(option)} 
+                                    disabled={answerDisabled}
                                 />
                                 {option}
                             </label>
@@ -104,7 +109,7 @@ function QuizPage() {
                 {isAnswerCorrect === false && <p style={{color: "red"}}>Incorrect.</p>}
 
 
-                <button onClick={handleNextButtonClick}>Next Question</button>
+                <button onClick={handleNextButtonClick} disabled={!answerDisabled}>Next Question</button>
             </div>
         )}
 
