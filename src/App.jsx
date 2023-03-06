@@ -14,6 +14,7 @@ import FAQPage from "./pages/FAQPage";
 import OutletComponent from "./components/OutletComponent";
 
 import UpdatePage from "./pages/UpdatePage";
+import QuizPage from "./pages/QuizPage";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             }
           />
           <Route path="/forum" element={<ForumPage />} />
+          <Route path='/quiz' element={<QuizPage />} />
         </Route>
       </Routes>
     </div>

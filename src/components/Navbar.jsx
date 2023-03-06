@@ -46,6 +46,13 @@ function NavBar() {
                   <NavLink to="/profile">
                     <Button variant="light">Profile</Button>
                   </NavLink>
+
+                  <NavLink to="/quiz">
+                    <Button variant="light">Quiz</Button>
+                  </NavLink>
+
+
+
                   <Button
                     component={NavLink}
                     to="/"
