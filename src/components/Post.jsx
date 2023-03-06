@@ -25,8 +25,8 @@ function Post({ post, setPosts, posts, fetchPosts }) {
   // POSTS
   //1.  UPDATE POST
   const [isEditing, setIsEditing] = useState(false);
-  const [newTitle, setNewTitle] = useState("");
-  const [newContent, setNewContent] = useState("");
+  const [newTitle, setNewTitle] = useState(post.title);
+  const [newContent, setNewContent] = useState(post.content);
   function handleNewTitleChange(e) {
     setNewTitle(e.target.value);
   }

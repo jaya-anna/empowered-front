@@ -27,7 +27,7 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
 
   // 3. EDIT COMMENT
   const [isEditingComment, setIsEditingComment] = useState(false);
-  const [newCommentContent, setNewCommentContent] = useState("");
+  const [newCommentContent, setNewCommentContent] = useState(comment.content);
 
   function handleEditComment(comment) {
     setIsEditingComment(true);
