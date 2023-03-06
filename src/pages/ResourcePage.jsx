@@ -14,7 +14,7 @@ function ResourcePage() {
 
         <Card shadow="sm" style={{ marginTop: '20px' }}>
           <Text weight={500} style={{ marginBottom: '10px' }}>Books</Text>
-          <ul style={{ paddingLeft: '20px' }}>
+          <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
             <li>
               <a href="https://www.amazon.com/Its-Perfectly-Normal-Changing-Growing/dp/0763668729" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Image src="https://m.media-amazon.com/images/I/A1pp7rvuN4L.jpg" width={80} alt="It's Perfectly Normal book cover" />
@@ -41,7 +41,7 @@ function ResourcePage() {
       <Card shadow="sm" style={{ marginTop: '20px' }}>
       <Text weight={500} style={{ marginBottom: '10px' }}>Podcasts</Text>
 
-        <ul style={{ paddingLeft: '20px' }}>
+        <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
           <li>
             <a href="https://podcasts.apple.com/us/podcast/sex-with-emily/id467599648" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Image src="https://i.podnews.network/r/t/396/11221-2b1ef06c.webp" width={80} alt="Sex with Emily podcast cover" />
@@ -68,7 +68,7 @@ function ResourcePage() {
 {/* WEBSITES */}
 <Card shadow="sm" style={{ marginTop: '20px' }}>
   <Text weight={500} style={{ marginBottom: '10px' }}>Websites</Text>
-  <ul style={{ paddingLeft: '20px' }}>
+  <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
     <li>
       <a href="https://www.plannedparenthood.org/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <Image src="https://www.plannedparenthood.org/static/assets/img/logos/planned-parenthood-logo-484x60.png" width={80} alt="Planned Parenthood logo" />
@@ -98,7 +98,7 @@ function ResourcePage() {
 <Card shadow="sm" style={{ marginTop: '20px' }}>
 <Text weight={500} style={{ marginBottom: '10px' }}>Videos</Text>
 
-  <ul style={{ paddingLeft: '20px' }}>
+  <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
     <li>
       <a href="https://www.youtube.com/user/sexplanations">"Sexplanations" by Dr. Lindsey Doe</a>: A YouTube channel that covers a wide range of sex education topics, from consent to sexual dysfunction
     </li>
@@ -117,7 +117,7 @@ function ResourcePage() {
       <Card shadow="sm" style={{ marginTop: '20px' }}>
       <Text weight={500} style={{ marginBottom: '10px' }}>Tools</Text>
 
-        <ul style={{ paddingLeft: '20px' }}>
+        <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
           <li>
             <a href="https://www.bedsider.org/">Bedsider</a>: A website that provides information on birth control options and helps users find a method that works for them
           </li>
@@ -135,7 +135,7 @@ function ResourcePage() {
 {/* OTHER VIDEOS */}
       <Card shadow="sm" style={{ marginTop: '20px' }}>
         <Text weight={500} style={{ marginBottom: '10px' }}>Videos or podcasts on sex education and health topics</Text>
-        <ul style={{ paddingLeft: '20px' }}>
+        <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
           <li>
             <a href="https://www.youtube.com/c/sexplanations" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Image src="https://i.ytimg.com/vi/7FA9aqw1wag/maxresdefault.jpg" width={80} alt="Sexplanations channel preview" />
@@ -163,7 +163,7 @@ function ResourcePage() {
 {/* Interactive tools or quizzes that can help users assess their knowledge of sex education and health: */}
 <Card shadow="sm" style={{ marginTop: '20px' }}>
   <Text weight={500} style={{ marginBottom: '10px' }}>Interactive Tools and Quizzes</Text>
-  <ul style={{ paddingLeft: '20px' }}>
+  <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
     <li>
       <a href="https://www.ashasexualhealth.org/hpv-and-men-take-the-quiz/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <Image src="https://cdn.riddle.com/embeds/v2/images/q_80,c_fill,w_960,h_540/fa8/fa8ffcb228c3503a4bbcb5d8e40078fb.png" width={80} alt="ASHA Sexual Health Quiz" />
