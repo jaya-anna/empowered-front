@@ -3,6 +3,7 @@ import { Text, Card, Divider, Button } from '@mantine/core';
 
 function AboutPage() {
   return (
+    // maybe here we can add a style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
     <div>
       <Card shadow="sm" padding="lg">
         <Text align="center" variant="h2">
@@ -34,6 +35,7 @@ function AboutPage() {
         </Text>
       </Card>
 
+{/* we can add style={{ maxWidth: '300px' }} to shorten the text to 300px */}
       <Card shadow="sm" padding="lg" marginTop="lg">
         <Text align="center" variant="h2">
           Follow us on Instagram
