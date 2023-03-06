@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Card, Image } from '@mantine/core';
+import { Text, Card, Image, Badge } from '@mantine/core';
 
 function ResourcePage() {
   return (
@@ -11,54 +11,85 @@ function ResourcePage() {
 
 
 {/* BOOKS */}
+      <Card shadow="sm" style={{ marginTop: '20px' }}>
+        <Text weight={500} style={{ marginBottom: '10px' }}>Books</Text>
+          <ul style={{ padding: '20px',  listStyle: "none" }}>
 
-        <Card shadow="sm" style={{ marginTop: '20px' }}>
-          <Text weight={500} style={{ marginBottom: '10px' }}>Books</Text>
-          <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
-            <li>
-              <a href="https://www.amazon.com/Its-Perfectly-Normal-Changing-Growing/dp/0763668729" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <li style={{ padding: '20px' }} >
+              <a href="https://www.amazon.com/Its-Perfectly-Normal-Changing-Growing/dp/0763668729" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <Image src="https://m.media-amazon.com/images/I/A1pp7rvuN4L.jpg" width={80} alt="It's Perfectly Normal book cover" />
-                <span>"It's Perfectly Normal" by Robie H. Harris and Michael Emberley</span>
-              </a> A comprehensive guide to puberty, sex, and relationships for young people
+
+                  <div>
+                    <Text weight={500}>It's Perfectly Normal</Text>
+                    <Text size="sm" style={{ marginTop: 5 }}>by Robie H. Harris and Michael Emberley</Text>
+                    <Badge style={{ marginTop: 10 }}>Puberty, sex, and relationships</Badge>
+                </div>
+              </a> 
             </li>
-            <li>
-              <a href="https://www.amazon.com/Sexual-Intelligence-Marty-Klein/dp/0062026062" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+
+            <li style={{ padding: '20px' }} >
+              <a href="https://www.amazon.com/Sexual-Intelligence-Marty-Klein/dp/0062026062" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <Image src="https://m.media-amazon.com/images/P/0062026062.01._SCLZZZZZZZ_SX500_.jpg" width={80} alt="Sexual Intelligence book cover" />
-                <span>"Sexual Intelligence" by Marty Klein</span>
-              </a> A guide to developing a healthy and fulfilling sex life, including tips for communication and consent
+
+                <div>
+                  <Text weight={500}>Sexual Intelligence</Text>
+                  <Text size="sm" style={{ marginTop: 5 }}>by Marty Klein</Text>
+                  <Badge style={{ marginTop: 10 }}>Healthy and fulfilling sex life</Badge>
+              </div>
+              </a> 
             </li>
-            <li>
-              <a href="https://www.amazon.com/Guide-Getting-Paul-Joannides/dp/1885535457" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+
+            <li style={{ padding: '20px' }}>
+              <a href="https://www.amazon.com/Guide-Getting-Paul-Joannides/dp/1885535457" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <Image src="https://m.media-amazon.com/images/I/512bCyJrRmL._SX387_BO1,204,203,200_.jpg" width={80} alt="The Guide to Getting it On book cover" />
-                <span>"The Guide to Getting it On" by Paul Joannides</span>
-              </a> An inclusive and humorous guide to all aspects of sex, from anatomy to technique
+                <div>
+                  <Text weight={500}>The Guide to Getting it On</Text>
+                  <Text size="sm" style={{ marginTop: '5px' }}>by Paul Joannides</Text>
+                  <Badge style={{ marginTop: '10px' }}>An inclusive and humorous guide to all aspects of sex</Badge>
+                </div>
+              </a>
             </li>
-          </ul>
-        </Card>
+
+        </ul>
+      </Card>
 
 
 {/* PODCASTS */}
       <Card shadow="sm" style={{ marginTop: '20px' }}>
       <Text weight={500} style={{ marginBottom: '10px' }}>Podcasts</Text>
 
-        <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
-          <li>
-            <a href="https://podcasts.apple.com/us/podcast/sex-with-emily/id467599648" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <ul style={{ paddingLeft: '20px', listStyle: "none" }}>
+          <li style={{ padding: '20px' }}>
+            <a href="https://podcasts.apple.com/us/podcast/sex-with-emily/id467599648" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
               <Image src="https://i.podnews.network/r/t/396/11221-2b1ef06c.webp" width={80} alt="Sex with Emily podcast cover" />
-              <span>"Sex with Emily" by Emily Morse</span>
-            </a> A podcast that explores sex, relationships, and intimacy with experts and everyday people
+              <div>
+                <Text weight={500} style={{ marginBottom: '5px' }}>"Sex with Emily"</Text>
+                <Text size="sm" style={{ marginBottom: '5px' }}>by Emily Morse</Text>
+                <Badge>Explores sex, relationships, and intimacy</Badge>
+              </div>
+            </a> 
           </li>
-          <li>
-            <a href="https://podcasts.apple.com/us/podcast/savage-lovecast/id135784124" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+
+          <li style={{ padding: '20px' }}>
+            <a href="https://podcasts.apple.com/us/podcast/savage-lovecast/id135784124" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
               <Image src="https://m.media-amazon.com/images/I/51N-kQCITjL._SL500_.jpg" width={80} alt="Savage Lovecast podcast cover" />
-              <span>"Savage Lovecast" by Dan Savage</span>
-            </a> A podcast that offers advice and insights on sex and relationships, with a focus on LGBTQ+ issues
+              <div>
+        <Text weight={500} style={{ marginBottom: '5px' }}>"Savage Lovecast"</Text>
+        <Text size="sm" style={{ marginBottom: '5px' }}>by Dan Savage</Text>
+        <Badge>Offers advice and insights on sex and relationships</Badge>
+      </div>
+    </a> 
           </li>
-          <li>
-            <a href="https://podcasts.apple.com/us/podcast/whoreible-decisions/id1291914299" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          
+          <li style={{ padding: '20px' }}>
+            <a href="https://podcasts.apple.com/us/podcast/whoreible-decisions/id1291914299" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
               <Image src="https://podsauce.com/wp-content/uploads/2022/03/WhoreibleDecisions-Logo-FINAL3000x3000-V2.png" width={80} alt="Whoreible Decisions podcast cover" />
-              <span>"Whoreible Decisions" by Mandii B and WeezyWTF</span>
-            </a> A podcast that discusses sex and dating from a frank and humorous perspective
+              <div>
+        <Text weight={500} style={{ marginBottom: '5px' }}>"Whoreible Decisions"</Text>
+        <Text size="sm" style={{ marginBottom: '5px' }}>by Mandii B and WeezyWTF</Text>
+        <Badge>Discusses sex and dating from a frank and humorous perspective</Badge>
+      </div>
+    </a> 
           </li>
         </ul>
       </Card>
@@ -68,7 +99,7 @@ function ResourcePage() {
 {/* WEBSITES */}
 <Card shadow="sm" style={{ marginTop: '20px' }}>
   <Text weight={500} style={{ marginBottom: '10px' }}>Websites</Text>
-  <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
+  <ul style={{ paddingLeft: '20px', listStyle: "none" }}>
     <li>
       <a href="https://www.plannedparenthood.org/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <Image src="https://www.plannedparenthood.org/static/assets/img/logos/planned-parenthood-logo-484x60.png" width={80} alt="Planned Parenthood logo" />
@@ -98,7 +129,7 @@ function ResourcePage() {
 <Card shadow="sm" style={{ marginTop: '20px' }}>
 <Text weight={500} style={{ marginBottom: '10px' }}>Videos</Text>
 
-  <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
+  <ul style={{ paddingLeft: '20px', listStyle: "none" }}>
     <li>
       <a href="https://www.youtube.com/user/sexplanations">"Sexplanations" by Dr. Lindsey Doe</a>: A YouTube channel that covers a wide range of sex education topics, from consent to sexual dysfunction
     </li>
@@ -117,7 +148,7 @@ function ResourcePage() {
       <Card shadow="sm" style={{ marginTop: '20px' }}>
       <Text weight={500} style={{ marginBottom: '10px' }}>Tools</Text>
 
-        <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
+        <ul style={{ paddingLeft: '20px' , listStyle: "none" }}>
           <li>
             <a href="https://www.bedsider.org/">Bedsider</a>: A website that provides information on birth control options and helps users find a method that works for them
           </li>
@@ -135,7 +166,7 @@ function ResourcePage() {
 {/* OTHER VIDEOS */}
       <Card shadow="sm" style={{ marginTop: '20px' }}>
         <Text weight={500} style={{ marginBottom: '10px' }}>Videos or podcasts on sex education and health topics</Text>
-        <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
+        <ul style={{ paddingLeft: '20px' , listStyle: "none" }}>
           <li>
             <a href="https://www.youtube.com/c/sexplanations" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Image src="https://i.ytimg.com/vi/7FA9aqw1wag/maxresdefault.jpg" width={80} alt="Sexplanations channel preview" />
@@ -163,7 +194,7 @@ function ResourcePage() {
 {/* Interactive tools or quizzes that can help users assess their knowledge of sex education and health: */}
 <Card shadow="sm" style={{ marginTop: '20px' }}>
   <Text weight={500} style={{ marginBottom: '10px' }}>Interactive Tools and Quizzes</Text>
-  <ul style={{ paddingLeft: '20px' }} style={{ listStyle: "none" }}>
+  <ul style={{ paddingLeft: '20px' , listStyle: "none" }}>
     <li>
       <a href="https://www.ashasexualhealth.org/hpv-and-men-take-the-quiz/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <Image src="https://cdn.riddle.com/embeds/v2/images/q_80,c_fill,w_960,h_540/fa8/fa8ffcb228c3503a4bbcb5d8e40078fb.png" width={80} alt="ASHA Sexual Health Quiz" />
