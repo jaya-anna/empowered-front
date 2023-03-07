@@ -15,7 +15,7 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
         await axios.delete(
             `http://localhost:5005/forum//posts/${post._id}/comments/${comment._id}`,
             {
-            headers: { Authorization: `holder ${token}` },
+            headers: { authorization: `Bearer ${token}` },
             }
         );
 
@@ -42,7 +42,7 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
             content: newCommentContent,
             },
             {
-            headers: { Authorization: `holder ${token}` },
+            headers: { authorization: `Bearer ${token}` },
             }
         );
         setComments((prevComments) => {
@@ -83,14 +83,18 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
         </>
       ) : (
         <>
-                    <Text> Comment: {comment.content} </Text>
-                    <Text>
-                      By:
-                      {comment.author.username[0].toUpperCase() +
-                        comment.author.username.slice(1)}{" "}
+                    <Text> 
+                      Comment:{" "} {comment.content} 
                     </Text>
                     <Text>
-                      Comment created at:
+                      By: {" "}
+                      { comment.author
+                        ? comment.author.username[0].toUpperCase() + comment.author.username.slice(1)
+                        : "User account deleted"
+                      }
+                    </Text>
+                    <Text>
+                      Comment created at: {" "}
                       {new Date(comment.createdAt).toLocaleDateString(
                         undefined,
                         options
@@ -99,7 +103,7 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
 
 
 
-          { comment.author._id === user._id && (
+          { comment.author && comment.author._id === user._id && (
                         <>
                             <Button onClick={() => handleEditComment(comment)}>Edit</Button>
                             <Button onClick={() => handleDeleteComment(comment)}>Delete</Button>

@@ -22,14 +22,17 @@ function ForumPage() {
 
     async function handleCreatePost(e) {
         e.preventDefault();
+
+console.log(token);
+
         try {
-        await axios.post('http://localhost:5005/forum/createpost', { title, content }, {headers: { Authorization: `holder ${token}`  } }
+        await axios.post('http://localhost:5005/forum/createpost', { title, content }, {headers: { authorization: `Bearer ${token}`  } }
         );
         setTitle('');
         setContent('');
         fetchPosts();
         } catch (error) {
-        console.log(error);
+            console.log(error);
         }
     }
 
@@ -66,13 +69,12 @@ function ForumPage() {
                             />
                         
                             <label>Post content:</label>
-                            <Textarea>
+
                             <Input
                                 id="content"
                                 value={content}
                                 onChange={handleContentChange}
                             />
-                            </Textarea>
                         
                             <Button type="submit">Create Post</Button>
 

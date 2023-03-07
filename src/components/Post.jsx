@@ -44,7 +44,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
           title: newTitle,
           content: newContent,
         },
-        { headers: { Authorization: `holder ${token}` } }
+        { headers: { authorization: `Bearer ${token}` } }
       );
       fetchComments();
       setIsEditing(false);
@@ -60,7 +60,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
   async function handleDeletePost() {
     try {
       await axios.delete(`http://localhost:5005/forum/posts/${post._id}`, {
-        headers: { Authorization: `holder ${token}` },
+        headers: { authorization: `Bearer ${token}` },
       });
 
       const filteredPosts = posts.filter((element) => element._id !== post._id);
@@ -80,7 +80,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
         {
           content: commentContent,
         },
-        { headers: { Authorization: `holder ${token}` } }
+        { headers: { authorization: `Bearer ${token}` } }
       );
       setCommentContent("");
       fetchComments();
@@ -130,26 +130,28 @@ function Post({ post, setPosts, posts, fetchPosts }) {
             <>
               <Card shadow="sm" padding="sm" style={{ marginBottom: "1rem" }}>
                 <Text size="lg" weight={600} style={{ marginBottom: "0.5rem" }}>
-                  Post title:{" "}
+                  Post title: {" "}
                   {post.title[0].toUpperCase() + post.title.slice(1)}
                 </Text>
 
                 <Text>
-                  Post content:{" "}
+                  Post content: {" "}
                   {post.content[0].toUpperCase() + post.content.slice(1)}
                 </Text>
 
                 <Text>
-                  Post by:{" "}
-                  {post.author.username[0].toUpperCase() +
-                    post.author.username.slice(1)}
+                  Post by: {" "}
+                  { post.author 
+                    ? post.author.username[0].toUpperCase() + post.author.username.slice(1)
+                    : "User account deleted"
+                  }
                 </Text>
 
                 <Text>
                   Post created at: {date.toLocaleDateString("en-US", options)}
                 </Text>
 
-            { post.author._id === user._id && (
+            { post.author && post.author._id === user._id && (
                 <>
                 <Button onClick={() => handleEditPost(post)}>Edit post</Button>
                 <Button onClick={handleDeletePost}>Delete Post</Button>
