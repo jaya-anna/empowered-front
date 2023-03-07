@@ -47,15 +47,23 @@ function NavBar() {
 
           <div>
             <br></br>
-            <NavLink className="navbar-comp-style" to="/forum">
-              forum
+
+
+            <NavLink className="navbar-comp-style" to="/quiz">
+              quiz
             </NavLink>
+
             <NavLink className="navbar-comp-style" to="/faq">
               FAQ
             </NavLink>
 
             {isAuthenticated ? (
               <>
+
+              <NavLink className="navbar-comp-style" to="/forum">
+                forum
+              </NavLink>
+
                 <NavLink className="navbar-comp-style" to="/profile">
                   profile
                 </NavLink>
