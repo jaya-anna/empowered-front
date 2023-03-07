@@ -13,7 +13,6 @@ function NavBar() {
     setIsAuthenticated(false);
     setToken(null);
     setUser(null);
-    setTimeout(() => {navigate("/quiz")}, 250);
   };
 
   return (
@@ -62,10 +61,11 @@ function NavBar() {
                 </NavLink>
 
 
-                <button type="button" onClick={handleLogout}>
-                  logout
-                </button>
-
+                <NavLink className="navbar-comp-style" to="/">
+                  <Button  onClick={handleLogout}>
+                    logout
+                  </Button>
+                </NavLink>
 
                 <IconBrandInstagram
                   style={{
