@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { SessionContext } from "../contexts/SessionContext";
 
 function UpdatePage() {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = React.useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
 const {token} = useContext(SessionContext)
@@ -53,7 +53,9 @@ const {token} = useContext(SessionContext)
           onChange={(e) => setEmail( e.target.value )}
         />
         <button type="submit">Save</button>
-        <button onClick={() => window.location.reload(false)}> Back to profile</button>
+        <Link onClick={handleUpdate} to="/profile">
+        <button  onClick={() => window.location.reload(true)}> Back to profile</button>
+        </Link>
       </form>
     </div>
   );

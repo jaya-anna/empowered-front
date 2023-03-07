@@ -6,13 +6,13 @@ import { SessionContext } from "../contexts/SessionContext";
 import { Link } from "react-router-dom";
 
 function Profile(){
-  const { user, isAuthenticated } = useContext(SessionContext);
+  const { user, isAuthenticated, } = useContext(SessionContext);
   const [deleting, setDeleting] = useState(false);
   const handleSubmit = async event => {
     event.preventDefault()
 
   // handle Button Delete
-  const handleDelete = async () => {
+  /* const handleDelete = async () => {
     setDeleting(true);
 try{
   await axios.delete("http://localhost:5005/auth/delete")
@@ -21,17 +21,12 @@ try{
 }catch (error) {
   console.log("Error: ", error);
   setDeleting(false);
-}
-  }
+} */
+  
 if(!user){
   return (
-    <p>pizza</p>)
+    <p>working</p>)
 } 
-fetchData()
-
-setTitle('')
-setImg('')
-setPricePerDay(100)
 }
 console.log(user);
   return (
@@ -58,7 +53,7 @@ console.log(user);
       <Link type="button" component={Link} to={`/update/${user._id}`}>
         Update
       </Link>
-      <button onClick={handleDelete}>Delete Profile</button>
+      {/* <Button title="Go to test test screen" onSubmit={`/profile`} /> */}
     </div>
   );
 }
