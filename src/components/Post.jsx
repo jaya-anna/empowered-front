@@ -168,7 +168,6 @@ function Post({ post, setPosts, posts, fetchPosts }) {
         <Card shadow="sm" padding="sm" style={{ marginBottom: "1rem" }}>
           {/* SHOW COMMENTS */}
             <Group direction="column">
-            <Text>Comments created so far:</Text>
                 {comments.map((comment) => (
                     <Comment key={comment._id} comment={comment} setComments={setComments} comments={comments} fetchComments={fetchComments} post={post} />
                 ))}
@@ -184,6 +183,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
                 <Input
                     id="content"
                     type="text"
+                    style={{width:'200px'}}
                     value={commentContent}
                     onChange={handleCommentContentChange}
                 />

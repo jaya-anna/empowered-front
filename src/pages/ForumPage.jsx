@@ -49,34 +49,63 @@ console.log(token);
     }, [posts])
 
     return (
-        <div>
+        <div style={{  
+            margin: "auto", padding: "80px 200px 0",
+            display:"flex", flexDirection:"column", justifyContent:"center", alignContent:"center"
+            }} >
 
-            <h1>Forum</h1>
-            <Text>We also value the voices and experiences of our readers, and we encourage you to share your thoughts and feedback in the comments section.</Text>
+            <h1 style={{ color: "#5b64cf" , marginLeft: "250px" }}>forum</h1>
+
+            <Text size="lg" align='center'
+                style={{ color: "#5b64cf" , 
+                margin:"20px 100px 15px" , 
+                }}
+                >We also value the <b>voices</b> of our readers, so we encourage you to share your questions and experiences in the comments section. <sup>*, **</sup>
+            </Text>
+
+            <Text 
+                style={{ color: "grey" ,  textAlign:"center", fontSize:"12px" }}
+                >
+                *this page is not a substitute for professional medical advice
+            </Text>
+
+            <Text 
+                style={{ color: "grey" ,  textAlign:"center", fontSize:"12px" }}
+                >
+                **individual experiences may vary
+            </Text>
 
 
             <form method="POST" action="/createpost" onSubmit={handleCreatePost}>
-                    <Group spacing="lg" direction="column">
-
-                            <Text>Create a new post here:</Text>
+                    <Group 
+                        spacing="lg" 
+                        direction="column" 
+                        style={{ margin:"35px", display: "flex", flexDirection:"column"
+                    }} >
                         
-                            <label>Post title:</label>
+
                             <Input
                                 type="text"
                                 id="title"
                                 value={title}
                                 onChange={handleTitleChange}
+                                placeholder="post title"
                             />
-                        
-                            <label>Post content:</label>
 
                             <Input
                                 id="content"
                                 value={content}
                                 onChange={handleContentChange}
+                                placeholder="post content"
                             />
                         
-                            <Button type="submit">Create Post</Button>
+                            <Button 
+                                type="submit"
+                                style={{ backgroundColor: "#5b64cf"}}
+                                variant="filled"
+                            >
+                                create post
+                            </Button>
 
                     </Group>
                 </form>
