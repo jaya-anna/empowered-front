@@ -14,18 +14,21 @@ import { SessionContext } from "../contexts/SessionContext";
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { setToken } = useContext(SessionContext);
+  const { setToken, setUser } = useContext(SessionContext);
   const [errorMessage, setErrorMessage] = useState(undefined);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log('hello')
     try {
       const response = await axios.post("http://localhost:5005/auth/login", {
         username: username,
         password: password,
       });
       setToken(response.data.token);
+      setUser(response.data.foundUser)
+      console.log(response.data)
       navigate("/profile");
     } catch (error) {
       setErrorMessage(error.response.data.errorMessage);
@@ -53,7 +56,7 @@ const LoginPage = () => {
           gap: "20px",
           marginTop: "2rem",
         }}
-        onSubmit={handleSubmit}
+        // onClick={handleSubmit}
       >
         <TextInput
           label="Username"
@@ -74,6 +77,7 @@ const LoginPage = () => {
           variant="gradient"
           gradient={{ from: "#ff9c6b", to: "#e34f4f", deg: 60 }}
           sx={{ marginTop: "1rem", alignSelf: "center" }}
+          onClick={handleSubmit}
         >
           Connect
         </Button>

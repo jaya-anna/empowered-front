@@ -1,18 +1,34 @@
-
+import axios from 'axios';
 import { AppShell, Box, Button, Header } from '@mantine/core'
 import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { SessionContext } from "../contexts/SessionContext";
 import { Link } from "react-router-dom";
 
-function Profile() {
-  const { user, isAuthenticated } = useContext(SessionContext);
-  const [currentUser, setCurrentUser] = useState();
+function Profile(){
+  const { user, isAuthenticated, } = useContext(SessionContext);
+  const [deleting, setDeleting] = useState(false);
+  const handleSubmit = async event => {
+    event.preventDefault()
 
-  useEffect(() => {
-    setCurrentUser(user);
-  }, []);
-
+  // handle Button Delete
+  /* const handleDelete = async () => {
+    setDeleting(true);
+try{
+  await axios.delete("http://localhost:5005/auth/delete")
+  .then(() => this.setState({ status: 'Delete successful' }));
+  
+}catch (error) {
+  console.log("Error: ", error);
+  setDeleting(false);
+} */
+  
+if(!user){
+  return (
+    <p>working</p>)
+} 
+}
+console.log(user);
   return (
     <div>
       {user ? (
@@ -34,10 +50,10 @@ function Profile() {
       ) : (
         <div></div>
       )}
-      <Button type="button" component={Link} to="/update">
+      <Link type="button" component={Link} to={`/update/${user._id}`}>
         Update
-      </Button>
-      <button>Delete</button>
+      </Link>
+      {/* <Button title="Go to test test screen" onSubmit={`/profile`} /> */}
     </div>
   );
 }

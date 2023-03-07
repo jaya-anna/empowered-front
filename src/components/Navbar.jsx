@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Box, Button, Header, Text } from '@mantine/core';
+import { Image, Box, Button, Header, Text } from "@mantine/core";
 import { SessionContext } from "../contexts/SessionContext";
+import { IconBrandInstagram, IconMail } from "@tabler/icons-react";
 
 function NavBar() {
   const { isAuthenticated, setIsAuthenticated } = useContext(SessionContext);
@@ -13,71 +14,95 @@ function NavBar() {
   };
 
   return (
-
-      <Header
-        shadow="sm"
-        padding={{ xs: 'sm', md: 'lg' }}
-        position="static"
-        borderbottom={1}
-      >
-        <Box display="flex" alignitems="center">
-          <NavLink to="/">
-            <Button variant="light">Home</Button>
-          </NavLink>
-          <Box marginleft="auto">
-            <nav>
-              <NavLink to="/resources">
-                <Button variant="light">Resources</Button>
-              </NavLink>
-              <NavLink to="/about">
-                <Button variant="light">About</Button>
-              </NavLink>
-              <NavLink to="/info">
-                <Button variant="light">Info</Button>
-              </NavLink>
-              <NavLink to="/forum">
-                <Button variant="light">Forum</Button>
-              </NavLink>
-              <NavLink to="/faq">
-                <Button variant="light">FAQ</Button>
-              </NavLink>
-              {isAuthenticated ? (
-                <>
-                  <NavLink to="/profile">
-                    <Button variant="light">Profile</Button>
-                  </NavLink>
-
-                  <NavLink to="/quiz">
-                    <Button variant="light">Quiz</Button>
-                  </NavLink>
+    <>
+      <section className="navbar-section-outer">
+        <div className="navbar-section-inner">
+          <div>
+            <br></br>
+            <NavLink className="navbar-comp-style" to="/">
+              home
+            </NavLink>
+      
+            <NavLink className="navbar-comp-style" to="/resources">
+              resources
+            </NavLink>
+            <NavLink className="navbar-comp-style" to="/info">
+              info
+            </NavLink>
+            <NavLink className="navbar-comp-style" to="/about">
+              about
+            </NavLink>
+          </div>
+          <div>
+            <Image
+              width={130}
+              className="style-logo"
+              src="../../images/logo-purple.png"
+              alt="logo empowered"
+            ></Image>
+          </div>
 
 
+          <div>
+            <br></br>
+            <NavLink className="navbar-comp-style" to="/forum">
+              forum
+            </NavLink>
+            <NavLink className="navbar-comp-style" to="/faq">
+              FAQ
+            </NavLink>
 
-                  <Button
-                    component={NavLink}
-                    to="/"
-                    variant="light"
-                    color="cyan"
-                    onClick={handleLogout}
-                  >
-                    Logout
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <NavLink to="/signup">
-                    <Button variant="light">Sign up</Button>
-                  </NavLink>
-                  <NavLink to="/login">
-                    <Button variant="light">Login</Button>
-                  </NavLink>
-                </>
-              )}
-            </nav>
-          </Box>
-        </Box>
-      </Header>
-
+            {isAuthenticated ? (
+              <>
+                <NavLink className="navbar-comp-style" to="/profile">
+                  profile
+                </NavLink>
+                <button to="/" onClick={handleLogout}>
+                  logout
+                </button>
+                <IconBrandInstagram
+                  style={{
+                    marginTop: "20px",
+                    marginLeft: "80px",
+                    height: "20px",
+                  }}
+                ></IconBrandInstagram>
+                <IconMail
+                  style={{
+                    marginTop: "20px",
+                    marginLeft: "10px",
+                    height: "20px",
+                  }}
+                ></IconMail>
+              </>
+            ) : (
+              <>
+                <NavLink className="navbar-comp-style" to="/signup">
+                  sign up
+                </NavLink>
+                <NavLink className="navbar-comp-style" to="/login">
+                  login
+                </NavLink>
+                <IconBrandInstagram
+                  style={{
+                    marginTop: "20px",
+                    marginLeft: "80px",
+                    height: "20px",
+                  }}
+                ></IconBrandInstagram>
+                <IconMail
+                  style={{
+                    marginTop: "20px",
+                    marginLeft: "10px",
+                    height: "20px",
+                  }}
+                ></IconMail>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
