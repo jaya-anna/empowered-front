@@ -145,10 +145,15 @@
 }
 
 .resource-section{
-  height: 150px;
+  height: 500px;
 
 }
 
 .info-section{
   height: 50px;
+}
+
+.image-resource{
+  margin-top: 70px;
+  margin-left: 250px;
 }
