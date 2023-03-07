@@ -114,8 +114,8 @@ const HomePage = () => {
       </section>
 
       <section className="home-section-3">
-        <div class="container-section-3">
-          <div class="box-3">
+        <div className="container-section-3">
+          <div className="box-3">
             <h2>interactive</h2> <IconMessages />
             <p>
               Cum sociis natoque penatibus et magnis dis parturient montes,
@@ -127,7 +127,7 @@ const HomePage = () => {
               at erat luctus.
             </p>
           </div>
-          <div class="box-3">
+          <div className="box-3">
             <h2>educational</h2> <IconSchool />
             <p>
               Duis tempus leo vitae ipsum viverra, blandit condimentum sapien
@@ -139,8 +139,8 @@ const HomePage = () => {
               elementum nspendisse at erat luctus.
             </p>
           </div>
-          <div class="box-3">
-            <image />
+          <div className="box-3">
+            <Image />
             <h2>empowering</h2> <IconRocket />
             <p>
               Cras aliquet venenatis porttitor. Donec rutrum sapien et sapien

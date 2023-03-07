@@ -5,12 +5,14 @@ import { SessionContext } from "../contexts/SessionContext";
 import { IconBrandInstagram, IconMail } from "@tabler/icons-react";
 
 function NavBar() {
-  const { isAuthenticated, setIsAuthenticated } = useContext(SessionContext);
+  const { isAuthenticated, setIsAuthenticated , setToken, setUser } = useContext(SessionContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("holder");
     setIsAuthenticated(false);
+    setToken(null);
+    setUser(null);
   };
 
   return (
@@ -45,21 +47,34 @@ function NavBar() {
 
           <div>
             <br></br>
-            <NavLink className="navbar-comp-style" to="/forum">
-              forum
+
+
+            <NavLink className="navbar-comp-style" to="/quiz">
+              quiz
             </NavLink>
+
             <NavLink className="navbar-comp-style" to="/faq">
               FAQ
             </NavLink>
 
             {isAuthenticated ? (
               <>
+
+              <NavLink className="navbar-comp-style" to="/forum">
+                forum
+              </NavLink>
+
                 <NavLink className="navbar-comp-style" to="/profile">
                   profile
                 </NavLink>
-                <button to="/" onClick={handleLogout}>
-                  logout
-                </button>
+
+
+                <NavLink className="navbar-comp-style" to="/" onClick={handleLogout} >
+
+                    logout
+
+                </NavLink>
+
                 <IconBrandInstagram
                   style={{
                     marginTop: "20px",
