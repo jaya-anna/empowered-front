@@ -3,29 +3,34 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { SessionContext } from "../contexts/SessionContext";
+import { Card, Text, Button, Input, Group } from "@mantine/core";
 
 function UpdatePage() {
-  const [user, setUser] = React.useState([]);
+  // const [user, setUser] = React.useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-const {token} = useContext(SessionContext)
+  const {token , setUser, user} = useContext(SessionContext)
   const navigate = useNavigate();
 
-//handle Button Update 
 
+
+//handle Button Update 
  const handleUpdate = async (event) => {
     event.preventDefault();
     console.log("updated Username:", username)
 
     try {
-      const response = await axios.put("http://localhost:5005/auth/update", {
+      const response = await axios.put(`http://localhost:5005/auth/update/${user._id}`, {
         username: username,
         email: email,
       } ,{headers: {
         authorization: `Bearer ${token}`
     }},);
+
       console.log(response.data);
       setUser(response.data);
+
+      navigate('/profile');
     } catch (error) {
       console.log("Error: ", error);
     };
@@ -39,23 +44,21 @@ const {token} = useContext(SessionContext)
   return (
     <div>
       <h1>Update your Profile</h1>
-      <form onSubmit={handleUpdate}>
+      <form onSubmit={handleUpdate}  >
         <label>Username</label>
-        <input
+        <Input
           type="text"
           value={username}
           onChange={(e) => setUsername( e.target.value )}
         />
         <label>Email adress</label>
-        <input
+        <Input
           type="email"
           value={email}
           onChange={(e) => setEmail( e.target.value )}
         />
-        <button type="submit">Save</button>
-        <Link onClick={handleUpdate} to="/profile">
-        <button  onClick={() => window.location.reload(true)}> Back to profile</button>
-        </Link>
+        <Button type="submit">Save</Button>
+
       </form>
     </div>
   );

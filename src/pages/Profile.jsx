@@ -3,13 +3,25 @@ import { AppShell, Box, Button, Header } from '@mantine/core'
 import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { SessionContext } from "../contexts/SessionContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Profile(){
-  const { user, isAuthenticated, } = useContext(SessionContext);
+function Profile( ){
+  const { user, setUser, isAuthenticated } = useContext(SessionContext);
   const [deleting, setDeleting] = useState(false);
+  const navigate = useNavigate();
+
   const handleSubmit = async event => {
-    event.preventDefault()
+    event.preventDefault();
+  
+      if(!user){
+        return (
+          <p>working</p>)
+          } 
+
+      navigate('/profile');
+  }
+
+    console.log(user);
 
   // handle Button Delete
   /* const handleDelete = async () => {
@@ -22,13 +34,7 @@ try{
   console.log("Error: ", error);
   setDeleting(false);
 } */
-  
-if(!user){
-  return (
-    <p>working</p>)
-} 
-}
-console.log(user);
+
   return (
     <div>
       {user ? (
@@ -40,12 +46,7 @@ console.log(user);
             <h2>Email adress</h2>
             <p>{user.email}</p>
           </div>
-          <div>
-            <h2>Your Posts</h2>
-            <p> </p>
-            <h2>Your Comments</h2>
-            <p> </p>
-          </div>
+
         </div>
       ) : (
         <div></div>
