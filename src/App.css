@@ -145,6 +145,10 @@
 }
 
 .resource-section{
-  height: 250px;
+  height: 150px;
 
+}
+
+.info-section{
+  height: 50px;
 }
