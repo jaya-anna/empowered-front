@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useContext } from 'react';
 import { SessionContext } from '../contexts/SessionContext';
-
 import { Card, Text, Button, Input, Group } from '@mantine/core';
 import Post from '../components/Post';
 

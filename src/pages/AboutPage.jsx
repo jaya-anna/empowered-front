@@ -3,8 +3,8 @@ import { Text, Card, Divider, Button } from '@mantine/core';
 
 function AboutPage() {
   return (
-    // maybe here we can add a style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-    <div>
+
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} >
       <Card shadow="sm" padding="lg">
         <Text align="center" variant="h2">
           Our Goal
@@ -15,7 +15,7 @@ function AboutPage() {
         </Text>
       </Card>
 
-      <Card shadow="sm" padding="lg" marginTop="lg">
+      <Card shadow="sm" padding="lg" marginTop="lg" style={{ maxWidth: '400px' }}>
         <Text align="center" variant="h2">
           Our Mission
         </Text>
@@ -35,9 +35,8 @@ function AboutPage() {
         </Text>
       </Card>
 
-{/* we can add style={{ maxWidth: '300px' }} to shorten the text to 300px */}
       <Card shadow="sm" padding="lg" marginTop="lg">
-        <Text align="center" variant="h2">
+        <Text align="center" variant="h2" style={{ maxWidth: '300px' }} >
           Follow us on Instagram
         </Text>
         <Divider />
@@ -52,6 +51,21 @@ function AboutPage() {
           @empoweredemp
         </Button>
       </Card>
+
+      <Card shadow="sm" padding="lg" marginTop="lg">
+        <Text align="center" variant="h2">
+          Visit Us
+        </Text>
+        <Divider />
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1V9vrpxRAdI-G66_1-QRtHEgAo0k&ehbc=2E312F"
+          width="640"
+          height="480"
+          title="Empowered Emp location"
+          style={{ border: 0, marginTop: '1rem' }}
+        />
+      </Card>
+
     </div>
   );
 }

@@ -2,16 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { SessionContext } from "../contexts/SessionContext";
-
 import { Card, Text, Button, Input, Group } from "@mantine/core";
-
 
 function Comment({ comment, setComments, comments, fetchComments, post }) {
     const [isEditingComment, setIsEditingComment] = useState(false);
     const [newCommentContent, setNewCommentContent] = useState(comment.content);
     const { token , user } = useContext(SessionContext);
 
-      // 2. DELETE COMMENT
+    //  DELETE COMMENT
     async function handleDeleteComment(comment) {
         try {
         await axios.delete(
@@ -27,13 +25,13 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
         }
     }
 
-    // 3. EDIT COMMENT
-    function handleEditComment(comment) {
-        setIsEditingComment(true);
-    }
-
+    // EDIT COMMENT
     function handleNewCommentContentChange(e) {
         setNewCommentContent(e.target.value);
+    }
+
+    function handleEditComment(comment) {
+        setIsEditingComment(true);
     }
 
     async function handleSaveComment(comment) {
@@ -64,13 +62,13 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
         }
     }
 
+    // OPTIONS FOR DATE FORMATTING
     let options = {
         weekday: "long",
         year: "numeric",
         month: "long",
         day: "numeric",
     };
-
   
   return (
     <Card padding="sm" style={{ marginBottom: "1rem" }}>

@@ -37,12 +37,14 @@ function QuizPage() {
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
     const [answerDisabled, setAnswerDisabled] = useState(false);
 
+    // click handler for selecting an answer
     function handleAnswerOptionClick(answerOption) {
         setSelectedAnswer(answerOption);
         checkAnswer(answerOption);
         setAnswerDisabled(true);
     }
 
+    // check if answer is correct
     function checkAnswer(answerOption) {
         if (answerOption === quizQuestions[currentQuestionIndex].answer) {
             setIsAnswerCorrect(true);
@@ -52,6 +54,7 @@ function QuizPage() {
         }
     }
 
+    // next question
     function handleNextButtonClick() {
         setSelectedAnswer('');
         setIsAnswerCorrect(null);
@@ -63,6 +66,7 @@ function QuizPage() {
         }
     }
 
+    // restart quiz
     function handleRestartButtonClick() {
         setCurrentQuestionIndex(0);
         setSelectedAnswer('');

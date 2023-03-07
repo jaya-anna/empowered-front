@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { SessionContext } from "../contexts/SessionContext";
-
 import { Card, Text, Button, Input, Group } from "@mantine/core";
 import Comment from "./Comment";
 
@@ -72,7 +71,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
   }
 
   // COMMENTS
-  // 1. CREATE COMMENT
+  // CREATE COMMENT
   async function handleCreateComment(e) {
     e.preventDefault();
     try {
@@ -94,6 +93,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
   }
 
 
+  // OPTIONS FOR DATE FORMATTING 
   let options = {
     weekday: "long",
     year: "numeric",
@@ -105,6 +105,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
   return (
     <Card shadow="sm" padding="sm" style={{ marginBottom: "1rem" }}>
       <Group spacing="lg" direction="column">
+                        {/* POST GROUP */}
         <Group spacing="lg" direction="column">
           {isEditing ? (
             <>
@@ -155,13 +156,13 @@ function Post({ post, setPosts, posts, fetchPosts }) {
                 </>
             )}
 
-
               </Card>
             </>
           )}
         </Group>
 
-        {/* CARD FOR COMMENTS */}
+
+                         {/* CARD FOR COMMENTS */}
         <Card shadow="sm" padding="sm" style={{ marginBottom: "1rem" }}>
           {/* SHOW COMMENTS */}
             <Group direction="column">
