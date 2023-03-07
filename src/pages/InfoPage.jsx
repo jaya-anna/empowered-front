@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
 
 function InfoPage() {
   return (
-    <div>InfoPage</div>
-  )
+
+    <>
+    <section classname="info-section">
+
+   
+    
+    </section>
+    </>
+
+  );
 }
 
-export default InfoPage
+export default InfoPage;
