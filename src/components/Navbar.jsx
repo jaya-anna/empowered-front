@@ -18,13 +18,13 @@ function NavBar() {
         shadow="sm"
         padding={{ xs: 'sm', md: 'lg' }}
         position="static"
-        borderBottom={1}
+        borderbottom={1}
       >
-        <Box display="flex" alignItems="center">
+        <Box display="flex" alignitems="center">
           <NavLink to="/">
             <Button variant="light">Home</Button>
           </NavLink>
-          <Box marginLeft="auto">
+          <Box marginleft="auto">
             <nav>
               <NavLink to="/resources">
                 <Button variant="light">Resources</Button>

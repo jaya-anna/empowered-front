@@ -14,7 +14,7 @@ const SessionContextProvider = ({children}) => {
         try {
             const response = await axios.post("http://localhost:5005/auth/verify", undefined, {
                 headers: {
-                    authorization: `holder ${jwt}`
+                    authorization: `Bearer ${jwt}`
                 },
             })
             setToken(jwt);
