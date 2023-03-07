@@ -33,24 +33,12 @@ const SessionContextProvider = ({children}) => {
         }
       }, []);
 
-      
-    /* useEffect(() => {
-        console.log(user)
-    }, [user])
- */
     useEffect(() => {
         if (token) {
             window.localStorage.setItem("holder", token);
             setIsAuthenticated(true);
-            // console.log(isAuthenticated);
           }
         }, [token]);
-
-       /*  const localToken = window.localStorage.getItem("holder");
-        console.log("LOCAL TOKEN: ", localToken)
-        verifyToken(localToken);
-    }, []) */
-
 
     return (
         <SessionContext.Provider value={{setToken, token, isAuthenticated, setIsAuthenticated, isLoading, user, setUser}} >{children}</SessionContext.Provider>

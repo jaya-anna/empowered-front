@@ -6,34 +6,27 @@ import { SessionContext } from "../contexts/SessionContext";
 import { Link, useNavigate } from "react-router-dom";
 
 function Profile( ){
-  const { user, setUser, isAuthenticated } = useContext(SessionContext);
+  const { user, setUser, setIsAuthenticated, setToken } = useContext(SessionContext);
   const [deleting, setDeleting] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = async event => {
-    event.preventDefault();
-  
-      if(!user){
-        return (
-          <p>working</p>)
-          } 
-
-      navigate('/profile');
-  }
-
-    console.log(user);
-
-  // handle Button Delete
-  /* const handleDelete = async () => {
+  // handler for deleting profile
+  const handleDeleteProfile = async () => {
     setDeleting(true);
-try{
-  await axios.delete("http://localhost:5005/auth/delete")
-  .then(() => this.setState({ status: 'Delete successful' }));
-  
-}catch (error) {
-  console.log("Error: ", error);
-  setDeleting(false);
-} */
+    try {
+      await axios.delete(`http://localhost:5005/auth/profile/${user._id}`)
+
+      localStorage.removeItem("holder");
+      setIsAuthenticated(false);
+      setToken(null);
+      setUser(null);
+
+      navigate('/');
+    } catch (error) {
+      console.log("Error: ", error);
+      setDeleting(false);
+    }
+  }
 
   return (
     <div>
@@ -54,7 +47,9 @@ try{
       <Link type="button" component={Link} to={`/update/${user._id}`}>
         Update
       </Link>
-      {/* <Button title="Go to test test screen" onSubmit={`/profile`} /> */}
+
+      <Button onClick={handleDeleteProfile}> Delete profile </Button>
+      
     </div>
   );
 }
