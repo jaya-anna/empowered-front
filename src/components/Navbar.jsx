@@ -42,6 +42,7 @@ function NavBar() {
             ></Image>
           </div>
 
+
           <div>
             <br></br>
             <NavLink className="navbar-comp-style" to="/forum">

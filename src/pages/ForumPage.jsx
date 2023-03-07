@@ -11,6 +11,8 @@ function ForumPage() {
     const [content, setContent] = useState('');
     const {token} = useContext(SessionContext);
 
+
+
     useEffect(() => {
         fetchPosts();
     }, []);
@@ -46,7 +48,7 @@ function ForumPage() {
         <h1>Forum</h1>
         <p>We also value the voices and experiences of our readers, and we encourage you to share your thoughts and feedback in the comments section.</p>
         <div>
-            <form method="POST" action="/createpost" onSubmit={handleCreatePost}>
+        <form method="POST" action="/createpost" onSubmit={handleCreatePost}>
                 <Group spacing="lg" direction="column">
                     
                         <label>Post title:</label>
@@ -72,7 +74,7 @@ function ForumPage() {
         <div>
             <Card shadow="sm" padding="sm" style={{ marginBottom: '1rem' }}>
                 {posts.map((post) => (
-                    <Post key={post._id} post={post} />
+                    <Post key={post._id} post={post} setPosts={setPosts} posts={posts}/>
                 ))}
             </Card>
         </div>
@@ -81,7 +83,7 @@ function ForumPage() {
     );
 }
 
-function Post({ post }) {
+function Post({ post, setPosts, posts }) {
     const [comments, setComments] = useState([]);
     const [commentContent, setCommentContent] = useState('');
     const {token} = useContext(SessionContext);
@@ -120,10 +122,46 @@ function Post({ post }) {
             await axios.delete(`http://localhost:5005/forum/posts/${post._id}`, {
                 headers: { Authorization: `holder ${token}` },
             });
+
+            const filteredPosts = posts.filter(element => element._id !== post._id);
+            setPosts(filteredPosts);
         } catch (error) {
             console.log(error);
         }
     }
+
+
+    //update post
+    const [isEditing, setIsEditing] = useState(false);
+    const [newTitle, setNewTitle] = useState('');
+    const [newContent, setNewContent] = useState('');
+    function handleNewTitleChange(e) {
+        setNewTitle(e.target.value);
+    }
+    function handleNewContentChange(e) {
+        setNewContent(e.target.value);
+    }
+    async function handleEditPost() {
+        setIsEditing(true);
+    }
+    async function handleSavePost() {
+        try {
+            const response = await axios.put(`http://localhost:5005/forum/posts/${post._id}`, 
+                {
+                title: newTitle,
+                content: newContent,
+                },
+                {headers: { Authorization: `holder ${token}`  } }
+            );
+            fetchComments();
+            setIsEditing(false);
+            setPosts(response.data);
+            } catch (error) {
+                console.log(error);
+            }
+    }
+
+
 
     async function handleDeleteComment(comment) {
         try {
@@ -140,21 +178,44 @@ function Post({ post }) {
     return (
         <Card shadow="sm" padding="sm" style={{ marginBottom: '1rem' }}>
         <Group spacing="lg" direction="column">
-            <Card shadow="sm" padding="sm" style={{ marginBottom: '1rem' }}>
-                <Text size="lg" weight={600} style={{ marginBottom: '0.5rem' }}>
-                    {post.title}
-                </Text>
+            <Group spacing="lg" direction="column">
+                {isEditing ? (
+                <>
+                    <Input
+                    type="text"
+                    id="newTitle"
+                    value={newTitle}
+                    onChange={handleNewTitleChange}
+                    />
+                    <Input
+                    id="newContent"
+                    value={newContent}
+                    onChange={handleNewContentChange}
+                    />
+                    <Button onClick={handleSavePost}>Save post</Button>
+                </>
+                ) : (
+                <>
+                    <Card shadow="sm" padding="sm" style={{ marginBottom: '1rem' }}>
+                            <Text size="lg" weight={600} style={{ marginBottom: '0.5rem' }}>
+                                {post.title}
+                            </Text>
 
-                <Text>
-                    {post.content}
-                </Text>
+                            <Text>
+                                {post.content}
+                            </Text>
 
-                <Text>
-                    {post.author.username}
-                </Text>
+                            <Text>
+                                {post.author.username}
+                            </Text>
 
-                <Button onClick={handleDeletePost}>Delete Post</Button>
-            </Card>
+                            <Button onClick={handleEditPost}>Edit post</Button>
+                            <Button onClick={handleDeletePost}>Delete Post</Button>
+                    </Card>
+
+                </>
+                )}
+            </Group>
 
         
 
