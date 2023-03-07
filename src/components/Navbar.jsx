@@ -22,7 +22,7 @@ function NavBar() {
             <NavLink className="navbar-comp-style" to="/">
               home
             </NavLink>
-
+      
             <NavLink className="navbar-comp-style" to="/resources">
               resources
             </NavLink>

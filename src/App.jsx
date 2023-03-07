@@ -29,7 +29,7 @@ function App() {
           <Route path="/info" element={<InfoPage />} />
           <Route path="/forum" element={<ForumPage />} />
           <Route path="/faq" element={<FAQPage />} />
-          <Route path="/update" element={<UpdatePage />} />
+          <Route path="/update/:userId" element={<UpdatePage />} />
           <Route
             path="/profile"
             element={
