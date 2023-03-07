@@ -61,10 +61,10 @@ function NavBar() {
                 </NavLink>
 
 
-                <NavLink className="navbar-comp-style" to="/">
-                  <Button  onClick={handleLogout}>
+                <NavLink className="navbar-comp-style" to="/" onClick={handleLogout} >
+
                     logout
-                  </Button>
+
                 </NavLink>
 
                 <IconBrandInstagram
