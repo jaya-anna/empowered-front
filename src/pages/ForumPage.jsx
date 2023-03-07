@@ -60,7 +60,7 @@ console.log(token);
                 style={{ color: "#5b64cf" , 
                 margin:"20px 100px 15px" , 
                 }}
-                >We also value the <b>voices</b> of our readers, so we encourage you to share your questions and experiences in the comments section. <sup>*, **</sup>
+                >We also value the <b>voices</b> of our readers, so we encourage you to share your questions and experiences and also support each other with replies. <sup>*, **</sup>
             </Text>
 
             <Text 
@@ -80,44 +80,44 @@ console.log(token);
                     <Group 
                         spacing="lg" 
                         direction="column" 
-                        style={{ margin:"35px", display: "flex", flexDirection:"column"
+                        style={{ margin:"50px 200px 10px", display:"block", 
                     }} >
                         
-
                             <Input
                                 type="text"
                                 id="title"
                                 value={title}
                                 onChange={handleTitleChange}
-                                placeholder="post title"
+                                placeholder="start writing short title here"
+                                style={{width:'350px', margin:"15px"}}
                             />
 
                             <Input
                                 id="content"
                                 value={content}
                                 onChange={handleContentChange}
-                                placeholder="post content"
+                                style={{width:'600px', margin:"15px"}}
+                                placeholder="start writing the details here"
                             />
+
+                            
                         
                             <Button 
                                 type="submit"
-                                style={{ backgroundColor: "#5b64cf"}}
+                                style={{ backgroundColor: "#5b64cf", margin:"15px"}}
                                 variant="filled"
                             >
-                                create post
+                                submit post
                             </Button>
 
                     </Group>
                 </form>
 
 
-
-            <Card shadow="sm" padding="sm" style={{ marginBottom: '1rem' }}>
-                <Text>Posts created so far below:</Text>
                 {posts.map((post) => (
                     <Post key={post._id} post={post} setPosts={setPosts} posts={posts} fetchPosts={fetchPosts} />
                 ))}
-            </Card>
+
 
         </div>
     );

@@ -103,10 +103,20 @@ function Post({ post, setPosts, posts, fetchPosts }) {
   let date = new Date(post.createdAt);
 
   return (
-    <Card shadow="sm" padding="sm" style={{ marginBottom: "1rem" }}>
-      <Group spacing="lg" direction="column">
+    <Card shadow="sm" padding="sm" 
+      style={{ margin:"70px 100px 20px",
+            display:"flex",
+            flexDirection:"column",
+            justifyContent:"center",
+            alignContent:"center",
+            alignItems:"center"
+            }}
+    >
+
                         {/* POST GROUP */}
-        <Group spacing="lg" direction="column">
+        <Group spacing="lg" direction="column"
+
+        >
           {isEditing ? (
             <>
               <form
@@ -117,45 +127,64 @@ function Post({ post, setPosts, posts, fetchPosts }) {
                   id="newTitle"
                   value={newTitle}
                   onChange={handleNewTitleChange}
+                  style={{width:'350px', margin:"15px"}}
                 />
                 <Input
                   id="newContent"
                   value={newContent}
                   onChange={handleNewContentChange}
+                  style={{width:'600px', margin:"15px"}}
                 />
-                <Button type="submit">Save post</Button>
+                <Button type="submit"
+                        style={{ backgroundColor: "#5b64cf", margin:"15px"}}
+                        variant="filled"
+                >Save post</Button>
               </form>
             </>
           ) : (
             <>
-              <Card shadow="sm" padding="sm" style={{ marginBottom: "1rem" }}>
-                <Text size="lg" weight={600} style={{ marginBottom: "0.5rem" }}>
-                  Post title: {" "}
-                  {post.title[0].toUpperCase() + post.title.slice(1)}
+              <Card shadow="sm" padding="sm" 
+                style={{ 
+                  display:"block",
+                  width:"700px",
+                  margin:"40px"
+
+                }}
+              >
+                <Text size="lg" color="indigo" weight={900} style={{ marginBottom: "20px" }}>
+                  {post.title}
                 </Text>
 
-                <Text>
-                  Post content: {" "}
-                  {post.content[0].toUpperCase() + post.content.slice(1)}
+                <Text size="md" color="indigo" weight={700} style={{ marginBottom: "10px" }}
+                >
+                  {post.content}
                 </Text>
 
-                <Text>
-                  Post by: {" "}
+                <Text size="sm" color="yellow" weight="extralight" >
+                  by {" "}
                   { post.author 
                     ? post.author.username[0].toUpperCase() + post.author.username.slice(1)
-                    : "User account deleted"
+                    : "deleted user account"
                   }
                 </Text>
 
-                <Text>
-                  Post created at: {date.toLocaleDateString("en-US", options)}
+                <Text size="sm" color="dimmed" weight="thin" >
+                  created {date.toLocaleDateString("en-US", options)}
                 </Text>
 
             { post.author && post.author._id === user._id && (
-                <>
-                <Button onClick={() => handleEditPost(post)}>Edit post</Button>
-                <Button onClick={handleDeletePost}>Delete Post</Button>
-                </>
+                <div>
+                <Button onClick={() => handleEditPost(post)}
+                              variant="outline"
+                              color="indigo"
+                              style={{ margin:"10px" }}
+                >edit post</Button>
+                <Button onClick={handleDeletePost}
+                              variant="outline"
+                              color="indigo"
+                              style={{ margin:"10px" }}
+                >delete</Button>
+                </div>
             )}
 
               </Card>
@@ -167,7 +196,14 @@ function Post({ post, setPosts, posts, fetchPosts }) {
                          {/* CARD FOR COMMENTS */}
         <Card shadow="sm" padding="sm" style={{ marginBottom: "1rem" }}>
           {/* SHOW COMMENTS */}
-            <Group direction="column">
+            <Group direction="column"
+              style={{ display:"block" }}
+            
+            >
+                <Text size="sm" color="pink">
+                  replies ♡
+                </Text>
+
                 {comments.map((comment) => (
                     <Comment key={comment._id} comment={comment} setComments={setComments} comments={comments} fetchComments={fetchComments} post={post} />
                 ))}
@@ -178,21 +214,27 @@ function Post({ post, setPosts, posts, fetchPosts }) {
                 method="POST"
                 action="/posts/:postId/createcomment"
                 onSubmit={handleCreateComment}
+                style={{ margin:"30px" }}
             >
-                <label>Leave a comment:</label>
                 <Input
                     id="content"
                     type="text"
-                    style={{width:'200px'}}
+                    style={{width:'400px', margin:"10px"}}
                     value={commentContent}
                     onChange={handleCommentContentChange}
+                    placeholder="start writing a reply here"
                 />
 
-                <Button type="submit">Leave Comment</Button>
+                <Button type="submit"
+                                style={{ backgroundColor: "gray", margin:"10px"}}
+                                variant="filled"
+                >submit reply</Button>
             </form>
+          {/* END OF LEAVE COMMENT FORM */}
+
         </Card>
 
-      </Group>
+
     </Card>
   );
 }

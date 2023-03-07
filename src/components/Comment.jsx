@@ -71,7 +71,13 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
     };
   
   return (
-    <Card padding="sm" style={{ marginBottom: "1rem" }}>
+    <Card padding="sm" 
+                style={{ 
+                  display:"block",
+                  margin:"20px"
+
+                }}
+    >
       {isEditingComment ? (
         <>
           <Input
@@ -79,22 +85,27 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
             value={newCommentContent}
             onChange={handleNewCommentContentChange}
           />
-          <Button onClick={() => handleSaveComment(comment)}>Save</Button>
+          <Button 
+            style={{ backgroundColor: "gray"}}
+            variant="filled"
+          onClick={() => handleSaveComment(comment)}>save</Button>
         </>
       ) : (
         <>
-                    <Text> 
-                      Comment:{" "} {comment.content} 
+                    <Text size="lg" color="pink" weight="bold"
+                      style={{ width:"400px" }}
+                    > 
+                      {comment.content} 
                     </Text>
-                    <Text>
-                      By: {" "}
+                    <Text size="sm" color="yellow" weight="extralight">
+                      by {" "}
                       { comment.author
-                        ? comment.author.username[0].toUpperCase() + comment.author.username.slice(1)
-                        : "User account deleted"
+                        ? comment.author.username
+                        : "deleted user account"
                       }
                     </Text>
-                    <Text>
-                      Comment created at: {" "}
+                    <Text size="sm" color="dimmed" weight="thin" >
+                      created {" "}
                       {new Date(comment.createdAt).toLocaleDateString(
                         undefined,
                         options
@@ -104,10 +115,19 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
 
 
           { comment.author && comment.author._id === user._id && (
-                        <>
-                            <Button onClick={() => handleEditComment(comment)}>Edit</Button>
-                            <Button onClick={() => handleDeleteComment(comment)}>Delete</Button>
-                        </>
+                        <div>
+                            <Button 
+                              onClick={() => handleEditComment(comment)}
+                              variant="outline"
+                              color="gray"
+                              style={{ margin:"10px" }}
+                            >edit reply</Button>
+                            <Button 
+                              onClick={() => handleDeleteComment(comment)}
+                              variant="outline"
+                              color="gray"
+                              >delete</Button>
+                        </div>
                     )}
         </>
       )}
