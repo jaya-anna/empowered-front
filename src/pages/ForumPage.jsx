@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useContext } from 'react';
 import { SessionContext } from '../contexts/SessionContext';
-import { Card, Text, Button, Input, Group } from '@mantine/core';
+import { Card, Text, Button, Input, Group, Textarea } from '@mantine/core';
 import Post from '../components/Post';
 
 function ForumPage() {
@@ -66,11 +66,13 @@ function ForumPage() {
                             />
                         
                             <label>Post content:</label>
+                            <Textarea>
                             <Input
                                 id="content"
                                 value={content}
                                 onChange={handleContentChange}
                             />
+                            </Textarea>
                         
                             <Button type="submit">Create Post</Button>
 
