@@ -65,7 +65,7 @@ function AboutPage() {
               textAlign:"center"
             }}
             >
-                  create a information exchange platform for teens and emerging adults on sexuality and relationship topics so that they will feel empowered (stronger and more confident)
+                  create an information exchange platform for teens and emerging adults on sexuality and relationship topics so that they will feel empowered (stronger and more confident)
           </Text>
 
       </div>
@@ -76,7 +76,7 @@ function AboutPage() {
                       width={350}
                       fit="contain"
                       mx="auto"
-                      src="../../public/images/powerpuff.gif"
+                      src="../../images/powerpuff.gif"
                       alt="powerpuff girls"
                   />
               </div>
@@ -133,7 +133,7 @@ function AboutPage() {
                     </Text>
 
                     <Image 
-                      src="../../public/images/bubbles.png"
+                      src="../../images/bubbles.png"
                       alt="bubbles"
                       width={80}
                       style={{ marginLeft:"13px" }}
@@ -158,7 +158,7 @@ function AboutPage() {
                     </Text>
 
                     <Image 
-                      src="../../public/images/blossom.webp"
+                      src="../../images/blossom.webp"
                       alt="blossom"
                       width={70}
                       style={{ marginLeft:"20px" }}
@@ -184,7 +184,7 @@ function AboutPage() {
 
 
                     <Image 
-                      src="../../public/images/buttercup.png"
+                      src="../../images/buttercup.png"
                       alt="buttercup"
                       width={65}
                       style={{ marginLeft:"35px" }}
@@ -218,7 +218,7 @@ function AboutPage() {
           rel="noopener noreferrer"
         >
               <Image 
-                src="../../public/images/instagram.png"
+                src="../../images/instagram.png"
                 alt="instagram logo"
                 width={50}
                 /> 

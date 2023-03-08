@@ -1,9 +1,10 @@
 import axios from 'axios';
-import { Image, Badge, Text, Button } from '@mantine/core'
+import { Badge, Text, Button } from '@mantine/core'
 import React, { useContext } from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { SessionContext } from "../contexts/SessionContext";
 import { Link, useNavigate } from "react-router-dom";
+import { baseURL } from "../apiURLs";
 
 function Profile( ){
   const { user, setUser, setIsAuthenticated, setToken } = useContext(SessionContext);
@@ -14,7 +15,7 @@ function Profile( ){
   const handleDeleteProfile = async () => {
     setDeleting(true);
     try {
-      await axios.delete(`http://localhost:5005/auth/profile/${user._id}`)
+      await axios.delete(`${baseURL.production}/auth/profile/${user._id}`)
 
       localStorage.removeItem("holder");
       setIsAuthenticated(false);
@@ -137,7 +138,7 @@ function Profile( ){
                       height={300}
                       fit="contain"
                       mx="auto"
-                      src="../../public/images/profile-avatar.jpeg"
+                      src="../../images/profile-avatar.jpeg"
                       alt="profile avatar"
                       style={{borderRadius: "50%"}}
                   />
