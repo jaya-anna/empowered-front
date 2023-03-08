@@ -2,6 +2,11 @@ import React from 'react';
 import { Text, Button, Badge, Image } from '@mantine/core';
 
 function AboutPage() {
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' , paddingTop:"80px" }} >
 
@@ -245,6 +250,15 @@ function AboutPage() {
     </div>
 {/* end of location div */}
 
+        <Button 
+          style={{ position: "fixed", bottom: "20px", right: "20px" }} 
+          onClick={scrollToTop}
+          variant="gradient" 
+          gradient={{ from: '#ed6ea0', to: 'indigo', deg: 35 }}
+        >
+            scroll to top
+        </Button>
+        
     </div>
   );
 }
