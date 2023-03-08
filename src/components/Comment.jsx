@@ -13,7 +13,7 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
     async function handleDeleteComment(comment) {
         try {
         await axios.delete(
-            `http://localhost:5005/forum//posts/${post._id}/comments/${comment._id}`,
+            `http://localhost:5005/forum/posts/${post._id}/comments/${comment._id}`,
             {
             headers: { authorization: `Bearer ${token}` },
             }
