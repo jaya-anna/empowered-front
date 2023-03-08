@@ -9,7 +9,7 @@ function NavBar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("holder");
+    localStorage.removeItem("bearer");
     setIsAuthenticated(false);
     setToken(null);
     setUser(null);
