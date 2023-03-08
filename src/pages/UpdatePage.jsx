@@ -2,7 +2,8 @@ import React, { useContext , useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { SessionContext } from "../contexts/SessionContext";
-import { Button, Input, Text } from "@mantine/core";
+import { Button, Input, Text, Badge, Box, TextInput
+} from "@mantine/core";
 
 function UpdatePage() {
   const [username, setUsername] = useState("");
@@ -33,25 +34,69 @@ function UpdatePage() {
       };
 
   return (
-    <div>
-      <h1>Update your Profile</h1>
-      <form onSubmit={handleUpdate} >
-        <label>Username</label>
-        <Input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername( e.target.value )}
-        />
-        <label>Email adress</label>
-        <Input
+    <Box
+        component="form"
+        sx={{
+          margin: "0 auto",
+        maxWidth: "300px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        height: "calc(100vh - 100px)",
+        }}
+      >
+
+{/* username */}
+          <Badge 
+                  sx={{ 
+                    margin: "0 auto",
+                    textTransform: "none",
+                    color: "blue",
+                    }}
+                  size="xl"
+                  color="pink"
+                >
+                    username
+                </Badge>
+
+            <TextInput
+              value={username}
+              variant="filled"
+              onChange={(e) => setUsername( e.target.value )}
+              sx={{ margin:"10px 30px 50px" }}
+            />
+{/* end of username */}
+
+{/* email */}
+        <Badge 
+              sx={{ 
+                margin: "0 auto",
+                textTransform: "none",
+                color: "blue"
+                }}
+              size="xl"
+              color="pink"
+            >
+                email
+            </Badge>
+
+        <TextInput
           type="email"
+          variant="filled"
           value={email}
           onChange={(e) => setEmail( e.target.value )}
+          sx={{ margin:"10px" }}
         />
-        <Button type="submit">Save</Button>
+{/* end of email */}
 
-      </form>
-    </div>
+        <Button type="submit"
+              variant="gradient" 
+              gradient={{ from: '#ed6ea0', to: 'indigo', deg: 35 }}
+              style={{ margin:"40px",  alignSelf: "center" }}
+              onClick={handleUpdate}
+        >update</Button>
+
+    </Box>    
   );
 }
 
