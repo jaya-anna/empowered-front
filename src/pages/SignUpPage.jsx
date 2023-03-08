@@ -8,13 +8,14 @@ import {
   Checkbox,
   Title,
   Center,
-  rem, Divider
+  rem, 
 } from "@mantine/core";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IconArrowRight, IconAlertCircle } from "@tabler/icons-react";
-import {baseURL} from "../apiURLs.js"
+import { baseURL } from "../apiURLs";
+
 const SignupPage = () => {
   console.log(baseURL)
   const [username, setUsername] = useState("");
