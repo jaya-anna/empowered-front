@@ -1,5 +1,5 @@
 import { Image, Button, Anchor } from "@mantine/core";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import {
   IconGenderIntergender,
   IconGenderAndrogyne,
@@ -15,14 +15,24 @@ import {
   IconGenderHermaphrodite,
   IconGenderNeutrois,
   IconGenderTrasvesti,
-  IconHeart,
   IconMessages,
-  IconInfoHexagon,
   IconSchool,
   IconRocket,
 } from "@tabler/icons-react";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
+  const handleNavigateLogin = () => {
+    navigate("/login");
+  };
+  const handleNavigateInfo = () => {
+    navigate("/info");
+  };
+  const handleNavigateResource = () => {
+    navigate("/resources");
+  };
+
   return (
     <>
       <section className="home-section-1">
@@ -31,57 +41,55 @@ const HomePage = () => {
             <h1> Let's talk about Sexuality & Relationships</h1>
 
             <div className="button-homepage">
-              {/*<Image src="../../images/speech-bubble.png" alt="" width={110} height={80} className="speechbubble"></Image>*/}
-              <NavLink>
-                <Button
-                  className="button-home-margin"
-                  variant="outline"
-                  color="indigo"
-                  to="/login"
-                >
-                  JOIN THE COMMUNITY
-                </Button>
-              </NavLink>
+              <Button
+                type="submit"
+                onClick={handleNavigateLogin}
+                className="button-home-margin"
+                variant="outline"
+                color="indigo"
+              >
+                JOIN THE COMMUNITY
+              </Button>
 
-              <NavLink>
-                <Button
-                  className="button-home-margin"
-                  variant="outline"
-                  color="indigo"
-                  to="/login"
-                >
-                  READ AND INFORM YOURSELF
-                </Button>
-              </NavLink>
+              <Button
+                type="submit"
+                onClick={handleNavigateInfo}
+                className="button-home-margin"
+                variant="outline"
+                color="indigo"
+              >
+                READ AND INFORM YOURSELF
+              </Button>
 
-              <NavLink>
-                <Button
-                  className="button-home-margin"
-                  variant="outline"
-                  color="indigo"
-                  to="/info"
-                >
+              <Button
+                type="submit"
+                onClick={handleNavigateResource}
+                className="button-home-margin"
+                variant="outline"
+                color="indigo"
+              >
                 RESOURCE RECOMMENDATIONS
-                </Button>
-              </NavLink>
+              </Button>
             </div>
           </div>
-          <Image 
-          className="image-speech-bubble"
-          src="../../images/speech-bubble.png" alt="" width={230}/>
+          <Image
+            className="image-speech-bubble"
+            src="../../images/speech-bubble.png"
+            alt=""
+            width={230}
+          />
           <span className="bubble-link">
-          <Link to="/quiz">
-          QUIZ ?
-          </Link>
-            {/* <p className="quiz-bg">QUIZ</p>
-            <p className="quiz-md">QUIZ</p>
-            <p className="quiz-sm">QUIZ</p> */}
+            <Link to="/quiz">
+              <p className="quiz-bg">QUIZ</p>
+              <p className="quiz-md">QUIZ</p>
+              <p className="quiz-sm">QUIZ</p>
+            </Link>
           </span>
 
           <Image
             className="image-group-home"
-            width={1500}
-            height={600}
+            max-width={100}
+            height={"auto"}
             fit="contain"
             mx="auto"
             src="../../images/home-group.png"
@@ -164,18 +172,17 @@ const HomePage = () => {
             </p>
           </div>
         </div>
-
-     {/*<section>
-          <Image
-            className="image-reading-home"
-            fit="contain"
-            width={1000}
-            height={350}
-            mx="auto"
-            src="../../images/home-reading.jpg"
-            alt="reading people"
-          />
-   </section> */}
+      </section>
+      <section>
+        <Image
+          className="image-reading-home"
+          fit="contain"
+          width={1000}
+          height={350}
+          mx="auto"
+          src="../../images/home-reading.jpg"
+          alt="reading people"
+        />
       </section>
     </>
   );

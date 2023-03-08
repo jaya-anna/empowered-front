@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { Image, Box, Button, Header, Text } from "@mantine/core";
+import { Image } from "@mantine/core";
 import { SessionContext } from "../contexts/SessionContext";
 import { IconBrandInstagram, IconMail } from "@tabler/icons-react";
 
 function NavBar() {
-  const { isAuthenticated, setIsAuthenticated , setToken, setUser } = useContext(SessionContext);
+  const { isAuthenticated, setIsAuthenticated, setToken, setUser } =
+    useContext(SessionContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -22,17 +23,17 @@ function NavBar() {
           <div>
             <br></br>
             <NavLink className="navbar-comp-style" to="/">
-              home
+              Home
             </NavLink>
-      
+
             <NavLink className="navbar-comp-style" to="/resources">
-              resources
+              Resources
             </NavLink>
             <NavLink className="navbar-comp-style" to="/info">
-              info
+              Info
             </NavLink>
             <NavLink className="navbar-comp-style" to="/about">
-              about
+              About
             </NavLink>
           </div>
           <div>
@@ -44,13 +45,11 @@ function NavBar() {
             ></Image>
           </div>
 
-
-          <div>
+          <div className="navBar-right">
             <br></br>
 
-
             <NavLink className="navbar-comp-style" to="/quiz">
-              quiz
+              Quiz
             </NavLink>
 
             <NavLink className="navbar-comp-style" to="/faq">
@@ -59,57 +58,61 @@ function NavBar() {
 
             {isAuthenticated ? (
               <>
-
-              <NavLink className="navbar-comp-style" to="/forum">
-                forum
-              </NavLink>
-
-                <NavLink className="navbar-comp-style" to="/profile">
-                  profile
+                <NavLink className="navbar-comp-style" to="/forum">
+                  Forum
                 </NavLink>
 
+                <NavLink className="navbar-comp-style" to="/profile">
+                  Profile
+                </NavLink>
 
-                <NavLink className="navbar-comp-style" to="/" onClick={handleLogout} >
-
-                    logout
-
+                <NavLink
+                  className="navbar-comp-style"
+                  to="/"
+                  onClick={handleLogout}
+                >
+                  Logout
                 </NavLink>
 
                 <IconBrandInstagram
                   style={{
                     marginTop: "20px",
                     marginLeft: "80px",
-                    height: "20px",
+                    position: "relative",
+                    top: "6px",
                   }}
                 ></IconBrandInstagram>
                 <IconMail
                   style={{
                     marginTop: "20px",
                     marginLeft: "10px",
-                    height: "20px",
+                    position: "relative",
+                    top: "6px",
                   }}
                 ></IconMail>
               </>
             ) : (
               <>
                 <NavLink className="navbar-comp-style" to="/signup">
-                  sign up
+                  Sign up
                 </NavLink>
                 <NavLink className="navbar-comp-style" to="/login">
-                  login
+                  Login
                 </NavLink>
                 <IconBrandInstagram
                   style={{
                     marginTop: "20px",
                     marginLeft: "80px",
-                    height: "20px",
+                    position: "relative",
+                    top: "6px",
                   }}
                 ></IconBrandInstagram>
                 <IconMail
                   style={{
                     marginTop: "20px",
-                    marginLeft: "10px",
-                    height: "20px",
+                    marginLeft: "80px",
+                    position: "relative",
+                    top: "6px",
                   }}
                 ></IconMail>
               </>
