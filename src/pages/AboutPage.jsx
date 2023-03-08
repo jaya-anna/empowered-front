@@ -123,7 +123,7 @@ function AboutPage() {
                       style={{ 
                         margin: "10px auto", 
                         paddingLeft: "30px" ,
-                        paddingRight: "30px" ,
+                        paddingRight: "50px" ,
                         fontWeight: "bold",
                         color: "#5b64cf" ,
                         textAlign:"center"
@@ -136,18 +136,18 @@ function AboutPage() {
                       src="../../public/images/bubbles.png"
                       alt="bubbles"
                       width={80}
-                      style={{ marginLeft:"20px" }}
+                      style={{ marginLeft:"13px" }}
                       /> 
                 </div>
 
                 <div
-                  style={{ margin:"10px"  }}
+                  style={{ margin:"33px"  }}
                   >
                     <Text 
                       weight={500}
                       style={{ 
-                        margin: "10px auto", 
-                        paddingLeft: "30px" ,
+                        margin: "25px auto", 
+                        paddingLeft: "35px" ,
                         paddingRight: "30px" ,
                         fontWeight: "bold",
                         color: "#5b64cf" ,
@@ -166,13 +166,13 @@ function AboutPage() {
                 </div>
 
                 <div
-                  style={{ margin:"20px" }}
+                  style={{ margin:"15px" }}
                   >
                     <Text 
                       weight={500}
                       style={{ 
-                        margin: "10px auto", 
-                        paddingLeft: "30px" ,
+                        margin: "15px auto", 
+                        paddingLeft: "45px" ,
                         paddingRight: "30px" ,
                         fontWeight: "bold",
                         color: "#5b64cf" ,
@@ -187,7 +187,7 @@ function AboutPage() {
                       src="../../public/images/buttercup.png"
                       alt="buttercup"
                       width={65}
-                      style={{ marginLeft:"15px" }}
+                      style={{ marginLeft:"35px" }}
                       /> 
                 </div>
         </div>
@@ -258,7 +258,7 @@ function AboutPage() {
         >
             scroll to top
         </Button>
-        
+
     </div>
   );
 }
