@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, Button, Badge, Image } from '@mantine/core';
+import { Link } from 'react-router-dom';
 
 function AboutPage() {
 
@@ -118,6 +119,7 @@ function AboutPage() {
                 <div
                   style={{ margin:"10px" }}
                   >
+                  <Link to={"https://github.com/jaya-anna"} style={{textDecoration:"none"}}>
                     <Text 
                       weight={500}
                       style={{ 
@@ -126,7 +128,7 @@ function AboutPage() {
                         paddingRight: "50px" ,
                         fontWeight: "bold",
                         color: "#5b64cf" ,
-                        textAlign:"center"
+                        textAlign:"center",
                       }}
                       >
                                             Anna
@@ -138,11 +140,13 @@ function AboutPage() {
                       width={80}
                       style={{ marginLeft:"13px" }}
                       /> 
+                  </Link>
                 </div>
 
                 <div
                   style={{ margin:"33px"  }}
                   >
+                  <Link to={"https://github.com/Leiladany"} style={{textDecoration:"none"}}>
                     <Text 
                       weight={500}
                       style={{ 
@@ -163,11 +167,13 @@ function AboutPage() {
                       width={70}
                       style={{ marginLeft:"20px" }}
                       /> 
+                  </Link>
                 </div>
 
                 <div
                   style={{ margin:"15px" }}
                   >
+                  <Link to={"https://github.com/dianaligiapena"} style={{textDecoration:"none"}}>
                     <Text 
                       weight={500}
                       style={{ 
@@ -189,6 +195,7 @@ function AboutPage() {
                       width={65}
                       style={{ marginLeft:"35px" }}
                       /> 
+                  </Link>
                 </div>
         </div>
 
