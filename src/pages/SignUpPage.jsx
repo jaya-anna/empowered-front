@@ -14,8 +14,9 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IconArrowRight, IconAlertCircle } from "@tabler/icons-react";
-import baseURL from "../apiURLs.js"
+import {baseURL} from "../apiURLs.js"
 const SignupPage = () => {
+  console.log(baseURL)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
