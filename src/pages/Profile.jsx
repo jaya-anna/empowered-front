@@ -138,7 +138,7 @@ function Profile( ){
                       fit="contain"
                       mx="auto"
                       src="../../public/images/profile-avatar.jpeg"
-                      alt="Random image"
+                      alt="profile avatar"
                       style={{borderRadius: "50%"}}
                   />
           </div>
