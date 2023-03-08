@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
-import NavBar from "./NavBar";
+import NavBar from "./Navbar";
 import { AppShell, Navbar, Header } from "@mantine/core";
 
 function OutletComponent() {
