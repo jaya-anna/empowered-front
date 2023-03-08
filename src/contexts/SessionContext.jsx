@@ -22,35 +22,23 @@ const SessionContextProvider = ({children}) => {
             setIsLoading(false);
 
         } catch (error) {
-            console.log("Error authenticating holder: ", error);
-            window.localStorage.removeItem("holder");
+            console.log("Error authenticating bearer: ", error);
+            window.localStorage.removeItem("bearer");
         }
     }
     useEffect(() => {
-        const localToken = window.localStorage.getItem("holder");
+        const localToken = window.localStorage.getItem("bearer");
         if (localToken) {
           verifyToken(localToken);
         }
       }, []);
 
-      
-    /* useEffect(() => {
-        console.log(user)
-    }, [user])
- */
     useEffect(() => {
         if (token) {
-            window.localStorage.setItem("holder", token);
+            window.localStorage.setItem("bearer", token);
             setIsAuthenticated(true);
-            // console.log(isAuthenticated);
           }
         }, [token]);
-
-       /*  const localToken = window.localStorage.getItem("holder");
-        console.log("LOCAL TOKEN: ", localToken)
-        verifyToken(localToken);
-    }, []) */
-
 
     return (
         <SessionContext.Provider value={{setToken, token, isAuthenticated, setIsAuthenticated, isLoading, user, setUser}} >{children}</SessionContext.Provider>

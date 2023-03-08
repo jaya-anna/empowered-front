@@ -15,7 +15,7 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
         await axios.delete(
             `http://localhost:5005/forum//posts/${post._id}/comments/${comment._id}`,
             {
-            headers: { Authorization: `holder ${token}` },
+            headers: { authorization: `Bearer ${token}` },
             }
         );
 
@@ -42,7 +42,7 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
             content: newCommentContent,
             },
             {
-            headers: { Authorization: `holder ${token}` },
+            headers: { authorization: `Bearer ${token}` },
             }
         );
         setComments((prevComments) => {
@@ -71,7 +71,13 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
     };
   
   return (
-    <Card padding="sm" style={{ marginBottom: "1rem" }}>
+    <Card padding="sm" 
+                style={{ 
+                  display:"block",
+                  margin:"20px"
+
+                }}
+    >
       {isEditingComment ? (
         <>
           <Input
@@ -79,18 +85,27 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
             value={newCommentContent}
             onChange={handleNewCommentContentChange}
           />
-          <Button onClick={() => handleSaveComment(comment)}>Save</Button>
+          <Button 
+            style={{ backgroundColor: "gray"}}
+            variant="filled"
+          onClick={() => handleSaveComment(comment)}>save</Button>
         </>
       ) : (
         <>
-                    <Text> Comment: {comment.content} </Text>
-                    <Text>
-                      By:
-                      {comment.author.username[0].toUpperCase() +
-                        comment.author.username.slice(1)}{" "}
+                    <Text size="lg" color="pink" weight="bold"
+                      style={{ width:"400px" }}
+                    > 
+                      {comment.content} 
                     </Text>
-                    <Text>
-                      Comment created at:
+                    <Text size="sm" color="yellow" weight="extralight">
+                      by {" "}
+                      { comment.author
+                        ? comment.author.username
+                        : "deleted user account"
+                      }
+                    </Text>
+                    <Text size="sm" color="dimmed" weight="thin" >
+                      created {" "}
                       {new Date(comment.createdAt).toLocaleDateString(
                         undefined,
                         options
@@ -99,11 +114,20 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
 
 
 
-          { comment.author._id === user._id && (
-                        <>
-                            <Button onClick={() => handleEditComment(comment)}>Edit</Button>
-                            <Button onClick={() => handleDeleteComment(comment)}>Delete</Button>
-                        </>
+          { comment.author && comment.author._id === user._id && (
+                        <div>
+                            <Button 
+                              onClick={() => handleEditComment(comment)}
+                              variant="outline"
+                              color="gray"
+                              style={{ margin:"10px" }}
+                            >edit reply</Button>
+                            <Button 
+                              onClick={() => handleDeleteComment(comment)}
+                              variant="outline"
+                              color="gray"
+                              >delete</Button>
+                        </div>
                     )}
         </>
       )}
