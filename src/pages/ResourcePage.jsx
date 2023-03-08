@@ -13,7 +13,7 @@ function ResourcePage() {
         <Image
           src="../../images/home-reading.jpg"
           alt="reading-people"
-          width={1200}
+          width={1000}
           className="image-resource"
         />
       </section>
@@ -27,11 +27,13 @@ function ResourcePage() {
       >
         <Text
           style={{
-            maxWidth: 1100,
-            textAlign: "center",
-            fontSize: "20px",
+            maxWidth: 700,
+            textAlign: "justify",
+            fontSize: "25px",
             lineHeight: "1.3",
             color: "#264143",
+            marginTop: "50px",
+            marginBottom: "50px",
           }}
         >
           Welcome to our resources page, where you can find a wide range of
@@ -712,11 +714,11 @@ function ResourcePage() {
         <Text
           style={{
             marginTop: "100px",
-            textAlign: "center",
+            textAlign: "justify",
             fontSize: "20px",
             lineHeight: "1.3",
             color: "#264143",
-            paddingBottom: "-100"
+            marginBottom: "70px",
           }}
         >
           We hope that these resources are helpful to you, and we encourage you

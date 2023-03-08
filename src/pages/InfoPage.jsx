@@ -7,7 +7,7 @@ function InfoPage() {
       <section className="info-section"></section>
 
       <container
-        classname="info-container"
+        className="info-container"
         style={{
           display: "flex",
           justifyContent: "center",
@@ -45,7 +45,7 @@ function InfoPage() {
 
         <div className="info-card">
           <Image
-            src="../../public/images/gender-identity.jpg"
+            src="../../images/gender-identity.jpg"
             alt="condom demo"
             height={180}
           />
@@ -71,11 +71,7 @@ function InfoPage() {
         </div>
 
         <div className="info-card">
-          <Image
-            src="../../public/images/flag.jpg"
-            alt="condom demo"
-            height={180}
-          />
+          <Image src="../../images/flag.jpg" alt="condom demo" height={180} />
 
           <div className="info-container-text">
             <h4>LGBTIQ </h4>
@@ -102,7 +98,7 @@ function InfoPage() {
 
         <div className="info-card">
           <Image
-            src="../../public/images/gender-spectrum.jpg"
+            src="../../images/gender-spectrum.jpg"
             alt="condom demo"
             height={180}
           />
@@ -130,7 +126,7 @@ function InfoPage() {
 
         <div className="info-card">
           <Image
-            src="../../public/images/mens-cup.jpg"
+            src="../../images/mens-cup.jpg"
             alt="condom demo"
             height={180}
           />
@@ -158,11 +154,7 @@ function InfoPage() {
         </div>
 
         <div className="info-card">
-          <Image
-            src="../../public/images/toys.jpg"
-            alt="condom demo"
-            height={180}
-          />
+          <Image src="../../images/toys.jpg" alt="condom demo" height={180} />
 
           <div className="info-container-text">
             <h4>sex toys</h4>
@@ -186,11 +178,7 @@ function InfoPage() {
         </div>
 
         <div className="info-card">
-          <Image
-            src="../../public/images/period.jpg"
-            alt="condom demo"
-            height={180}
-          />
+          <Image src="../../images/period.jpg" alt="condom demo" height={180} />
 
           <div className="info-container-text">
             <h4>menstruation cycle</h4>
@@ -212,7 +200,7 @@ function InfoPage() {
 
         <div className="info-card">
           <Image
-            src="../../public/images/clitoris.jpg"
+            src="../../images/clitoris.jpg"
             alt="condom demo"
             height={180}
           />
@@ -237,19 +225,34 @@ function InfoPage() {
 
         <div className="info-card">
           <Image
-            src="../../public/images/silence.jpg"
+            src="../../images/safe-sex.jpg"
             alt="condom demo"
             height={180}
           />{" "}
           <div className="info-container-text">
-            <h4>contraception</h4>
-            <p></p>
+            <h4>consent and safe sex</h4>
+            <p>
+              Consent and safe sex are two critical aspects of sexual activity
+              that should always go hand in hand. Consent refers to the
+              voluntary agreement between all parties involved in a sexual
+              encounter, and it should be obtained before any sexual activity
+              takes place. Both parties should communicate their boundaries and
+              make sure they are respected throughout the entire encounter. It's
+              important to note that a lack of explicit consent or any
+              indication of reluctance or discomfort means that the sexual
+              activity is not consensual. Safe sex practices, such as using
+              barrier methods like condoms and dental dams, can reduce the risk
+              of sexually transmitted infections (STIs) and unintended
+              pregnancies. It is important to discuss safe sex practices and
+              consent with sexual partners. So talk about it. And keep in mind:
+              "no means no"!
+            </p>
           </div>
         </div>
 
         <div className="info-card">
           <Image
-            src="../../public/images/education.jpg"
+            src="../../images/education.jpg"
             alt="condom demo"
             height={180}
           />
@@ -274,13 +277,13 @@ function InfoPage() {
 
         <div className="info-card">
           <Image
-            src="../../public/images/body-choice.jpg"
+            src="../../images/body-choice.jpg"
             alt="condom demo"
             height={180}
           />
 
           <div className="info-container-text">
-            <h4>contraception</h4>
+            <h4>"my body, my choice"</h4>
             <p>
               The statement "my body, my choice" affirms an individual's right
               to make decisions about their own body, health, and well-being. It
@@ -298,11 +301,7 @@ function InfoPage() {
         </div>
 
         <div className="info-card">
-          <Image
-            src="../../public/images/uterus.jpg"
-            alt="condom demo"
-            height={180}
-          />
+          <Image src="../../images/uterus.jpg" alt="condom demo" height={180} />
 
           <div className="info-container-text">
             <h4>inner female genitalia</h4>
@@ -329,7 +328,7 @@ function InfoPage() {
 
         <div className="info-card">
           <Image
-            src="../../public/images/drag-queens.jpg"
+            src="../../images/drag-queens.jpg"
             alt="condom demo"
             height={180}
           />
@@ -355,7 +354,7 @@ function InfoPage() {
         </div>
         <div className="info-card">
           <Image
-            src="../../public/images/transgender.jpg"
+            src="../../images/transgender.jpg"
             alt="condom demo"
             height={180}
           />
@@ -380,7 +379,7 @@ function InfoPage() {
         </div>
         <div className="info-card">
           <Image
-            src="../../public/images/love-your-body.jpg"
+            src="../../images/love-your-body.jpg"
             alt="condom demo"
             height={180}
           />
