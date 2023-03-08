@@ -72,11 +72,12 @@ const HomePage = () => {
               </Button>
             </div>
           </div>
+          {/*}
           <Image
             className="image-speech-bubble"
             src="../../images/speech-bubble.png"
             alt=""
-            width={230}
+            width={130}
           />
           <span className="bubble-link">
             <Link to="/quiz">
@@ -85,7 +86,7 @@ const HomePage = () => {
               <p className="quiz-sm">QUIZ</p>
             </Link>
           </span>
-
+*/}
           <Image
             className="image-group-home"
             max-width={100}

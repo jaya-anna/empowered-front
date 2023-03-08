@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { AppShell, Box, Button, Header } from '@mantine/core'
 import "./App.css";
 import HomePage from "./pages/HomePage";
-import LogInPage from "./pages/LoginPage";
+import LogInPage from "./pages/LogInPage";
 import SignUpPage from "./pages/SignupPage";
 import Profile from "./pages/Profile";
 import PrivateRoute from "./components/Privateroute";
