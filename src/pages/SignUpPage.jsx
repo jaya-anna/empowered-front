@@ -33,7 +33,7 @@ const SignupPage = () => {
       });
       navigate("/login");
     } catch (error) {
-      setErrorMessage(error.response.data.errorMessage);
+     // setErrorMessage(error.response.data.errorMessage);
       console.log(error);
     }
   };
