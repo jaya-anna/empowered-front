@@ -36,14 +36,14 @@ function NavBar() {
               About
             </NavLink>
           </div>
-          <div>
+         
             <Image
               width={130}
               className="style-logo"
               src="../../images/logo-purple.png"
               alt="logo empowered"
             ></Image>
-          </div>
+         
 
           <div className="navBar-right">
             <br></br>
