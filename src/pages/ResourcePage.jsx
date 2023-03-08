@@ -1,7 +1,12 @@
 import React from "react";
-import { Text, Card, Image, Badge } from "@mantine/core";
+import { Text, Card, Image, Badge, Button } from "@mantine/core";
 
 function ResourcePage() {
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <>
       <section className="resource-section">
@@ -71,7 +76,7 @@ function ResourcePage() {
                   <Text size="sm" style={{ marginTop: 5 }}>
                     by Robie H. Harris and Michael Emberley
                   </Text>
-                  <Badge style={{ marginTop: 20 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Puberty, sex, and relationships
                   </Badge>
                 </div>
@@ -100,7 +105,7 @@ function ResourcePage() {
                   <Text size="sm" style={{ marginTop: 5 }}>
                     by Marty Klein
                   </Text>
-                  <Badge style={{ marginTop: 20 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Healthy and fulfilling sex life
                   </Badge>
                 </div>
@@ -128,7 +133,7 @@ function ResourcePage() {
                   <Text size="sm" style={{ marginTop: "5px" }}>
                     by Paul Joannides
                   </Text>
-                  <Badge style={{ marginTop: "20px" }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     An inclusive and humorous guide to all aspects of sex
                   </Badge>
                 </div>
@@ -174,7 +179,9 @@ function ResourcePage() {
                   <Text size="sm" style={{ marginBottom: "5px" }}>
                     by Emily Morse
                   </Text>
-                  <Badge>Explores sex, relationships, and intimacy</Badge>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
+                  
+                  Explores sex, relationships, and intimacy</Badge>
                 </div>
               </a>
             </li>
@@ -202,7 +209,7 @@ function ResourcePage() {
                   <Text size="sm" style={{ marginBottom: "5px" }}>
                     by Dan Savage
                   </Text>
-                  <Badge>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Offers advice and insights on sex and relationships
                   </Badge>
                 </div>
@@ -232,7 +239,7 @@ function ResourcePage() {
                   <Text size="sm" style={{ marginBottom: "5px" }}>
                     by Mandii B and WeezyWTF
                   </Text>
-                  <Badge>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Discusses sex and dating from a frank and humorous
                     perspective
                   </Badge>
@@ -278,7 +285,7 @@ function ResourcePage() {
                     services and sex education resources to individuals of all
                     ages and genders
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Reproductive health and sex education
                   </Badge>
                 </div>
@@ -308,7 +315,7 @@ function ResourcePage() {
                     to young people, including LGBTQ+ individuals and survivors
                     of sexual assault
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Comprehensive sex education and advice
                   </Badge>
                 </div>
@@ -338,7 +345,7 @@ function ResourcePage() {
                     covers a wide range of topics, including sexual health and
                     relationships
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Health Q&A run by Columbia University
                   </Badge>
                 </div>
@@ -366,7 +373,7 @@ function ResourcePage() {
                   <Text size="sm" style={{ marginTop: 5 }}>
                     by The Guardian
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Articles on different aspects of sex education and relationships
                   </Badge>
                 </div>
@@ -409,7 +416,7 @@ function ResourcePage() {
                   <Text size="sm" style={{ marginTop: 5 }}>
                     by Advocates for Youth
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Engaging and accessible sex education videos
                   </Badge>
                 </div>
@@ -439,7 +446,7 @@ function ResourcePage() {
                   <Text size="sm" style={{ marginTop: 5 }}>
                     by Dr. Lindsey Doe
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Wide range of sex education topics
                   </Badge>
                 </div>
@@ -467,7 +474,7 @@ function ResourcePage() {
                   <Text size="sm" style={{ marginTop: 5 }}>
                     by Al Vernacchio
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Comprehensive sex education
                   </Badge>
                 </div>
@@ -511,7 +518,7 @@ function ResourcePage() {
                     A website that provides information on birth control options
                     and helps users find a method that works for them
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Birth control information and support
                   </Badge>
                 </div>
@@ -539,7 +546,8 @@ function ResourcePage() {
                     An app that helps users find free condoms near their
                     location
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>Free condom locator</Badge>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
+                  Free condom locator</Badge>
                 </div>
               </a>
             </li>
@@ -565,7 +573,7 @@ function ResourcePage() {
                     A period and fertility tracking app that helps users
                     understand their menstrual cycle and reproductive health
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Period and fertility tracker
                   </Badge>
                 </div>
@@ -608,7 +616,7 @@ function ResourcePage() {
                      What do you know about HPV and men? 
                   </Text>
                   <Text size="sm" style={{ marginTop: 5 }}></Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Test your knowledge of how HPV infection affects men
                   </Badge>
                 </div>
@@ -636,7 +644,7 @@ function ResourcePage() {
                     Am I Pregnant? 
                   </Text>
                   <Text size="sm" style={{ marginTop: 5 }}></Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Test your knowledge of pregnancy and taking a pregnancy test
                   </Badge>
                 </div>
@@ -663,7 +671,7 @@ function ResourcePage() {
                   <Text weight={500}>
                   Are you at risk for an STI?
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     check the risk for a sexually transmitted infection
                   </Badge>
                 </div>
@@ -690,7 +698,7 @@ function ResourcePage() {
                   <Text weight={500}>
                   Do you know everything about sex? 
                   </Text>
-                  <Badge style={{ marginTop: 10 }}>
+                  <Badge style={{ marginTop: 20 }} color="indigo">
                     Yes/ No quiz - basic sex education
                   </Badge>
                 </div>
@@ -707,6 +715,16 @@ function ResourcePage() {
           that we should include on this page, please don't hesitate to contact
           us.
         </Text>
+
+        <Button 
+          style={{ position: "fixed", bottom: "20px", right: "20px" }} 
+          onClick={scrollToTop}
+          variant="gradient" 
+          gradient={{ from: '#ed6ea0', to: 'indigo', deg: 35 }}
+        >
+            scroll to top
+        </Button>
+
       </div>
     </>
   );
