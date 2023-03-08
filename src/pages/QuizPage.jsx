@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Text, Checkbox, Group } from '@mantine/core';
+import { Button, Text, Checkbox, Group , Badge } from '@mantine/core';
 
 const quizQuestions = [
 {        
@@ -113,30 +113,58 @@ function QuizPage() {
     }
 
     return (
-            <div style={{ maxWidth: 600, margin: "auto", padding: 100 }}>
+            <div style={{ maxWidth: 700, margin: "auto", padding: 100 }}>
 
             {showScore ? (
 
                 <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }} >
 
-                    <Text size="lg" align="center">Your Score: {score} out of {quizQuestions.length}</Text>
+                    <Text 
+                        size="xl" 
+                        weight={600} 
+                        style={{ marginTop: 20 }}
+                        color="#5b64cf"
+                        
+                        align="center"
+                        
+                        > scored {score} / {quizQuestions.length}</Text>
                     
                     <Button 
                         onClick={handleRestartButtonClick} 
-                        variant="light"
+                        variant="gradient" 
+                        gradient={{ from: '#ed6ea0', to: 'indigo', deg: 35 }}
                         style={{ marginTop: 50, padding: '10px 20px'  }}
 
                     >
-                        Restart Quiz
+                        restart
                     </Button>
 
                 </div>
 
             ) : (
 
-                <div>
-                <Text size="lg" align="center">Question {currentQuestionIndex + 1} of {quizQuestions.length}</Text>
-                <Text size="xl" weight={700} style={{ marginTop: 20 }}>{quizQuestions[currentQuestionIndex].question}</Text>
+            <div>
+
+                <Badge 
+                    style={{ 
+                        margin: "10px auto",
+                        textTransform: "none",
+                        color: "blue",
+                        }}
+                    size="xl"
+                    color="pink"
+                    >
+                            {currentQuestionIndex + 1} / {quizQuestions.length}
+                </Badge>
+
+
+                <Text 
+                    size="xl" 
+                    weight={700} 
+                    style={{ marginTop: 20 }}
+                    color="#5b64cf"
+                    >{quizQuestions[currentQuestionIndex].question}
+                </Text>
         
                 <Group style={{ marginTop: 20 }} direction='column' >
                     {quizQuestions[currentQuestionIndex].options.map(option => (
@@ -147,37 +175,42 @@ function QuizPage() {
                                 checked={selectedAnswer === option}
                                 onChange={() => handleAnswerOptionClick(option)}
                                 disabled={answerDisabled}
+                                sx={{ ["& .mantine-Checkbox-label"]: { 
+                                        color: "#5b64cf", 
+                                        fontWeight:500 ,
+                                    } }}
                             />
                         </div>
                     ))}
                 </Group>
         
                 {isAnswerCorrect === true && 
-                    <Text style={{ color: "green", marginTop: 10 }}>
-                        Correct!
+                    <Text weight="bold" style={{ color: "#41A83E", marginTop: 10 }}>
+                        correct!
                     </Text>
                 }
 
                 {isAnswerCorrect === false && (
                     <>
-                    <Text style={{ color: "red", marginTop: 15 }}>
-                        Incorrect.
+                    <Text weight="bold" style={{ color: "#DF155E", marginTop: 15, textAlign: "center" }}>
+                        incorrect
                     </Text>
 
-                    <Text style={{ color: "green", marginTop: 30 }}>
-                        The correct answer is: <b> {  quizQuestions[currentQuestionIndex].answer } </b>
+                    <Text weight={500} style={{ color: "#41A83E", marginTop: 10 , padding: "0 30px" ,textAlign: "center"}}>
+                        correct answer - <b> {  quizQuestions[currentQuestionIndex].answer } </b>
                     </Text>
                     </>
-                ) 
+                    ) 
                 }
         
                 <Button 
                     onClick={handleNextButtonClick}
-                    variant="outline"
+                    variant="gradient" 
+                    gradient={{ from: '#ed6ea0', to: 'indigo', deg: 35 }}
                     disabled={!answerDisabled}
                     style={{ marginTop: 20 }}
                 >
-                    Next Question
+                    next
                 </Button>
                 </div>
 
