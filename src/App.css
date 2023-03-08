@@ -96,7 +96,7 @@
 /* Footer */
 
 .section-footer {
-  margin-top: 300px;
+ 
   background-color: #eddcd9;
   color: grey;
   height: 150px;
@@ -144,16 +144,41 @@
   padding-top: 15px;
 }
 
-.resource-section{
-  height: 500px;
-
+.resource-section {
+  display: flex;
+  justify-content: center;
 }
 
-.info-section{
-  height: 50px;
-}
-
-.image-resource{
+.image-resource {
   margin-top: 70px;
-  margin-left: 250px;
+}
+
+/* Info Page */
+
+.info-section {
+  height: 100px;
+  background-color: #f2ebe9;
+}
+
+.info-card {
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 400px;
+  height: 500px;
+  margin: 30px;
+  background-color: white;
+}
+
+.info-container {
+  background-color: #f2ebe9;
+ 
+}
+
+.info-container-text {
+  margin: 30px;
+  text-align: justify;
+}
+
+.info-container-text p {
+  font-size: 10px;
 }

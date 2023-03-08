@@ -154,7 +154,7 @@ const HomePage = () => {
           </div>
         </div>
 
-     
+     {/*<section>
           <Image
             className="image-reading-home"
             fit="contain"
@@ -164,7 +164,7 @@ const HomePage = () => {
             src="../../images/home-reading.jpg"
             alt="reading people"
           />
-   
+   </section> */}
       </section>
     </>
   );

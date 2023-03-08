@@ -5,9 +5,10 @@ function Footer() {
   return (
     <section className="section-footer">
       <div className="container-footer">
-        <p>
+        <p style={{lineHeight:"2"}}>
           © 2023 feel empowered. All Rights Reserved. Made with ♡ by Leila &
-          Anna & Diana
+          Anna & Diana <br></br>
+          <span style={{marginTop:"30px", fontSize:"13px"}}>| only Love - no Hate</span>
         </p>
 
         <div className="positioning-about-follow">

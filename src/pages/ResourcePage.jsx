@@ -6,9 +6,9 @@ function ResourcePage() {
     <>
       <section className="resource-section">
         <Image
-          src="../../public/images/home-reading.jpg"
+          src="../../images/home-reading.jpg"
           alt="reading-people"
-          width={1400}
+          width={1200}
           className="image-resource"
         />
       </section>
@@ -23,10 +23,10 @@ function ResourcePage() {
         <Text
           style={{
             maxWidth: 1100,
-            color: "black",
             textAlign: "center",
             fontSize: "20px",
             lineHeight: "1.3",
+            color: "#264143",
           }}
         >
           Welcome to our resources page, where you can find a wide range of
@@ -676,7 +676,16 @@ function ResourcePage() {
           </ul>
         </Card>
 
-        <Text style={{ marginTop: "100px" }}>
+        <Text
+          style={{
+            marginTop: "100px",
+            textAlign: "center",
+            fontSize: "20px",
+            lineHeight: "1.3",
+            color: "#264143",
+            paddingBottom: "-100"
+          }}
+        >
           We hope that these resources are helpful to you, and we encourage you
           to explore them further. If you have any suggestions for resources
           that we should include on this page, please don't hesitate to contact
