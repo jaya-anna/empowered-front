@@ -30,6 +30,7 @@ function App() {
           <Route path="/forum" element={<ForumPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/update/:userId" element={<UpdatePage />} />
+          <Route path='/quiz' element={<QuizPage />} />
           <Route
             path="/profile"
             element={
@@ -39,9 +40,7 @@ function App() {
                 </Profile>
               </PrivateRoute>
             }
-          />
-          <Route path="/forum" element={<ForumPage />} />
-          <Route path='/quiz' element={<QuizPage />} />
+          />     
         </Route>
       </Routes>
     </div>
