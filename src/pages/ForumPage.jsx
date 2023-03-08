@@ -94,6 +94,7 @@ console.log(token);
 
                             <Input
                                 id="content"
+                                type="textarea"
                                 value={content}
                                 onChange={handleContentChange}
                                 style={{width:'600px', margin:"15px"}}
