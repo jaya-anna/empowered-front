@@ -52,9 +52,6 @@ function NavBar() {
               Quiz
             </NavLink>
 
-            <NavLink className="navbar-comp-style" to="/faq">
-              FAQ
-            </NavLink>
 
             {isAuthenticated ? (
               <>

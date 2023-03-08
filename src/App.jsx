@@ -28,7 +28,6 @@ function App() {
           <Route path="/resources" element={<ResourcePage />} />
           <Route path="/info" element={<InfoPage />} />
           <Route path="/forum" element={<ForumPage />} />
-          <Route path="/faq" element={<FAQPage />} />
           <Route path="/update/:userId" element={<UpdatePage />} />
           <Route path='/quiz' element={<QuizPage />} />
           <Route
