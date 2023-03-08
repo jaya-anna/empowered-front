@@ -22,17 +22,17 @@ function NavBar() {
           <div>
             <br></br>
             <NavLink className="navbar-comp-style" to="/">
-              Home
+              home
             </NavLink>
 
             <NavLink className="navbar-comp-style" to="/resources">
-              Resources
+              resources
             </NavLink>
             <NavLink className="navbar-comp-style" to="/info">
-              Info
+              info
             </NavLink>
             <NavLink className="navbar-comp-style" to="/about">
-              About
+              about
             </NavLink>
           </div>
          
@@ -48,18 +48,18 @@ function NavBar() {
             <br></br>
 
             <NavLink className="navbar-comp-style" to="/quiz">
-              Quiz
+              quiz
             </NavLink>
 
 
             {isAuthenticated ? (
               <>
                 <NavLink className="navbar-comp-style" to="/forum">
-                  Forum
+                  forum
                 </NavLink>
 
                 <NavLink className="navbar-comp-style" to="/profile">
-                  Profile
+                  profile
                 </NavLink>
 
                 <NavLink
@@ -67,7 +67,7 @@ function NavBar() {
                   to="/"
                   onClick={handleLogout}
                 >
-                  Logout
+                  logout
                 </NavLink>
 
                 <IconBrandInstagram
@@ -90,10 +90,10 @@ function NavBar() {
             ) : (
               <>
                 <NavLink className="navbar-comp-style" to="/signup">
-                  Sign up
+                  sign up
                 </NavLink>
                 <NavLink className="navbar-comp-style" to="/login">
-                  Login
+                  login
                 </NavLink>
 
               <a href="https://www.instagram.com/empoweredemp/">
