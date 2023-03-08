@@ -1,62 +1,245 @@
 import React from 'react';
-import { Text, Card, Divider, Button } from '@mantine/core';
+import { Text, Button, Badge, Image } from '@mantine/core';
 
 function AboutPage() {
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' , paddingTop:"80px" }} >
 
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} >
-      <Card shadow="sm" padding="lg">
-        <Text align="center" variant="h2">
-          Our Goal
-        </Text>
-        <Divider />
-        <Text size="lg">
-          Create a information exchange platform for teens and emerging adults on sexuality and relationship topics.
-        </Text>
-      </Card>
+  {/* first div with the header  */}
+    <div
+        style={{  
+            paddingRight: "100px", 
+            display:"flex", flexDirection:"column", justifyContent:"center", alignContent:"center"
+          }}
+        >
+          <h1 style={{ color: "#5b64cf"  }}
+          > about </h1>
+    </div>
+{/* end of header div */}
 
-      <Card shadow="sm" padding="lg" marginTop="lg" style={{ maxWidth: '400px' }}>
-        <Text align="center" variant="h2">
-          Our Mission
-        </Text>
-        <Divider />
-        <Text size="lg">
-          We believe that everyone deserves access to accurate and up-to-date information about their bodies and their sexual health, and we strive to provide that through our web application.
-        </Text>
-      </Card>
+{/* second div with 2 divs - left with info, right with avatar */}
+<div
+          style={{  
+            margin: "0 auto", 
+            display:"flex", flexDirection:"row", 
+            justifyContent:"center", alignContent:"center"
+            }}
+        >
 
-      <Card shadow="sm" padding="lg" marginTop="lg">
-        <Text align="center" variant="h2">
-          The Team
-        </Text>
-        <Divider />
-        <Text size="lg">
-          Anna, Leila, Diana
-        </Text>
-      </Card>
+{/* left div with mission */}
+      <div
+          style={{  
+            margin: "0 auto", 
+            padding: "10px" ,
+            maxWidth: "500px",
+            display:"flex", flexDirection:"column", 
+            justifyContent:"center", alignContent:"center"
+            }}
+        >
 
-      <Card shadow="sm" padding="lg" marginTop="lg">
-        <Text align="center" variant="h2" style={{ maxWidth: '300px' }} >
-          Follow us on Instagram
-        </Text>
-        <Divider />
+          <Badge 
+              style={{ 
+                margin: "30px auto",
+                textTransform: "none",
+                color: "blue",
+                }}
+              size="xl"
+              color="pink"
+            >
+                    mission
+          </Badge>
+
+          <Text 
+            weight={500}
+            style={{ 
+              margin: "30px auto", 
+              paddingLeft: "30px" ,
+              paddingRight: "30px" ,
+              fontWeight: "bold",
+              color: "#5b64cf" ,
+              textAlign:"center"
+            }}
+            >
+                  create a information exchange platform for teens and emerging adults on sexuality and relationship topics so that they will feel empowered (stronger and more confident)
+          </Text>
+
+      </div>
+{/* end of left div --- mission */}
+
+            <div>
+                <img
+                      width={350}
+                      fit="contain"
+                      mx="auto"
+                      src="../../public/images/powerpuff.gif"
+                      alt="powerpuff girls"
+                  />
+              </div>
+
+      </div>
+{/* end of (mission + image) div */}
+
+{/* team div */}
+<div
+    style={{ 
+      display: 'flex', 
+      flexDirection: 'column',
+      justifyContent: 'center', 
+      alignItems: 'center',
+      margin: "20px"
+
+    }}
+  >
+          <Badge 
+              style={{ 
+                margin: "0 auto",
+                textTransform: "none",
+                color: "blue",
+                }}
+              size="xl"
+              color="pink"
+            >
+                    team
+          </Badge>
+
+        <div
+          style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              alignItems: 'center',
+              marginTop: "10px"
+            }}
+        >
+                <div
+                  style={{ margin:"10px" }}
+                  >
+                    <Text 
+                      weight={500}
+                      style={{ 
+                        margin: "10px auto", 
+                        paddingLeft: "30px" ,
+                        paddingRight: "50px" ,
+                        fontWeight: "bold",
+                        color: "#5b64cf" ,
+                        textAlign:"center"
+                      }}
+                      >
+                                            Anna
+                    </Text>
+
+                    <Image 
+                      src="../../public/images/bubbles.png"
+                      alt="bubbles"
+                      width={80}
+                      style={{ marginLeft:"13px" }}
+                      /> 
+                </div>
+
+                <div
+                  style={{ margin:"33px"  }}
+                  >
+                    <Text 
+                      weight={500}
+                      style={{ 
+                        margin: "25px auto", 
+                        paddingLeft: "35px" ,
+                        paddingRight: "30px" ,
+                        fontWeight: "bold",
+                        color: "#5b64cf" ,
+                        textAlign:"center"
+                      }}
+                      >
+                                          Leila
+                    </Text>
+
+                    <Image 
+                      src="../../public/images/blossom.webp"
+                      alt="blossom"
+                      width={70}
+                      style={{ marginLeft:"20px" }}
+                      /> 
+                </div>
+
+                <div
+                  style={{ margin:"15px" }}
+                  >
+                    <Text 
+                      weight={500}
+                      style={{ 
+                        margin: "15px auto", 
+                        paddingLeft: "45px" ,
+                        paddingRight: "30px" ,
+                        fontWeight: "bold",
+                        color: "#5b64cf" ,
+                        textAlign:"center"
+                      }}
+                      >
+                                        Diana
+                    </Text>
+
+
+                    <Image 
+                      src="../../public/images/buttercup.png"
+                      alt="buttercup"
+                      width={65}
+                      style={{ marginLeft:"35px" }}
+                      /> 
+                </div>
+        </div>
+
+</div>
+{/* end of team div */}
+
+{/* instagram */}
+    <div style={{ display:"flex", flexDirection:"column", margin:"30px auto" }}>
+          <Badge 
+              style={{ 
+                margin: "20px auto",
+                textTransform: "none",
+                color: "blue",
+                }}
+              size="xl"
+              color="pink"
+            >
+                    instagram
+          </Badge>
+
         <Button
-          fullWidth
-          variant="light"
+          variant="transparent"
+          size="xl"
           component="a"
           href="https://www.instagram.com/empoweredemp/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          @empoweredemp
+              <Image 
+                src="../../public/images/instagram.png"
+                alt="instagram logo"
+                width={50}
+                /> 
         </Button>
-      </Card>
+    </div>
+{/* end of instagram div */}
 
-      <Card shadow="sm" padding="lg" marginTop="lg">
-        <Text align="center" variant="h2">
-          Visit Us
-        </Text>
-        <Divider />
+{/* location */}
+    <div style={{ display:"flex", flexDirection:"column", margin:"30px auto" }}>
+        <Badge 
+              style={{ 
+                margin: "10px auto",
+                textTransform: "none",
+                color: "blue",
+                }}
+              size="xl"
+              color="pink"
+            >
+                    visit us
+          </Badge>
+
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1V9vrpxRAdI-G66_1-QRtHEgAo0k&ehbc=2E312F"
           width="640"
@@ -64,7 +247,17 @@ function AboutPage() {
           title="Empowered Emp location"
           style={{ border: 0, marginTop: '1rem' }}
         />
-      </Card>
+    </div>
+{/* end of location div */}
+
+        <Button 
+          style={{ position: "fixed", bottom: "20px", right: "20px" }} 
+          onClick={scrollToTop}
+          variant="gradient" 
+          gradient={{ from: '#ed6ea0', to: 'indigo', deg: 35 }}
+        >
+            scroll to top
+        </Button>
 
     </div>
   );
