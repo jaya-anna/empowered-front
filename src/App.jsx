@@ -3,9 +3,9 @@ import { AppShell, Box, Button, Header } from '@mantine/core'
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import LogInPage from "./pages/LogInPage";
-import SignUpPage from "./pages/SignupPage";
+import SignUpPage from "./pages/SignUpPage";
 import Profile from "./pages/Profile";
-import PrivateRoute from "./components/Privateroute";
+import PrivateRoute from "./components/PrivateRoute";
 import ForumPage from "./pages/ForumPage";
 import InfoPage from "./pages/InfoPage";
 import ResourcePage from "./pages/ResourcePage";
