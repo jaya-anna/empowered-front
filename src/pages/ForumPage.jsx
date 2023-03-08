@@ -48,6 +48,10 @@ console.log(token);
         console.log(posts)
     }, [posts])
 
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     return (
         <div style={{  
             margin: "auto", padding: "80px 200px 0",
@@ -119,6 +123,14 @@ console.log(token);
                     <Post key={post._id} post={post} setPosts={setPosts} posts={posts} fetchPosts={fetchPosts} />
                 ))}
 
+                <Button 
+                    style={{ position: "fixed", bottom: "20px", right: "20px" }} 
+                    onClick={scrollToTop}
+                    variant="gradient" 
+                    gradient={{ from: '#ed6ea0', to: 'indigo', deg: 35 }}
+                    >
+                        scroll to top
+                    </Button>
 
         </div>
     );

@@ -114,9 +114,28 @@ function Post({ post, setPosts, posts, fetchPosts }) {
     >
 
                         {/* POST GROUP */}
-        <Group spacing="lg" direction="column"
+        <Group spacing="lg" direction="row"
 
         >
+        <div
+          style={{  
+            margin: "20px", 
+            display:"flex", flexDirection:"row", 
+            justifyContent:"center", alignContent:"center"
+            }}
+        >
+
+          <div> 
+              <img
+                      width={100}
+                      fit="contain"
+                      mx="auto"
+                      src="../../public/images/loudspeaker.png"
+                      alt="profile avatar"
+                      style={{borderRadius: "50%"}}
+                  />
+          </div>
+
           {isEditing ? (
             <>
               <form
@@ -146,7 +165,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
               <Card shadow="sm" padding="sm" 
                 style={{ 
                   display:"block",
-                  width:"700px",
+                  width:"600px",
                   margin:"40px"
 
                 }}
@@ -190,6 +209,8 @@ function Post({ post, setPosts, posts, fetchPosts }) {
               </Card>
             </>
           )}
+          </div>
+
         </Group>
 
 
