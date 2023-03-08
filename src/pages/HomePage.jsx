@@ -121,11 +121,11 @@ const HomePage = () => {
                 an online community and information platform for your unique
                 journey
               </p>
-              <NavLink>
+              <Link to='/about'>
                 <Button variant="filled" className="button-about">
                   About us
                 </Button>
-              </NavLink>
+              </Link>
               <br />
               {/* <IconHeart width={500} className="icon-heart" />*/}
             </h1>

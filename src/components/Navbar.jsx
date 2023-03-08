@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Image } from "@mantine/core";
 import { SessionContext } from "../contexts/SessionContext";
 import { IconBrandInstagram, IconMail } from "@tabler/icons-react";
@@ -7,7 +7,6 @@ import { IconBrandInstagram, IconMail } from "@tabler/icons-react";
 function NavBar() {
   const { isAuthenticated, setIsAuthenticated, setToken, setUser } =
     useContext(SessionContext);
-  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("bearer");
@@ -96,6 +95,8 @@ function NavBar() {
                 <NavLink className="navbar-comp-style" to="/login">
                   Login
                 </NavLink>
+
+              <a href="https://www.instagram.com/empoweredemp/">
                 <IconBrandInstagram
                   style={{
                     marginTop: "20px",
@@ -104,6 +105,9 @@ function NavBar() {
                     top: "6px",
                   }}
                 ></IconBrandInstagram>
+              </a> 
+
+              <Link to={"mailto:empowered9876@gmail.com"}>
                 <IconMail
                   style={{
                     marginTop: "20px",
@@ -112,6 +116,9 @@ function NavBar() {
                     top: "6px",
                   }}
                 ></IconMail>
+              </Link>
+
+
               </>
             )}
           </div>

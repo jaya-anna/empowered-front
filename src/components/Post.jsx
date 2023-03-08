@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { SessionContext } from "../contexts/SessionContext";
 import { Card, Text, Button, Input, Group } from "@mantine/core";
 import Comment from "./Comment";
+import { baseURL } from "../apiURLs";
 
 function Post({ post, setPosts, posts, fetchPosts }) {
   const [comments, setComments] = useState([]);
@@ -19,7 +20,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
 
   async function fetchComments() {
     const response = await axios.get(
-      `http://localhost:5005/forum/posts/${post._id}/comments`
+      `${baseURL.production}/forum/posts/${post._id}/comments`
     );
     setComments(response.data);
   }
@@ -39,7 +40,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
     event.preventDefault()
     try {
       const response = await axios.put(
-        `http://localhost:5005/forum/posts/${post._id}`,
+        `${baseURL.production}/forum/posts/${post._id}`,
         {
           title: newTitle,
           content: newContent,
@@ -59,7 +60,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
   //2.  DELETE POST
   async function handleDeletePost() {
     try {
-      await axios.delete(`http://localhost:5005/forum/posts/${post._id}`, {
+      await axios.delete(`${baseURL.production}/forum/posts/${post._id}`, {
         headers: { authorization: `Bearer ${token}` },
       });
 
@@ -76,7 +77,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
     e.preventDefault();
     try {
       await axios.post(
-        `http://localhost:5005/forum/posts/${post._id}/createcomment`,
+        `${baseURL.production}/forum/posts/${post._id}/createcomment`,
         {
           content: commentContent,
         },
@@ -130,7 +131,7 @@ function Post({ post, setPosts, posts, fetchPosts }) {
                       width={100}
                       fit="contain"
                       mx="auto"
-                      src="../../public/images/loudspeaker.png"
+                      src="../../images/loudspeaker.png"
                       alt="profile avatar"
                       style={{borderRadius: "50%"}}
                   />

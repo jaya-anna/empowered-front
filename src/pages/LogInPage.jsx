@@ -10,6 +10,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SessionContext } from "../contexts/SessionContext";
+import { baseURL } from "../apiURLs";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -22,7 +23,7 @@ const LoginPage = () => {
     event.preventDefault();
     console.log('hello')
     try {
-      const response = await axios.post("http://localhost:5005/auth/login", {
+      const response = await axios.post(`${baseURL.production}/auth/login`, {
         username: username,
         password: password,
       });
