@@ -2,7 +2,7 @@ import React, { useContext , useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { SessionContext } from "../contexts/SessionContext";
-import { Button, Input, Group } from "@mantine/core";
+import { Button, Input, Text } from "@mantine/core";
 
 function UpdatePage() {
   const [username, setUsername] = useState("");

@@ -30,7 +30,7 @@ function Profile( ){
 
   return (
     <div>
-      {/* {user && ( */}
+
 
 {/* first div with the header PROFILE */}
         <div
@@ -146,8 +146,6 @@ function Profile( ){
         </div>
 {/* end of second div - left with info, right with avatar */}
 
-
-      {/* )} */}
 
 {/* last div  with buttons */}
       <div
