@@ -46,7 +46,7 @@ function InfoPage() {
         <div className="info-card">
           <Image
             src="../../images/gender-identity.jpg"
-            alt="condom demo"
+            alt="gender identity"
             height={180}
           />
           <div className="info-container-text">
@@ -71,7 +71,7 @@ function InfoPage() {
         </div>
 
         <div className="info-card">
-          <Image src="../../images/flag.jpg" alt="condom demo" height={180} />
+          <Image src="../../images/flag.jpg" alt="flag" height={180} />
 
           <div className="info-container-text">
             <h4>LGBTIQ </h4>
@@ -99,7 +99,7 @@ function InfoPage() {
         <div className="info-card">
           <Image
             src="../../images/gender-spectrum.jpg"
-            alt="condom demo"
+            alt="gender"
             height={180}
           />
 
@@ -127,7 +127,7 @@ function InfoPage() {
         <div className="info-card">
           <Image
             src="../../images/mens-cup.jpg"
-            alt="condom demo"
+            alt="cup"
             height={180}
           />
 
@@ -154,7 +154,7 @@ function InfoPage() {
         </div>
 
         <div className="info-card">
-          <Image src="../../images/toys.jpg" alt="condom demo" height={180} />
+          <Image src="../../images/toys.jpg" alt="toys" height={180} />
 
           <div className="info-container-text">
             <h4>sex toys</h4>
@@ -178,7 +178,7 @@ function InfoPage() {
         </div>
 
         <div className="info-card">
-          <Image src="../../images/period.jpg" alt="condom demo" height={180} />
+          <Image src="../../images/period.jpg" alt="cycle" height={180} />
 
           <div className="info-container-text">
             <h4>menstruation cycle</h4>
@@ -201,7 +201,7 @@ function InfoPage() {
         <div className="info-card">
           <Image
             src="../../images/clitoris.jpg"
-            alt="condom demo"
+            alt="clitoris"
             height={180}
           />
 
@@ -226,7 +226,7 @@ function InfoPage() {
         <div className="info-card">
           <Image
             src="../../images/safe-sex.jpg"
-            alt="condom demo"
+            alt="legs bed"
             height={180}
           />{" "}
           <div className="info-container-text">
@@ -253,7 +253,7 @@ function InfoPage() {
         <div className="info-card">
           <Image
             src="../../images/education.jpg"
-            alt="condom demo"
+            alt="education"
             height={180}
           />
 
@@ -278,7 +278,7 @@ function InfoPage() {
         <div className="info-card">
           <Image
             src="../../images/body-choice.jpg"
-            alt="condom demo"
+            alt="body choice"
             height={180}
           />
 
@@ -301,7 +301,7 @@ function InfoPage() {
         </div>
 
         <div className="info-card">
-          <Image src="../../images/uterus.jpg" alt="condom demo" height={180} />
+          <Image src="../../images/uterus.jpg" alt="uterus" height={180} />
 
           <div className="info-container-text">
             <h4>inner female genitalia</h4>
@@ -329,7 +329,7 @@ function InfoPage() {
         <div className="info-card">
           <Image
             src="../../images/drag-queens.jpg"
-            alt="condom demo"
+            alt="drag queens"
             height={180}
           />
 
@@ -355,7 +355,7 @@ function InfoPage() {
         <div className="info-card">
           <Image
             src="../../images/transgender.jpg"
-            alt="condom demo"
+            alt="transgender"
             height={180}
           />
 
@@ -380,7 +380,7 @@ function InfoPage() {
         <div className="info-card">
           <Image
             src="../../images/love-your-body.jpg"
-            alt="condom demo"
+            alt="love your body"
             height={180}
           />
 
