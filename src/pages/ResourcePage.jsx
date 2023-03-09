@@ -37,7 +37,7 @@ function ResourcePage() {
             marginBottom: "30px",
           }}
         >
-          Welcome to our resources page, where you can find a wide range of
+          Welcome to our <b>resources</b> page, where you can find a wide range of
           materials to help you learn more about sex education and health. 
         </Text>
       </div>
