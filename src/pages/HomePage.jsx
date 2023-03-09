@@ -108,13 +108,12 @@ const HomePage = () => {
                 an online community and information platform for your unique
                 journey
               </p>
-              <Link to='/about'>
+              <Link to="/about">
                 <Button variant="filled" className="button-about">
                   About us
                 </Button>
               </Link>
               <br />
-
             </h1>
           </div>
         </div>
@@ -125,38 +124,36 @@ const HomePage = () => {
           <div className="box-3">
             <h2>interactive</h2> <IconMessages />
             <p>
-              Cum sociis natoque penatibus et magnis dis parturient montes,
-              nascetur ridiculus mus. Vestibulum vehicula erat non congue
-              cursus. Aenean auctor nulla quis augue dictum, sed sagittis odio
-              varius. Duis tempus leo vitae ipsum viverra, blandit condimentum
-              sapien porttitor. Duis porttitor sed metus eget mollis. Curabitur
-              bibendum imperdiet tortor, ut pulvinar purus elementum nspendisse
-              at erat luctus.
+              "interactive" refers to features that allow you to actively engage
+              with our content and participate in learning activities like our
+              fantastic quiz. You can join our community for exchange - post,
+              comment, ask questions and share your experiences. These features
+              can help you to enhance your learning experience. So get started
+              and signup!
             </p>
           </div>
           <div className="box-3">
             <h2>educational</h2> <IconSchool />
             <p>
-              Duis tempus leo vitae ipsum viverra, blandit condimentum sapien
-              porttitor. Duis porttitor sed metus eget mollis. Curabitur
-              bibendum imperdiet tortor, ut pulvinar purus elementum nspendisse
-              at erat luctus. Duis tempus leo vitae ipsum viverra, blandit
-              condimentum sapien porttitor. Duis porttitor sed metus eget
-              mollis. Curabitur bibendum imperdiet tortor, ut pulvinar purus
-              elementum nspendisse at erat luctus.
+              Our mission is to provide accessible and accurate information on
+              sex education and health. We believe that everyone deserves access
+              to accurate and up-to-date information about their bodies and
+              their sexual health, and we strive to provide that through our web
+              application. We want to support you in your personal development:
+              knowing your rights and living a self-determined sexuality. Being
+              the one you want to be!
             </p>
           </div>
           <div className="box-3">
             <Image />
             <h2>empowering</h2> <IconRocket />
             <p>
-              Cras aliquet venenatis porttitor. Donec rutrum sapien et sapien
-              dignissim, eu dapibus mi molestie. Suspendisse dictum convallis
-              quam et sodales. Praesent non enim et magna congue gravida.Duis
-              tempus leo vitae ipsum viverra, blandit condimentum sapien
-              porttitor. Duis porttitor sed metus eget mollis. Curabitur
-              bibendum imperdiet tortor, ut pulvinar purus elementum nspendisse
-              at erat luctus.
+              We want you to feel empowered about yourself, your rights, your
+              sexuality and gender indentity therefore we provide comprehensive
+              and accurate information about anatomy, body knowledge, gender
+              diversity, sexual orientation, LGBTIQ*, sexual rights,
+              relationships, sexual health and a lot of more. We hope we can
+              support you during your unique journey!
             </p>
           </div>
         </div>
