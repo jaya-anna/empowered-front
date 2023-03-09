@@ -28,32 +28,32 @@ function ResourcePage() {
         <Text
           style={{
             maxWidth: 700,
-            textAlign: "justify",
-            fontSize: "25px",
+            textAlign: "center",
+            fontSize: "23px",
+            fontWeight: "450" ,
             lineHeight: "1.3",
-            color: "#264143",
+            color: "#258188",
             marginTop: "50px",
-            marginBottom: "50px",
+            marginBottom: "30px",
           }}
         >
-          Welcome to our resources page, where you can find a wide range of
-          materials to help you learn more about sex education and health. We've
-          curated a list of resources to ensure that you're getting accurate and
-          up-to-date information.
+          Welcome to our <b>resources</b> page, where you can find a wide range of
+          materials to help you learn more about sex education and health. 
         </Text>
       </div>
       <div style={{ maxWidth: 700, margin: "auto" }}>
         {/* BOOKS */}
-        <Card shadow="xl" style={{ marginTop: "60px" }}>
+        <Card shadow="xl" style={{ marginTop: "30px" }}>
           <Text
             weight={500}
             style={{
-              marginLeft: "40px",
+              marginLeft: "10px",
               marginBottom: "-30px",
               fontSize: "20px",
+              color: "gray"
             }}
           >
-            BOOKS
+            books
           </Text>
           <ul style={{ padding: "20px", listStyle: "none" }}>
             <li style={{ padding: "20px" }}>
@@ -149,12 +149,13 @@ function ResourcePage() {
           <Text
             weight={500}
             style={{
-              marginLeft: "40px",
+              marginLeft: "10px",
               marginBottom: "-20px",
               fontSize: "20px",
+              color:"gray"
             }}
           >
-            APPLE PODCASTS
+            apple podcasts
           </Text>
 
           <ul style={{ paddingLeft: "20px", listStyle: "none" }}>
@@ -256,12 +257,13 @@ function ResourcePage() {
           <Text
             weight={500}
             style={{
-              marginLeft: "40px",
+              marginLeft: "10px",
               marginBottom: "-20px",
               fontSize: "20px",
+              color:"gray"
             }}
           >
-            WEBSITES
+            websites
           </Text>
           <ul style={{ paddingLeft: "20px", listStyle: "none" }}>
             <li style={{ padding: "20px" }}>
@@ -389,12 +391,13 @@ function ResourcePage() {
           <Text
             weight={500}
             style={{
-              marginLeft: "40px",
+              marginLeft: "10px",
               marginBottom: "-20px",
               fontSize: "20px",
+              color:"gray"
             }}
           >
-            VIDEOS
+            videos
           </Text>
           <ul style={{ paddingLeft: "20px", listStyle: "none" }}>
             <li style={{ padding: "20px" }}>
@@ -490,12 +493,13 @@ function ResourcePage() {
           <Text
             weight={500}
             style={{
-              marginLeft: "40px",
+              marginLeft: "10px",
               marginBottom: "-20px",
               fontSize: "20px",
+              color:"gray"
             }}
           >
-            TOOLS
+            tools
           </Text>
           <ul style={{ paddingLeft: "20px", listStyle: "none" }}>
             <li style={{ padding: "20px" }}>
@@ -589,12 +593,13 @@ function ResourcePage() {
           <Text
             weight={500}
             style={{
-              marginLeft: "40px",
+              marginLeft: "10px",
               marginBottom: "-20px",
               fontSize: "20px",
+              color:"gray"
             }}
           >
-            QUIZZES
+            quizzes
           </Text>
           <ul style={{ paddingLeft: "20px", listStyle: "none" }}>
             <li style={{ padding: "20px" }}>
@@ -714,10 +719,11 @@ function ResourcePage() {
         <Text
           style={{
             marginTop: "100px",
-            textAlign: "justify",
-            fontSize: "20px",
+            textAlign: "center",
+            fontSize: "17px",
+            fontWeight:"450",
             lineHeight: "1.3",
-            color: "#264143",
+            color: "#258188",
             marginBottom: "70px",
           }}
         >

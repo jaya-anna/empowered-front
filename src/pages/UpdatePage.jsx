@@ -2,8 +2,9 @@ import React, { useContext , useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { SessionContext } from "../contexts/SessionContext";
-import { Button, Input, Text, Badge, Box, TextInput
+import { Button, Badge, Box, TextInput
 } from "@mantine/core";
+import { baseURL } from "../apiURLs";
 
 function UpdatePage() {
   const [username, setUsername] = useState("");
@@ -17,7 +18,7 @@ function UpdatePage() {
         console.log("updated Username:", username)
 
         try {
-          const response = await axios.put(`http://localhost:5005/auth/update/${user._id}`, {
+          const response = await axios.put(`${baseURL.production}/auth/update/${user._id}`, {
             username: username,
             email: email,
           } ,{headers: {

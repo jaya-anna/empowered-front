@@ -8,14 +8,16 @@ import {
   Checkbox,
   Title,
   Center,
-  rem, Divider
+  rem, 
 } from "@mantine/core";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IconArrowRight, IconAlertCircle } from "@tabler/icons-react";
+import { baseURL } from "../apiURLs";
 
 const SignupPage = () => {
+  console.log(baseURL)
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -26,14 +28,14 @@ const SignupPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post(`${API_URL}/auth/signup`, {
+      await axios.post(`${baseURL.production}/auth/signup`, {
         username: username,
         email: email,
         password: password,
       });
       navigate("/login");
     } catch (error) {
-      setErrorMessage(error.response.data.errorMessage);
+     // setErrorMessage(error.response.data.errorMessage);
       console.log(error);
     }
   };

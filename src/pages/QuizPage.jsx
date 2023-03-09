@@ -24,7 +24,7 @@ const quizQuestions = [
     id: 4,
     question: 'What is the purpose of emergency contraception (also known as the "morning-after pill")?',
     options: ['To prevent pregnancy after unprotected sex or contraceptive failure', 'To prevent the spread of STIs', 'To terminate an existing pregnancy'],
-    answer: 'To prevent pregnancy after unprotected sex or contraceptive failure.'
+    answer: 'To prevent pregnancy after unprotected sex or contraceptive failure'
 },
 {
     id: 5,

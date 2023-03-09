@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useContext } from 'react';
 import { SessionContext } from '../contexts/SessionContext';
-import { Card, Text, Button, Input, Group, Textarea } from '@mantine/core';
+import { Text, Button, Input, Group } from '@mantine/core';
 import Post from '../components/Post';
+import { baseURL } from "../apiURLs";
 
 function ForumPage() {
     const [posts, setPosts] = useState([]);
@@ -16,7 +17,7 @@ function ForumPage() {
     }, []);
 
     async function fetchPosts() {
-        const response = await axios.get('http://localhost:5005/forum/posts');
+        const response = await axios.get(`${baseURL.production}/forum/posts`);
         setPosts(response.data);
     }
 
@@ -26,7 +27,7 @@ function ForumPage() {
 console.log(token);
 
         try {
-        await axios.post('http://localhost:5005/forum/createpost', { title, content }, {headers: { authorization: `Bearer ${token}`  } }
+        await axios.post(`${baseURL.production}/forum/createpost`, { title, content }, {headers: { authorization: `Bearer ${token}`  } }
         );
         setTitle('');
         setContent('');

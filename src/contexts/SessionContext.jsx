@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { baseURL } from "../apiURLs";
 
 export const SessionContext = createContext(); 
 
@@ -12,7 +13,7 @@ const SessionContextProvider = ({children}) => {
     const verifyToken = async (jwt) => {
         console.log("JWT: ", jwt);
         try {
-            const response = await axios.post("http://localhost:5005/auth/verify", undefined, {
+            const response = await axios.post(`${baseURL.production}/auth/verify`, undefined, {
                 headers: {
                     authorization: `Bearer ${jwt}`
                 },

@@ -10,7 +10,6 @@ import ForumPage from "./pages/ForumPage";
 import InfoPage from "./pages/InfoPage";
 import ResourcePage from "./pages/ResourcePage";
 import AboutPage from "./pages/AboutPage";
-import FAQPage from "./pages/FAQPage";
 import OutletComponent from "./components/OutletComponent";
 import UpdatePage from "./pages/UpdatePage";
 import QuizPage from "./pages/QuizPage";
@@ -28,7 +27,6 @@ function App() {
           <Route path="/resources" element={<ResourcePage />} />
           <Route path="/info" element={<InfoPage />} />
           <Route path="/forum" element={<ForumPage />} />
-          <Route path="/faq" element={<FAQPage />} />
           <Route path="/update/:userId" element={<UpdatePage />} />
           <Route path='/quiz' element={<QuizPage />} />
           <Route

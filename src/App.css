@@ -6,7 +6,7 @@
 
 .navBar-right {
   position: relative;
-    bottom: 20px;
+  bottom: 20px;
 }
 
 /* Homepage */
@@ -15,18 +15,18 @@
   margin-bottom: -27px;
   padding-top: 20px;
   background-color: #f2ebe9;
-  
 }
 
 .home-section-1 h1 {
   margin-top: 75px;
-  margin-left: 150px;
+  margin-left: 100px;
+  max-width: 50%;
   font-size: 45px;
   color: #264143;
   line-height: 1.1;
 }
 
-.bubble-link{
+.bubble-link {
   position: relative;
   top: 30px;
   right: 410px;
@@ -35,9 +35,9 @@
   color: #e00a9c;
   text-align: center;
   z-index: 1;
-} 
+}
 
-.bubble-link a{
+.bubble-link a {
   color: #e00a9c;
   text-decoration: none;
 }
@@ -91,8 +91,11 @@
 }
 
 .button-homepage {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
   margin-top: 80px;
-  margin-left: 150px;
+  margin-left: 100px;
   padding-right: 86px;
   text-align: center;
 }
@@ -103,10 +106,6 @@
 
 .home-section-3 {
   height: 400px;
-}
-
-.icon-heart {
-  margin-top: 30px;
 }
 
 .button-about {
@@ -143,7 +142,6 @@
 /* Footer */
 
 .section-footer {
- 
   background-color: #eddcd9;
   color: grey;
   height: 150px;
@@ -188,7 +186,7 @@
 
 .style-logo {
   position: relative;
-  left: 225px;
+  left: 120px;
 }
 
 .resource-section {
@@ -218,7 +216,6 @@
 
 .info-container {
   background-color: #f2ebe9;
- 
 }
 
 .info-container-text {

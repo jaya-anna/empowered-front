@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { SessionContext } from "../contexts/SessionContext";
-import { Card, Text, Button, Input, Group } from "@mantine/core";
+import { Card, Text, Button, Input } from "@mantine/core";
+import { baseURL } from "../apiURLs";
 
 function Comment({ comment, setComments, comments, fetchComments, post }) {
     const [isEditingComment, setIsEditingComment] = useState(false);
@@ -13,7 +14,7 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
     async function handleDeleteComment(comment) {
         try {
         await axios.delete(
-            `http://localhost:5005/forum/posts/${post._id}/comments/${comment._id}`,
+            `${baseURL.production}/forum/posts/${post._id}/comments/${comment._id}`,
             {
             headers: { authorization: `Bearer ${token}` },
             }
@@ -30,14 +31,14 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
         setNewCommentContent(e.target.value);
     }
 
-    function handleEditComment(comment) {
+    function handleEditComment() {
         setIsEditingComment(true);
     }
 
     async function handleSaveComment(comment) {
         try {
-        const response = await axios.put(
-            `http://localhost:5005/forum/posts/${post._id}/comments/${comment._id}`,
+          await axios.put(
+            `${baseURL.production}/forum/posts/${post._id}/comments/${comment._id}`,
             {
             content: newCommentContent,
             },
@@ -117,7 +118,7 @@ function Comment({ comment, setComments, comments, fetchComments, post }) {
           { comment.author && comment.author._id === user._id && (
                         <div>
                             <Button 
-                              onClick={() => handleEditComment(comment)}
+                              onClick={() => handleEditComment()}
                               variant="outline"
                               color="gray"
                               style={{ margin:"10px" }}

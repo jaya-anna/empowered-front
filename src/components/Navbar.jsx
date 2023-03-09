@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Image } from "@mantine/core";
 import { SessionContext } from "../contexts/SessionContext";
 import { IconBrandInstagram, IconMail } from "@tabler/icons-react";
@@ -7,7 +7,6 @@ import { IconBrandInstagram, IconMail } from "@tabler/icons-react";
 function NavBar() {
   const { isAuthenticated, setIsAuthenticated, setToken, setUser } =
     useContext(SessionContext);
-  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("bearer");
@@ -23,47 +22,42 @@ function NavBar() {
           <div>
             <br></br>
             <NavLink className="navbar-comp-style" to="/">
-              Home
+              home
             </NavLink>
 
             <NavLink className="navbar-comp-style" to="/resources">
-              Resources
+              resources
             </NavLink>
             <NavLink className="navbar-comp-style" to="/info">
-              Info
+              info
             </NavLink>
             <NavLink className="navbar-comp-style" to="/about">
-              About
+              about
             </NavLink>
           </div>
-         
-            <Image
-              width={130}
-              className="style-logo"
-              src="../../images/logo-purple.png"
-              alt="logo empowered"
-            ></Image>
-         
+
+          <Image
+            width={130}
+            className="style-logo"
+            src="../../images/logo-purple.png"
+            alt="logo empowered"
+          ></Image>
 
           <div className="navBar-right">
             <br></br>
 
             <NavLink className="navbar-comp-style" to="/quiz">
-              Quiz
-            </NavLink>
-
-            <NavLink className="navbar-comp-style" to="/faq">
-              FAQ
+              quiz
             </NavLink>
 
             {isAuthenticated ? (
               <>
                 <NavLink className="navbar-comp-style" to="/forum">
-                  Forum
+                  forum
                 </NavLink>
 
                 <NavLink className="navbar-comp-style" to="/profile">
-                  Profile
+                  profile
                 </NavLink>
 
                 <NavLink
@@ -71,50 +65,65 @@ function NavBar() {
                   to="/"
                   onClick={handleLogout}
                 >
-                  Logout
+                  logout
                 </NavLink>
 
-                <IconBrandInstagram
-                  style={{
-                    marginTop: "20px",
-                    marginLeft: "80px",
-                    position: "relative",
-                    top: "6px",
-                  }}
-                ></IconBrandInstagram>
+                <a href="https://www.instagram.com/empoweredemp/">
+                  <IconBrandInstagram
+                    style={{
+                      marginTop: "20px",
+                      marginLeft: "80px",
+                      position: "relative",
+                      top: "6px",
+                      color: "#264143",
+                    }}
+                  ></IconBrandInstagram>
+                </a>
+
+                <Link to={"mailto:empowered9876@gmail.com"}>
                 <IconMail
                   style={{
                     marginTop: "20px",
                     marginLeft: "10px",
                     position: "relative",
                     top: "6px",
+                    color: "#264143",
                   }}
-                ></IconMail>
+                ></IconMail></Link>
               </>
+
             ) : (
               <>
                 <NavLink className="navbar-comp-style" to="/signup">
-                  Sign up
+                  sign up
                 </NavLink>
                 <NavLink className="navbar-comp-style" to="/login">
-                  Login
+                  login
                 </NavLink>
-                <IconBrandInstagram
-                  style={{
-                    marginTop: "20px",
-                    marginLeft: "80px",
-                    position: "relative",
-                    top: "6px",
-                  }}
-                ></IconBrandInstagram>
-                <IconMail
-                  style={{
-                    marginTop: "20px",
-                    marginLeft: "80px",
-                    position: "relative",
-                    top: "6px",
-                  }}
-                ></IconMail>
+
+                <a href="https://www.instagram.com/empoweredemp/">
+                  <IconBrandInstagram
+                    style={{
+                      marginTop: "20px",
+                      marginLeft: "80px",
+                      position: "relative",
+                      top: "6px",
+                      color: "#264143",
+                    }}
+                  ></IconBrandInstagram>
+                </a>
+
+                <Link to={"mailto:empowered9876@gmail.com"}>
+                  <IconMail
+                    style={{
+                      marginTop: "20px",
+                      marginLeft: "10px",
+                      position: "relative",
+                      top: "6px",
+                      color: "#264143",
+                    }}
+                  ></IconMail>
+                </Link>
               </>
             )}
           </div>
