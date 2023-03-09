@@ -57,7 +57,7 @@ const LoginPage = () => {
           gap: "20px",
           marginTop: "2rem",
         }}
-        // onClick={handleSubmit}
+
       >
         <TextInput
           label="Username"
