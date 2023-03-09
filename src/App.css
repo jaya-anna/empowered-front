@@ -125,10 +125,14 @@
 .box-3 {
   width: 400px;
   text-align: center;
+  
 }
 
 .box-3 h2 {
   margin-bottom: 4px;
+}
+.box-3 p {
+  text-align: justify;
 }
 
 .image-reading-home {
