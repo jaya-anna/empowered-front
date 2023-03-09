@@ -77,6 +77,7 @@ const HomePage = () => {
             className="image-group-home"
             max-width={100}
             height={"auto"}
+            marginLeft={-30}
             fit="contain"
             mx="auto"
             src="../../images/home-group.png"
