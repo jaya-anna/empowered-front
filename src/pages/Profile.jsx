@@ -138,7 +138,7 @@ function Profile( ){
                       height={300}
                       fit="contain"
                       mx="auto"
-                      src="../../images/profile-avatar.jpeg"
+                      src="../../images/profile-avatar.png"
                       alt="profile avatar"
                       style={{borderRadius: "50%"}}
                   />

@@ -22,15 +22,15 @@ const quizQuestions = [
 },
 {
     id: 4,
-    question: 'What is the purpose of emergency contraception (also known as the "morning-after pill")?',
-    options: ['To prevent pregnancy after unprotected sex or contraceptive failure', 'To prevent the spread of STIs', 'To terminate an existing pregnancy'],
-    answer: 'To prevent pregnancy after unprotected sex or contraceptive failure'
+    question: 'What is the term for a person who identifies as neither male nor female',
+    options: ['Transgender', 'Non-binary', 'Cisgender'],
+    answer: 'Non-binary'
 },
 {
     id: 5,
-    question: 'What is the most effective method of contraception?',
-    options: ['Birth control pills', 'IUDs', 'Sterilization'],
-    answer: 'Sterilization'
+    question: 'Which of the following is a menstrual hygiene material?',
+    options: ['Menstrual Cup', 'Menstrual Mug', 'Menstrual Glas'],
+    answer: 'Menstrual Cup'
     },
     {
     id: 6,
@@ -40,15 +40,15 @@ const quizQuestions = [
     },
     {
     id: 7,
-    question: 'What is the recommended age for individuals to start getting regular Pap tests to screen for cervical cancer?',
-    options: ['18', '21', '25'],
-    answer: '21'
+    question: 'Which of the following is a medical condition that affects person with a uterus and can cause pain and discomfort during menstruation?',
+    options: ['Endometriosis', 'Prostate cancer', 'Erectile dysfunction'],
+    answer: 'Endometriosis'
     },
     {
     id: 8,
-    question: 'What is the proper way to use a condom?',
-    options: ['Put the condom on after penetration has already occurred', 'Reuse a condom if it hasn\'t been damaged', 'Pinch the tip of the condom before rolling it down the penis'],
-    answer: 'Pinch the tip of the condom before rolling it down the penis'
+    question: 'How long can sperm live inside the uterus ?',
+    options: ['up to 24 hours', 'up to 10 min', 'up to 5 days'],
+    answer: 'up to 5 days'
     },
     {
     id: 9,
@@ -58,9 +58,9 @@ const quizQuestions = [
     },
     {
     id: 10,
-    question: 'What is the best way to protect yourself from sexually transmitted infections?',
-    options: ['Abstinence', 'Using condoms consistently and correctly', 'Getting vaccinated'],
-    answer: 'Using condoms consistently and correctly'
+    question: 'What does the term "pansexual" mean in regards to sexual orientation',
+    options: ['A person who is attracted to people of any gender identity', 'A person who is attracted to people of the opposite gender', 'A person who is attracted to people of the same gender'],
+    answer: 'A person who is attracted to people of any gender identity'
     }
 ];
 
