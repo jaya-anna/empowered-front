@@ -1,5 +1,5 @@
-import { Image, Button, Anchor } from "@mantine/core";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { Image, Button } from "@mantine/core";
+import { Link, useNavigate } from "react-router-dom";
 import {
   IconGenderIntergender,
   IconGenderAndrogyne,
@@ -72,21 +72,7 @@ const HomePage = () => {
               </Button>
             </div>
           </div>
-          {/*}
-          <Image
-            className="image-speech-bubble"
-            src="../../images/speech-bubble.png"
-            alt=""
-            width={130}
-          />
-          <span className="bubble-link">
-            <Link to="/quiz">
-              <p className="quiz-bg">QUIZ</p>
-              <p className="quiz-md">QUIZ</p>
-              <p className="quiz-sm">QUIZ</p>
-            </Link>
-          </span>
-*/}
+
           <Image
             className="image-group-home"
             max-width={100}
@@ -127,7 +113,7 @@ const HomePage = () => {
                 </Button>
               </Link>
               <br />
-              {/* <IconHeart width={500} className="icon-heart" />*/}
+
             </h1>
           </div>
         </div>

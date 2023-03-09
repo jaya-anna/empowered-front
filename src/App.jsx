@@ -10,7 +10,6 @@ import ForumPage from "./pages/ForumPage";
 import InfoPage from "./pages/InfoPage";
 import ResourcePage from "./pages/ResourcePage";
 import AboutPage from "./pages/AboutPage";
-import FAQPage from "./pages/FAQPage";
 import OutletComponent from "./components/OutletComponent";
 import UpdatePage from "./pages/UpdatePage";
 import QuizPage from "./pages/QuizPage";
