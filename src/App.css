@@ -20,7 +20,8 @@
 
 .home-section-1 h1 {
   margin-top: 75px;
-  margin-left: 150px;
+  margin-left: 100px;
+  max-width: 50%;
   font-size: 45px;
   color: #264143;
   line-height: 1.1;
@@ -91,6 +92,9 @@
 }
 
 .button-homepage {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
   margin-top: 80px;
   margin-left: 150px;
   padding-right: 86px;
@@ -105,9 +109,7 @@
   height: 400px;
 }
 
-.icon-heart {
-  margin-top: 30px;
-}
+
 
 .button-about {
   background-color: #f7e38d;
@@ -188,7 +190,7 @@
 
 .style-logo {
   position: relative;
-  left: 225px;
+  left: 120px;
 }
 
 .resource-section {

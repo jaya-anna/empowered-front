@@ -35,14 +35,13 @@ function NavBar() {
               about
             </NavLink>
           </div>
-         
-            <Image
-              width={130}
-              className="style-logo"
-              src="../../images/logo-purple.png"
-              alt="logo empowered"
-            ></Image>
-         
+
+          <Image
+            width={130}
+            className="style-logo"
+            src="../../images/logo-purple.png"
+            alt="logo empowered"
+          ></Image>
 
           <div className="navBar-right">
             <br></br>
@@ -50,7 +49,6 @@ function NavBar() {
             <NavLink className="navbar-comp-style" to="/quiz">
               quiz
             </NavLink>
-
 
             {isAuthenticated ? (
               <>
@@ -70,23 +68,30 @@ function NavBar() {
                   logout
                 </NavLink>
 
-                <IconBrandInstagram
-                  style={{
-                    marginTop: "20px",
-                    marginLeft: "80px",
-                    position: "relative",
-                    top: "6px",
-                  }}
-                ></IconBrandInstagram>
+                <a href="https://www.instagram.com/empoweredemp/">
+                  <IconBrandInstagram
+                    style={{
+                      marginTop: "20px",
+                      marginLeft: "80px",
+                      position: "relative",
+                      top: "6px",
+                      color: "#264143",
+                    }}
+                  ></IconBrandInstagram>
+                </a>
+
+                <Link to={"mailto:empowered9876@gmail.com"}>
                 <IconMail
                   style={{
                     marginTop: "20px",
                     marginLeft: "10px",
                     position: "relative",
                     top: "6px",
+                    color: "#264143",
                   }}
-                ></IconMail>
+                ></IconMail></Link>
               </>
+
             ) : (
               <>
                 <NavLink className="navbar-comp-style" to="/signup">
@@ -96,29 +101,29 @@ function NavBar() {
                   login
                 </NavLink>
 
-              <a href="https://www.instagram.com/empoweredemp/">
-                <IconBrandInstagram
-                  style={{
-                    marginTop: "20px",
-                    marginLeft: "80px",
-                    position: "relative",
-                    top: "6px",
-                  }}
-                ></IconBrandInstagram>
-              </a> 
+                <a href="https://www.instagram.com/empoweredemp/">
+                  <IconBrandInstagram
+                    style={{
+                      marginTop: "20px",
+                      marginLeft: "80px",
+                      position: "relative",
+                      top: "6px",
+                      color: "#264143",
+                    }}
+                  ></IconBrandInstagram>
+                </a>
 
-              <Link to={"mailto:empowered9876@gmail.com"}>
-                <IconMail
-                  style={{
-                    marginTop: "20px",
-                    marginLeft: "80px",
-                    position: "relative",
-                    top: "6px",
-                  }}
-                ></IconMail>
-              </Link>
-
-
+                <Link to={"mailto:empowered9876@gmail.com"}>
+                  <IconMail
+                    style={{
+                      marginTop: "20px",
+                      marginLeft: "10px",
+                      position: "relative",
+                      top: "6px",
+                      color: "#264143",
+                    }}
+                  ></IconMail>
+                </Link>
               </>
             )}
           </div>
