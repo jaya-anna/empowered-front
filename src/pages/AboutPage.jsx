@@ -66,7 +66,7 @@ function AboutPage() {
               textAlign:"center"
             }}
             >
-                  create an information exchange platform for teens and emerging adults on sexuality and relationship topics so that they will feel empowered (stronger and more confident)
+                  create an information exchange platform for teens and emerging adults on sexuality and relationship topics so that they will feel empowered (more confident and stronger)
           </Text>
 
       </div>
